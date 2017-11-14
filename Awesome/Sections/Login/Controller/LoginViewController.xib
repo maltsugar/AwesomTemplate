@@ -19,13 +19,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQm-01-Eb6">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                    <color key="backgroundColor" red="1" green="0.68086332333004762" blue="0.43649912915432953" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="8Mi-b5-Mj4"/>
-                    </constraints>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNY-D2-PLD">
                     <rect key="frame" x="164" y="216" width="46" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -35,12 +28,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="tQm-01-Eb6" secondAttribute="trailing" id="BVa-lm-ZsD"/>
-                <constraint firstItem="tQm-01-Eb6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="J8x-DN-jSY"/>
-                <constraint firstItem="tQm-01-Eb6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Yio-fE-0dV"/>
-            </constraints>
+            <color key="backgroundColor" red="0.94509803920000002" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <point key="canvasLocation" x="-297.5" y="-490.5"/>
         </view>
     </objects>
