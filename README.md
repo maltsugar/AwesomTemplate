@@ -1,12 +1,12 @@
 # 新项目模板
 ---
 ### 功能介绍
-- 修改bundleID直接修改就行，[这里](https://github.com/maltsugar/AwesomTemplate#awdes)有怎么修改Target名(如果不能跳转，你往下翻吧(⊙﹏⊙)b)
 - 此模板可以帮助快速搭建一个APP的“地基”，省却设置pch，宏，info.plist的一堆配置等步骤
-- 集成几乎必用到的库，具体用法可以百度搜，也可以咨询我（我有空的话）省去导库 找库的时间
+- 集成几乎必用到的库，具体用法可以搜索，都是很常用的应该都有用过，也可以问我（我有空的话）省去导库、找库的时间
 - 编译build值自增1，可以显示这个项目经过了多少次“打磨”，也方便传iTunes Connect 或者标记测试包，值必须不一样。（不需要的话删除Build Phases下的 Run Script）  
 - 项目目录分区明确，参考[iOS App开发那些事](http://www.cocoachina.com/programmer/20140526/8551.html)，我也一直用这种模式，不得不说，目录层次确实清晰，coding要优雅，也方便别人维护  
-![目录结构](http://wx3.sinaimg.cn/mw690/72aba7efgy1flhcn16kbqj21120yggrh.jpg)  
+![目录结构](http://wx3.sinaimg.cn/mw690/72aba7efgy1flhcn16kbqj21120yggrh.jpg)   
+- 你可以拿去修改名称作为新项目，修改bundleID直接修改就行，[这里](https://github.com/maltsugar/AwesomTemplate#awdes)有怎么修改Target名(如果不能跳转，你往下翻吧(⊙﹏⊙)b)  
 
 ---
 
@@ -15,7 +15,7 @@
 感谢为开源无私奉献的前辈，这里面使用的库，也是亲身实践较好用的，没有其他目的，只是我感觉比较顺手。当然你也可以找自己顺手的，替换里面的库。
 库如果有重大更新，比如适配iPhone X的MJRefresh，我也会更新的！
 
-# 更改项目target教程
+# 更改整个项目名称教程
 <a id="awdes">-</a>
 此处演示是xcode9，我之前用xcode8 也改过，从xcode5以后基本都一样。[我参考的这篇文章](http://www.cnblogs.com/tbfirstone/p/3601541.html)
 #### 将Awesome改为MyProject
