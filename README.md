@@ -20,7 +20,7 @@
 此处演示是xcode9，我之前用xcode8 也改过，从xcode5以后基本都一样。[我参考的这篇文章](http://www.cnblogs.com/tbfirstone/p/3601541.html)
 ####将Awesome改为MyProject
 1. 修改工程名  
-	![](http://wx3.sinaimg.cn/mw690/72aba7efgy1flhdl235w3j20dg0jyjuk.jpg)
+	![](http://wx3.sinaimg.cn/mw690/72aba7efgy1flhdl235w3j20dg0jyjuk.jpg)   
 	点击如图箭头所示，键盘Enter键，修改为MyProject，会出现以下提示
 	![](http://wx2.sinaimg.cn/mw690/72aba7efgy1flhdl2mkvbj20rs0l4gnn.jpg)   
 	点击 Rename，OK
@@ -43,7 +43,3 @@
 	![](http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl6wv4dj21c00vqgqu.jpg)
 5. bulid succeed!别忘了把最外面的文件夹名称也改下
 	![](http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl7g077j20og01wwem.jpg)
-
-
-
-
