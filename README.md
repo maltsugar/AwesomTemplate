@@ -1,7 +1,7 @@
 # 新项目模板
 ---
 ### 功能介绍
-- 修改bundleID直接修改就行，[这里](#des)有怎么修改Target名(如果不能跳转，你往下翻吧(⊙﹏⊙)b)
+- 修改bundleID直接修改就行，[这里](https://github.com/maltsugar/AwesomTemplate#des)有怎么修改Target名(如果不能跳转，你往下翻吧(⊙﹏⊙)b)
 - 此模板可以帮助快速搭建一个APP的“地基”，省却设置pch，宏，info.plist的一堆配置等步骤
 - 集成几乎必用到的库，具体用法可以百度搜，也可以咨询我（我有空的话）省去导库 找库的时间
 - 编译build值自增1，可以显示这个项目经过了多少次“打磨”，也方便传iTunes Connect 或者标记测试包，值必须不一样  
