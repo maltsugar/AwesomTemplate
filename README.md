@@ -4,7 +4,7 @@
 - 修改bundleID直接修改就行，[这里](https://github.com/maltsugar/AwesomTemplate#awdes)有怎么修改Target名(如果不能跳转，你往下翻吧(⊙﹏⊙)b)
 - 此模板可以帮助快速搭建一个APP的“地基”，省却设置pch，宏，info.plist的一堆配置等步骤
 - 集成几乎必用到的库，具体用法可以百度搜，也可以咨询我（我有空的话）省去导库 找库的时间
-- 编译build值自增1，可以显示这个项目经过了多少次“打磨”，也方便传iTunes Connect 或者标记测试包，值必须不一样  
+- 编译build值自增1，可以显示这个项目经过了多少次“打磨”，也方便传iTunes Connect 或者标记测试包，值必须不一样。（不需要的话删除Build Phases下的 Run Script）  
 - 项目目录分区明确，参考[iOS App开发那些事](http://www.cocoachina.com/programmer/20140526/8551.html)，我也一直用这种模式，不得不说，目录层次确实清晰，coding要优雅，也方便别人维护  
 ![目录结构](http://wx3.sinaimg.cn/mw690/72aba7efgy1flhcn16kbqj21120yggrh.jpg)  
 
@@ -41,8 +41,8 @@
 4. 修改pch文件和info.plist文件目录   
 	![](http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl6bermj21a20j4die.jpg)
 	![](http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl6wv4dj21c00vqgqu.jpg)
-5. bulid succeed!别忘了把最外面的文件夹名称也改下   
+5. bulid succeed!别忘了把最外面的文件夹名称也改下，删除`.git`隐藏文件夹   
 	![](http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl7g077j20og01wwem.jpg)   
 # 注意
 该项目使用了YYCache，所有Xcode要8.0以上，可能有的同学的xcode版本问题，编译报错.   
-##### 尝试导入 lizb.tbd  libsqlite3.tbd
+##### 尝试导入 `lizb.tbd`  `libsqlite3.tbd`
