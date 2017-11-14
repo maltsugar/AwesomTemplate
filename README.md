@@ -42,4 +42,7 @@
 	![](http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl6bermj21a20j4die.jpg)
 	![](http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl6wv4dj21c00vqgqu.jpg)
 5. bulid succeed!别忘了把最外面的文件夹名称也改下   
-	![](http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl7g077j20og01wwem.jpg)
+	![](http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl7g077j20og01wwem.jpg)   
+# 注意
+该项目使用了YYCache，所有Xcode要8.0以上，可能有的同学的xcode版本问题，编译报错.   
+##### 尝试导入 lizb.tbd  libsqlite3.tbd
