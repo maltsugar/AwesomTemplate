@@ -20,26 +20,26 @@
 此处演示是xcode9，我之前用xcode8 也改过，从xcode5以后基本都一样。[我参考的这篇文章](http://www.cnblogs.com/tbfirstone/p/3601541.html)
 #### 将Awesome改为MyProject
 1. 修改工程名  
-	![](http://wx3.sinaimg.cn/mw690/72aba7efgy1flhdl235w3j20dg0jyjuk.jpg)   
+	![](http://wx2.sinaimg.cn/mw690/72aba7efgy1flhiprp2unj20dq0b0taa.jpg)   
 	点击如图箭头所示，键盘Enter键，修改为MyProject，会出现以下提示
 	![](http://wx2.sinaimg.cn/mw690/72aba7efgy1flhdl2mkvbj20rs0l4gnn.jpg)   
 	点击 Rename，OK
 	
 	
-2. 修改Scheme
-	![](http://wx3.sinaimg.cn/mw690/72aba7efgy1flhdl3b32kj20ju0bi40s.jpg)
+2. 修改Scheme   
+	![](http://wx3.sinaimg.cn/mw690/72aba7efgy1flhdl3b32kj20ju0bi40s.jpg)   
 	选中Awesome，Enter键，修改为MyProject
 	![](http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl3uel1j216o0o0q4j.jpg)
 
-3. 修改工程目录名称
-	![](http://wx3.sinaimg.cn/mw690/72aba7efgy1flhdl4k7qaj20ky0vqq7w.jpg)
+3. 修改工程目录名称   
+	![](http://wx3.sinaimg.cn/mw690/72aba7efgy1flhdl4k7qaj20ky0vqq7w.jpg)   
 	Show In Finder,修改此目录为MyProject，修改后所有文件变红色
-	![](http://wx3.sinaimg.cn/mw690/72aba7efgy1flhi3a4r3yj20fm0r2765.jpg)
+	![](http://wx3.sinaimg.cn/mw690/72aba7efgy1flhi3a4r3yj20fm0r2765.jpg)   
 	修改此处Name 为 MyProject,点击灰色文件夹图标
-	![](http://wx2.sinaimg.cn/mw690/72aba7efgy1flhdl5s9cij20p80nmq5r.jpg)
+	![](http://wx2.sinaimg.cn/mw690/72aba7efgy1flhdl5s9cij20p80nmq5r.jpg)   
 	选中项目目录
-4. 修改pch文件和info.plist文件目录
+4. 修改pch文件和info.plist文件目录   
 	![](http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl6bermj21a20j4die.jpg)
 	![](http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl6wv4dj21c00vqgqu.jpg)
-5. bulid succeed!别忘了把最外面的文件夹名称也改下
+5. bulid succeed!别忘了把最外面的文件夹名称也改下   
 	![](http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl7g077j20og01wwem.jpg)
