@@ -11,7 +11,7 @@
 #import "Singleton.h"
 
 BOOL isIPhoneX(void);
-
+char *formattedLogDate(void);
 
 
 @interface AppTools : NSObject

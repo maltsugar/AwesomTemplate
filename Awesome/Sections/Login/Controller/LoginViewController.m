@@ -18,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"test log");
 //
 //    _table = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
 //    _table.delegate = self;
