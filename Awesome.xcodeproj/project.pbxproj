@@ -51,7 +51,6 @@
 		569932041F79F52F00BA1BEB /* NSObject+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 569932001F79F52E00BA1BEB /* NSObject+YYAdd.m */; };
 		569932051F79F52F00BA1BEB /* NSArray+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 569932011F79F52E00BA1BEB /* NSArray+YYAdd.m */; };
 		5699323A1F79F5BD00BA1BEB /* MBProgressHUD.bundle in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF7D8E1F74F9FC005EDBE6 /* MBProgressHUD.bundle */; };
-		56C094711F7A06A7002C3ECE /* HYBNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C094701F7A06A2002C3ECE /* HYBNetworking.m */; };
 		56C094951F7A0724002C3ECE /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C094821F7A0703002C3ECE /* AFAutoPurgingImageCache.m */; };
 		56C094961F7A0724002C3ECE /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C094841F7A0703002C3ECE /* AFImageDownloader.m */; };
 		56C094971F7A0724002C3ECE /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C094861F7A0703002C3ECE /* AFNetworkActivityIndicatorManager.m */; };
@@ -103,6 +102,7 @@
 		9146CE721F9F1AC100AD33D8 /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9146CE5E1F9F1AC000AD33D8 /* IQUIView+Hierarchy.m */; };
 		9146CE731F9F1AC100AD33D8 /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9146CE631F9F1AC000AD33D8 /* IQUIViewController+Additions.m */; };
 		9146CE741F9F1AC100AD33D8 /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9146CE651F9F1AC000AD33D8 /* IQKeyboardReturnKeyHandler.m */; };
+		914932F31FBD5F0C005C3A00 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 914932F11FBD5F0B005C3A00 /* UIViewController+Extension.m */; };
 		914F3D6D1FB963D0001C35F3 /* AWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F3D6C1FB963D0001C35F3 /* AWNavigationController.m */; };
 		914F3D7D1FB9687C001C35F3 /* DemoViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F3D7B1FB9687C001C35F3 /* DemoViewController2.m */; };
 		914F3D7E1FB9687C001C35F3 /* DemoViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914F3D7C1FB9687C001C35F3 /* DemoViewController2.xib */; };
@@ -123,6 +123,7 @@
 		916C74901F7F48CF0056F06B /* AvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C747F1F7F487B0056F06B /* AvoidCrash.m */; };
 		916C74911F7F48CF0056F06B /* AvoidCrashStubProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C74821F7F487B0056F06B /* AvoidCrashStubProxy.m */; };
 		9182A0B91F8DB06100EE238F /* AppTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9182A0B81F8DB06100EE238F /* AppTools.m */; };
+		91C172E11FC66FE20050F371 /* HYBNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C172E01FC66FE20050F371 /* HYBNetworking.m */; };
 		91D83C141FB4459E004595DE /* NSString+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C131FB4459E004595DE /* NSString+Tools.m */; };
 		91D83C261FB44E82004595DE /* NSDate+JKLunarCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C1A1FB44E82004595DE /* NSDate+JKLunarCalendar.m */; };
 		91D83C271FB44E82004595DE /* NSDate+JKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C1C1FB44E82004595DE /* NSDate+JKExtension.m */; };
@@ -246,8 +247,6 @@
 		569932011F79F52E00BA1BEB /* NSArray+YYAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YYAdd.m"; sourceTree = "<group>"; };
 		569932021F79F52E00BA1BEB /* NSArray+YYAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+YYAdd.h"; sourceTree = "<group>"; };
 		569932031F79F52F00BA1BEB /* NSObject+YYAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYAdd.h"; sourceTree = "<group>"; };
-		56C0946F1F7A06A2002C3ECE /* HYBNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYBNetworking.h; sourceTree = "<group>"; };
-		56C094701F7A06A2002C3ECE /* HYBNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HYBNetworking.m; sourceTree = "<group>"; };
 		56C094731F7A06FD002C3ECE /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		56C094741F7A06FD002C3ECE /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		56C094751F7A06FD002C3ECE /* AFNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
@@ -354,6 +353,8 @@
 		9146CE631F9F1AC000AD33D8 /* IQUIViewController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIViewController+Additions.m"; sourceTree = "<group>"; };
 		9146CE641F9F1AC000AD33D8 /* IQUIView+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+Hierarchy.h"; sourceTree = "<group>"; };
 		9146CE651F9F1AC000AD33D8 /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
+		914932F11FBD5F0B005C3A00 /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
+		914932F21FBD5F0C005C3A00 /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
 		914F3D6B1FB963D0001C35F3 /* AWNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWNavigationController.h; sourceTree = "<group>"; };
 		914F3D6C1FB963D0001C35F3 /* AWNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWNavigationController.m; sourceTree = "<group>"; };
 		914F3D7A1FB9687C001C35F3 /* DemoViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController2.h; sourceTree = "<group>"; };
@@ -395,6 +396,8 @@
 		919DD82A1FB92564004EFB9F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		919DD82B1FB9256A004EFB9F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		919DD82C1FB9256F004EFB9F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		91C172DF1FC66FE20050F371 /* HYBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBNetworking.h; sourceTree = "<group>"; };
+		91C172E01FC66FE20050F371 /* HYBNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBNetworking.m; sourceTree = "<group>"; };
 		91D83C121FB4459E004595DE /* NSString+Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Tools.h"; sourceTree = "<group>"; };
 		91D83C131FB4459E004595DE /* NSString+Tools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tools.m"; sourceTree = "<group>"; };
 		91D83C161FB44E82004595DE /* NSDate+JKZeroDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+JKZeroDate.h"; sourceTree = "<group>"; };
@@ -576,6 +579,8 @@
 			children = (
 				91D83C151FB44E82004595DE /* NSDate */,
 				2DBF7D851F74F7AD005EDBE6 /* Foundation+Log.m */,
+				914932F21FBD5F0C005C3A00 /* UIViewController+Extension.h */,
+				914932F11FBD5F0B005C3A00 /* UIViewController+Extension.m */,
 				2DBF7D861F74F7AD005EDBE6 /* UIView+Extension.h */,
 				2DBF7D871F74F7AD005EDBE6 /* UIView+Extension.m */,
 				91D83C121FB4459E004595DE /* NSString+Tools.h */,
@@ -767,8 +772,8 @@
 		56C0946E1F7A06A2002C3ECE /* HYBNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				56C0946F1F7A06A2002C3ECE /* HYBNetworking.h */,
-				56C094701F7A06A2002C3ECE /* HYBNetworking.m */,
+				91C172DF1FC66FE20050F371 /* HYBNetworking.h */,
+				91C172E01FC66FE20050F371 /* HYBNetworking.m */,
 			);
 			path = HYBNetworking;
 			sourceTree = "<group>";
@@ -1350,6 +1355,7 @@
 				916C748E1F7F48CF0056F06B /* NSMutableAttributedString+AvoidCrash.m in Sources */,
 				916C748F1F7F48CF0056F06B /* NSAttributedString+AvoidCrash.m in Sources */,
 				91D83C2A1FB44E82004595DE /* NSDate+JKUtilities.m in Sources */,
+				91C172E11FC66FE20050F371 /* HYBNetworking.m in Sources */,
 				916C74901F7F48CF0056F06B /* AvoidCrash.m in Sources */,
 				9146CE6F1F9F1AC100AD33D8 /* IQUIWindow+Hierarchy.m in Sources */,
 				916C74911F7F48CF0056F06B /* AvoidCrashStubProxy.m in Sources */,
@@ -1365,6 +1371,7 @@
 				9146CE6D1F9F1AC100AD33D8 /* IQKeyboardManager.m in Sources */,
 				9146CE6A1F9F1AC100AD33D8 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				91EC95641FAABF2A005C5021 /* OAStackViewDistributionStrategy.m in Sources */,
+				914932F31FBD5F0C005C3A00 /* UIViewController+Extension.m in Sources */,
 				56C094991F7A0724002C3ECE /* UIButton+AFNetworking.m in Sources */,
 				91EC95631FAABF2A005C5021 /* OATransformLayer.m in Sources */,
 				91D83C281FB44E82004595DE /* NSDate+JKInternetDateTime.m in Sources */,
@@ -1393,7 +1400,6 @@
 				91D83C401FB454F9004595DE /* UIView+WZLBadge.m in Sources */,
 				91D83C2B1FB44E82004595DE /* NSDate+JKReporting.m in Sources */,
 				56C094A31F7A0724002C3ECE /* AFURLSessionManager.m in Sources */,
-				56C094711F7A06A7002C3ECE /* HYBNetworking.m in Sources */,
 				5699323A1F79F5BD00BA1BEB /* MBProgressHUD.bundle in Sources */,
 				91D83C3E1FB454F9004595DE /* UIBarButtonItem+WZLBadge.m in Sources */,
 				569932051F79F52F00BA1BEB /* NSArray+YYAdd.m in Sources */,
