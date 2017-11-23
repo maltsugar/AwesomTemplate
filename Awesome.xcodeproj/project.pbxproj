@@ -124,6 +124,7 @@
 		916C74911F7F48CF0056F06B /* AvoidCrashStubProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C74821F7F487B0056F06B /* AvoidCrashStubProxy.m */; };
 		9182A0B91F8DB06100EE238F /* AppTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9182A0B81F8DB06100EE238F /* AppTools.m */; };
 		91C172E11FC66FE20050F371 /* HYBNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C172E01FC66FE20050F371 /* HYBNetworking.m */; };
+		91C1730E1FC6C0EC0050F371 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1730C1FC6C0EB0050F371 /* UIBarButtonItem+Extension.m */; };
 		91D83C141FB4459E004595DE /* NSString+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C131FB4459E004595DE /* NSString+Tools.m */; };
 		91D83C261FB44E82004595DE /* NSDate+JKLunarCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C1A1FB44E82004595DE /* NSDate+JKLunarCalendar.m */; };
 		91D83C271FB44E82004595DE /* NSDate+JKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C1C1FB44E82004595DE /* NSDate+JKExtension.m */; };
@@ -398,6 +399,8 @@
 		919DD82C1FB9256F004EFB9F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		91C172DF1FC66FE20050F371 /* HYBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBNetworking.h; sourceTree = "<group>"; };
 		91C172E01FC66FE20050F371 /* HYBNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBNetworking.m; sourceTree = "<group>"; };
+		91C1730C1FC6C0EB0050F371 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		91C1730D1FC6C0EC0050F371 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		91D83C121FB4459E004595DE /* NSString+Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Tools.h"; sourceTree = "<group>"; };
 		91D83C131FB4459E004595DE /* NSString+Tools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tools.m"; sourceTree = "<group>"; };
 		91D83C161FB44E82004595DE /* NSDate+JKZeroDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+JKZeroDate.h"; sourceTree = "<group>"; };
@@ -581,6 +584,8 @@
 				2DBF7D851F74F7AD005EDBE6 /* Foundation+Log.m */,
 				914932F21FBD5F0C005C3A00 /* UIViewController+Extension.h */,
 				914932F11FBD5F0B005C3A00 /* UIViewController+Extension.m */,
+				91C1730D1FC6C0EC0050F371 /* UIBarButtonItem+Extension.h */,
+				91C1730C1FC6C0EB0050F371 /* UIBarButtonItem+Extension.m */,
 				2DBF7D861F74F7AD005EDBE6 /* UIView+Extension.h */,
 				2DBF7D871F74F7AD005EDBE6 /* UIView+Extension.m */,
 				91D83C121FB4459E004595DE /* NSString+Tools.h */,
@@ -1440,6 +1445,7 @@
 				5699316C1F79F13900BA1BEB /* MASViewConstraint.m in Sources */,
 				569931F91F79F4EB00BA1BEB /* NSData+YYAdd.m in Sources */,
 				9146CE381F9F1AA000AD33D8 /* MJRefreshAutoNormalFooter.m in Sources */,
+				91C1730E1FC6C0EC0050F371 /* UIBarButtonItem+Extension.m in Sources */,
 				2DBF7D9A1F74FAC2005EDBE6 /* LoginViewController.m in Sources */,
 				91D83C3D1FB454F9004595DE /* CAAnimation+WAnimation.m in Sources */,
 				569931FF1F79F51000BA1BEB /* UIApplication+YYAdd.m in Sources */,
