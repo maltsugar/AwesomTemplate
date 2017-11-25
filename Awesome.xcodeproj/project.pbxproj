@@ -11,7 +11,6 @@
 		2DBF7D651F74EFD5005EDBE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF7D641F74EFD5005EDBE6 /* AppDelegate.m */; };
 		2DBF7D6D1F74EFD5005EDBE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DBF7D6C1F74EFD5005EDBE6 /* Assets.xcassets */; };
 		2DBF7D701F74EFD5005EDBE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DBF7D6E1F74EFD5005EDBE6 /* LaunchScreen.storyboard */; };
-		2DBF7D881F74F7AD005EDBE6 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF7D851F74F7AD005EDBE6 /* Foundation+Log.m */; };
 		2DBF7D891F74F7AD005EDBE6 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF7D871F74F7AD005EDBE6 /* UIView+Extension.m */; };
 		2DBF7D911F74F9FC005EDBE6 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF7D8D1F74F9FC005EDBE6 /* MBProgressHUD+MJ.m */; };
 		2DBF7D921F74F9FC005EDBE6 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2DBF7D8E1F74F9FC005EDBE6 /* MBProgressHUD.bundle */; };
@@ -122,6 +121,10 @@
 		916C748F1F7F48CF0056F06B /* NSAttributedString+AvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C747C1F7F487B0056F06B /* NSAttributedString+AvoidCrash.m */; };
 		916C74901F7F48CF0056F06B /* AvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C747F1F7F487B0056F06B /* AvoidCrash.m */; };
 		916C74911F7F48CF0056F06B /* AvoidCrashStubProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C74821F7F487B0056F06B /* AvoidCrashStubProxy.m */; };
+		9174A49E1FC90BE8005FD18E /* NSArray+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9174A4961FC90BE8005FD18E /* NSArray+HYBUnicodeReadable.m */; };
+		9174A49F1FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9174A4971FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.m */; };
+		9174A4A01FC90BE8005FD18E /* NSSet+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9174A4991FC90BE8005FD18E /* NSSet+HYBUnicodeReadable.m */; };
+		9174A4A11FC90BE8005FD18E /* NSObject+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9174A49D1FC90BE8005FD18E /* NSObject+HYBUnicodeReadable.m */; };
 		9182A0B91F8DB06100EE238F /* AppTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9182A0B81F8DB06100EE238F /* AppTools.m */; };
 		91C172E11FC66FE20050F371 /* HYBNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C172E01FC66FE20050F371 /* HYBNetworking.m */; };
 		91C1730E1FC6C0EC0050F371 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1730C1FC6C0EB0050F371 /* UIBarButtonItem+Extension.m */; };
@@ -163,7 +166,6 @@
 		2DBF7D711F74EFD5005EDBE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DBF7D831F74F316005EDBE6 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2DBF7D841F74F78D005EDBE6 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
-		2DBF7D851F74F7AD005EDBE6 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		2DBF7D861F74F7AD005EDBE6 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		2DBF7D871F74F7AD005EDBE6 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		2DBF7D8A1F74F85F005EDBE6 /* CommonHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonHeader.h; sourceTree = "<group>"; };
@@ -392,6 +394,14 @@
 		916C74841F7F487B0056F06B /* NSMutableString+AvoidCrash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+AvoidCrash.h"; sourceTree = "<group>"; };
 		916C74851F7F487B0056F06B /* NSMutableAttributedString+AvoidCrash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+AvoidCrash.h"; sourceTree = "<group>"; };
 		916C74861F7F487B0056F06B /* NSMutableArray+AvoidCrash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+AvoidCrash.h"; sourceTree = "<group>"; };
+		9174A4961FC90BE8005FD18E /* NSArray+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
+		9174A4971FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
+		9174A4981FC90BE8005FD18E /* NSObject+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
+		9174A4991FC90BE8005FD18E /* NSSet+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
+		9174A49A1FC90BE8005FD18E /* NSArray+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
+		9174A49B1FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
+		9174A49C1FC90BE8005FD18E /* NSSet+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
+		9174A49D1FC90BE8005FD18E /* NSObject+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
 		9182A0B71F8DB06100EE238F /* AppTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppTools.h; sourceTree = "<group>"; };
 		9182A0B81F8DB06100EE238F /* AppTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTools.m; sourceTree = "<group>"; };
 		919DD82A1FB92564004EFB9F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -580,8 +590,8 @@
 		2DBF7D7D1F74F169005EDBE6 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				9174A4951FC90BE8005FD18E /* HYBUnicodeReadable */,
 				91D83C151FB44E82004595DE /* NSDate */,
-				2DBF7D851F74F7AD005EDBE6 /* Foundation+Log.m */,
 				914932F21FBD5F0C005C3A00 /* UIViewController+Extension.h */,
 				914932F11FBD5F0B005C3A00 /* UIViewController+Extension.m */,
 				91C1730D1FC6C0EC0050F371 /* UIBarButtonItem+Extension.h */,
@@ -1135,6 +1145,21 @@
 			path = AvoidCrash;
 			sourceTree = "<group>";
 		};
+		9174A4951FC90BE8005FD18E /* HYBUnicodeReadable */ = {
+			isa = PBXGroup;
+			children = (
+				9174A49C1FC90BE8005FD18E /* NSSet+HYBUnicodeReadable.h */,
+				9174A4991FC90BE8005FD18E /* NSSet+HYBUnicodeReadable.m */,
+				9174A4981FC90BE8005FD18E /* NSObject+HYBUnicodeReadable.h */,
+				9174A49D1FC90BE8005FD18E /* NSObject+HYBUnicodeReadable.m */,
+				9174A49A1FC90BE8005FD18E /* NSArray+HYBUnicodeReadable.h */,
+				9174A4961FC90BE8005FD18E /* NSArray+HYBUnicodeReadable.m */,
+				9174A49B1FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.h */,
+				9174A4971FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.m */,
+			);
+			path = HYBUnicodeReadable;
+			sourceTree = "<group>";
+		};
 		919DD8291FB92564004EFB9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1344,6 +1369,7 @@
 				9146CE711F9F1AC100AD33D8 /* IQUIScrollView+Additions.m in Sources */,
 				9182A0B91F8DB06100EE238F /* AppTools.m in Sources */,
 				91D83C261FB44E82004595DE /* NSDate+JKLunarCalendar.m in Sources */,
+				9174A4A11FC90BE8005FD18E /* NSObject+HYBUnicodeReadable.m in Sources */,
 				916C74871F7F48CF0056F06B /* NSArray+AvoidCrash.m in Sources */,
 				916C74881F7F48CF0056F06B /* NSString+AvoidCrash.m in Sources */,
 				916C74891F7F48CF0056F06B /* NSDictionary+AvoidCrash.m in Sources */,
@@ -1411,6 +1437,7 @@
 				569931F11F79F4C900BA1BEB /* NSString+YYAdd.m in Sources */,
 				569931F21F79F4C900BA1BEB /* UIDevice+YYAdd.m in Sources */,
 				569931F31F79F4C900BA1BEB /* YYCache.m in Sources */,
+				9174A49F1FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.m in Sources */,
 				9146CE351F9F1AA000AD33D8 /* MJRefreshBackNormalFooter.m in Sources */,
 				9146CE3C1F9F1AA000AD33D8 /* MJRefreshFooter.m in Sources */,
 				91EC955D1FAABF2A005C5021 /* OAStackView+Hiding.m in Sources */,
@@ -1419,6 +1446,7 @@
 				569931F51F79F4C900BA1BEB /* YYKVStorage.m in Sources */,
 				9146CE3D1F9F1AA000AD33D8 /* MJRefreshHeader.m in Sources */,
 				9146CE311F9F1AA000AD33D8 /* NSBundle+MJRefresh.m in Sources */,
+				9174A4A01FC90BE8005FD18E /* NSSet+HYBUnicodeReadable.m in Sources */,
 				569931F61F79F4C900BA1BEB /* YYMemoryCache.m in Sources */,
 				569931881F79F20200BA1BEB /* MJExtensionConst.m in Sources */,
 				9146CE2E1F9F1AA000AD33D8 /* MJRefreshConst.m in Sources */,
@@ -1464,10 +1492,10 @@
 				9146CE341F9F1AA000AD33D8 /* MJRefreshBackStateFooter.m in Sources */,
 				569931671F79F12800BA1BEB /* MASCompositeConstraint.m in Sources */,
 				91D83C3F1FB454F9004595DE /* UITabBarItem+WZLBadge.m in Sources */,
+				9174A49E1FC90BE8005FD18E /* NSArray+HYBUnicodeReadable.m in Sources */,
 				91EC956F1FAACB75005C5021 /* VerticalButton.m in Sources */,
 				5699316A1F79F13200BA1BEB /* MASLayoutConstraint.m in Sources */,
 				2DBF7D621F74EFD5005EDBE6 /* main.m in Sources */,
-				2DBF7D881F74F7AD005EDBE6 /* Foundation+Log.m in Sources */,
 				569931FC1F79F4FF00BA1BEB /* NSNumber+YYAdd.m in Sources */,
 				569931701F79F14500BA1BEB /* ViewController+MASAdditions.m in Sources */,
 				2DBF7D931F74F9FC005EDBE6 /* MBProgressHUD.m in Sources */,
