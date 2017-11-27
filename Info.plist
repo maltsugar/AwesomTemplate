@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
-	<string>DemoInfoPlist</string>
+	<string>Demo</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>324</string>
+	<string>346</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -29,6 +29,8 @@
 	</dict>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>是否允许此App使用蓝牙？</string>
+	<key>NSCameraUsageDescription</key>
+	<string>App需要您的同意，才能访问相机</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>App需要您的同意,才能始终访问位置</string>
 	<key>NSLocationAlwaysUsageDescription</key>
