@@ -12,37 +12,28 @@
 
 + (BOOL)judgeNotEmptyFor:(NSString *)str
 {
-    BOOL flag = YES;
-    if ([[str class] isKindOfClass:[NSString class]]) {
-        
+    if (nil == str) {
+        return NO;
+    }else{
         if ([[str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0) {
-            flag = NO;
+            return NO;
+        }else if ([str isEqualToString:@"(null)"] ||
+                  [str isEqualToString:@"null"] ||
+                  [str isEqualToString:@"<null>"]
+                  ) {
+            return NO;
         }else
         {
-            if ([str isEqualToString:@"(null)"] ||
-                [str isEqualToString:@"null"] ||
-                [str isEqualToString:@"<null>"]
-                ) {
-                flag = NO;
+            if ([[str class] isKindOfClass:[NSNumber class]] || [[str class] isKindOfClass:[NSNull class]]) {
+                return NO;
             }
+            
         }
-    }else
-    {
-        flag = NO;
-        if (nil == str || NULL == str){
-            flag = NO;
-        }else if ([str isKindOfClass:[NSNull class]]) {
-            flag = NO;
-        }else
-        {
-#if DEBUG
-            NSAssert([[str class] isKindOfClass:[NSString class]], @"你根本不是string类");
-#endif
-        }
-        
     }
     
-    return flag;
+    
+    
+    return YES;
 }
 
 - (NSString *)formatDateWithTimeStamp:(NSTimeInterval)timestamp format:(NSString *)format

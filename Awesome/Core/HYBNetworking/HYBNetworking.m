@@ -326,13 +326,14 @@ static inline NSString *cachePath() {
                                                            parameters:params];
                     if (response) {
                         if (success) {
-                            [self successResponse:response callback:success];
-                            
                             if ([self isDebug]) {
                                 [self logWithSuccessResponse:response
                                                          url:absolute
                                                       params:params];
                             }
+                            [self successResponse:response callback:success];
+                            
+                            
                         }
                         return nil;
                     }
@@ -343,13 +344,13 @@ static inline NSString *cachePath() {
                                                        parameters:params];
                 if (response) {
                     if (success) {
-                        [self successResponse:response callback:success];
-                        
                         if ([self isDebug]) {
                             [self logWithSuccessResponse:response
                                                      url:absolute
                                                   params:params];
                         }
+                        [self successResponse:response callback:success];
+
                     }
                     return nil;
                 }
@@ -361,6 +362,12 @@ static inline NSString *cachePath() {
                 progress(downloadProgress.completedUnitCount, downloadProgress.totalUnitCount);
             }
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            if ([self isDebug]) {
+                [self logWithSuccessResponse:responseObject
+                                         url:absolute
+                                      params:params];
+            }
+            
             [self successResponse:responseObject callback:success];
             
             if (sg_cacheGet) {
@@ -369,11 +376,7 @@ static inline NSString *cachePath() {
             
             [[self allTasks] removeObject:task];
             
-            if ([self isDebug]) {
-                [self logWithSuccessResponse:responseObject
-                                         url:absolute
-                                      params:params];
-            }
+            
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [[self allTasks] removeObject:task];
             
@@ -382,27 +385,30 @@ static inline NSString *cachePath() {
                                                        parameters:params];
                 if (response) {
                     if (success) {
-                        [self successResponse:response callback:success];
-                        
                         if ([self isDebug]) {
                             [self logWithSuccessResponse:response
                                                      url:absolute
                                                   params:params];
                         }
+                        [self successResponse:response callback:success];
+                        
+                        
                     }
                 } else {
-                    [self handleCallbackWithError:error fail:fail];
-                    
                     if ([self isDebug]) {
                         [self logWithFailError:error url:absolute params:params];
                     }
+                    [self handleCallbackWithError:error fail:fail];
+                    
+                    
                 }
             } else {
-                [self handleCallbackWithError:error fail:fail];
-                
                 if ([self isDebug]) {
                     [self logWithFailError:error url:absolute params:params];
                 }
+                [self handleCallbackWithError:error fail:fail];
+                
+                
             }
         }];
     } else if (httpMethod == 2) {
@@ -413,13 +419,14 @@ static inline NSString *cachePath() {
                                                            parameters:params];
                     if (response) {
                         if (success) {
-                            [self successResponse:response callback:success];
-                            
                             if ([self isDebug]) {
                                 [self logWithSuccessResponse:response
                                                          url:absolute
                                                       params:params];
                             }
+                            [self successResponse:response callback:success];
+                            
+                            
                         }
                         return nil;
                     }
@@ -430,13 +437,14 @@ static inline NSString *cachePath() {
                                                        parameters:params];
                 if (response) {
                     if (success) {
-                        [self successResponse:response callback:success];
-                        
                         if ([self isDebug]) {
                             [self logWithSuccessResponse:response
                                                      url:absolute
                                                   params:params];
                         }
+                        [self successResponse:response callback:success];
+                        
+                        
                     }
                     return nil;
                 }
@@ -448,6 +456,12 @@ static inline NSString *cachePath() {
                 progress(downloadProgress.completedUnitCount, downloadProgress.totalUnitCount);
             }
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            if ([self isDebug]) {
+                [self logWithSuccessResponse:responseObject
+                                         url:absolute
+                                      params:params];
+            }
+            
             [self successResponse:responseObject callback:success];
             
             if (sg_cachePost) {
@@ -456,11 +470,7 @@ static inline NSString *cachePath() {
             
             [[self allTasks] removeObject:task];
             
-            if ([self isDebug]) {
-                [self logWithSuccessResponse:responseObject
-                                         url:absolute
-                                      params:params];
-            }
+            
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [[self allTasks] removeObject:task];
             
@@ -470,27 +480,32 @@ static inline NSString *cachePath() {
                 
                 if (response) {
                     if (success) {
-                        [self successResponse:response callback:success];
-                        
                         if ([self isDebug]) {
                             [self logWithSuccessResponse:response
                                                      url:absolute
                                                   params:params];
                         }
+                        
+                        [self successResponse:response callback:success];
+                        
+                        
                     }
                 } else {
-                    [self handleCallbackWithError:error fail:fail];
                     
                     if ([self isDebug]) {
                         [self logWithFailError:error url:absolute params:params];
                     }
+                    [self handleCallbackWithError:error fail:fail];
+                    
+                    
                 }
             } else {
-                [self handleCallbackWithError:error fail:fail];
-                
                 if ([self isDebug]) {
                     [self logWithFailError:error url:absolute params:params];
                 }
+                [self handleCallbackWithError:error fail:fail];
+                
+                
             }
         }];
     }
@@ -535,20 +550,21 @@ static inline NSString *cachePath() {
     } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         [[self allTasks] removeObject:session];
         
-        [self successResponse:responseObject callback:success];
         
         if (error) {
-            [self handleCallbackWithError:error fail:fail];
-            
             if ([self isDebug]) {
                 [self logWithFailError:error url:response.URL.absoluteString params:nil];
             }
+            [self handleCallbackWithError:error fail:fail];
+            
+            
         } else {
             if ([self isDebug]) {
                 [self logWithSuccessResponse:responseObject
                                          url:response.URL.absoluteString
                                       params:nil];
             }
+            [self successResponse:responseObject callback:success];
         }
     }];
     
@@ -608,21 +624,24 @@ static inline NSString *cachePath() {
         }
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [[self allTasks] removeObject:task];
-        [self successResponse:responseObject callback:success];
         
         if ([self isDebug]) {
             [self logWithSuccessResponse:responseObject
                                      url:absolute
                                   params:parameters];
         }
+        [self successResponse:responseObject callback:success];
+        
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [[self allTasks] removeObject:task];
-        
-        [self handleCallbackWithError:error fail:fail];
         
         if ([self isDebug]) {
             [self logWithFailError:error url:absolute params:nil];
         }
+        [self handleCallbackWithError:error fail:fail];
+        
+        
     }];
     
     [session resume];
@@ -665,22 +684,23 @@ static inline NSString *cachePath() {
         [[self allTasks] removeObject:session];
         
         if (error == nil) {
-            if (success) {
-                success(filePath.absoluteString);
-            }
-            
             if ([self isDebug]) {
                 HYBAppLog(@"Download success for url %@",
                           [self absoluteUrlWithPath:url]);
             }
-        } else {
-            [self handleCallbackWithError:error fail:failure];
             
+            if (success) {
+                success(filePath.absoluteString);
+            }
+            
+            
+        } else {
             if ([self isDebug]) {
                 HYBAppLog(@"Download fail for url %@, reason : %@",
                           [self absoluteUrlWithPath:url],
                           [error description]);
             }
+            [self handleCallbackWithError:error fail:failure];
         }
     }];
     

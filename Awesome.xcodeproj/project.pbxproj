@@ -124,7 +124,6 @@
 		9174A49E1FC90BE8005FD18E /* NSArray+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9174A4961FC90BE8005FD18E /* NSArray+HYBUnicodeReadable.m */; };
 		9174A49F1FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9174A4971FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.m */; };
 		9174A4A01FC90BE8005FD18E /* NSSet+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9174A4991FC90BE8005FD18E /* NSSet+HYBUnicodeReadable.m */; };
-		9174A4A11FC90BE8005FD18E /* NSObject+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9174A49D1FC90BE8005FD18E /* NSObject+HYBUnicodeReadable.m */; };
 		9182A0B91F8DB06100EE238F /* AppTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9182A0B81F8DB06100EE238F /* AppTools.m */; };
 		91C172E11FC66FE20050F371 /* HYBNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C172E01FC66FE20050F371 /* HYBNetworking.m */; };
 		91C1730E1FC6C0EC0050F371 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1730C1FC6C0EB0050F371 /* UIBarButtonItem+Extension.m */; };
@@ -1369,7 +1368,6 @@
 				9146CE711F9F1AC100AD33D8 /* IQUIScrollView+Additions.m in Sources */,
 				9182A0B91F8DB06100EE238F /* AppTools.m in Sources */,
 				91D83C261FB44E82004595DE /* NSDate+JKLunarCalendar.m in Sources */,
-				9174A4A11FC90BE8005FD18E /* NSObject+HYBUnicodeReadable.m in Sources */,
 				916C74871F7F48CF0056F06B /* NSArray+AvoidCrash.m in Sources */,
 				916C74881F7F48CF0056F06B /* NSString+AvoidCrash.m in Sources */,
 				916C74891F7F48CF0056F06B /* NSDictionary+AvoidCrash.m in Sources */,
