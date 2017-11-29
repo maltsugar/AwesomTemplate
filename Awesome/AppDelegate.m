@@ -32,7 +32,8 @@
     [HYBNetworking enableInterfaceDebug:YES];
     
     
-    
+#ifdef DEBUG
+#else
     // 防止崩溃
     [AvoidCrash makeAllEffective];
     NSArray *noneSelClassStrings = @[
@@ -41,6 +42,8 @@
     [AvoidCrash setupNoneSelClassStringsArr:noneSelClassStrings];
     //监听通知:AvoidCrashNotification, 获取AvoidCrash捕获的崩溃日志的详细信息
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dealwithCrashMessage:) name:AvoidCrashNotification object:nil];
+#endif
+    
     return YES;
 }
 

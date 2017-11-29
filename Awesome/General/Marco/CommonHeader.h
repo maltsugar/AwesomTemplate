@@ -116,11 +116,10 @@ blue:((float)(hexValue & 0xFF)) / 255.0 alpha:1.0]
 // 获取沙盒的Cache路径
 #define kCachePath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
 
-#if TARGET_OS_IPHONE
-// 真机
-#endif
 #if TARGET_IPHONE_SIMULATOR
 // 模拟器
+#else
+// 真机
 #endif
 
 
