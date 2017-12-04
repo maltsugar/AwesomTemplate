@@ -23,7 +23,7 @@
     [self.window makeKeyAndVisible];
     
     // 设置根视图
-    [AppTools startApp];
+    [[AppTools sharedAppTools] startApp];
     
     // 配置请求类，采用AWConfigManager不用宏 可以动态设置URL，便于调试
     AWConfigManager *config = [AWConfigManager sharedAWConfigManager];

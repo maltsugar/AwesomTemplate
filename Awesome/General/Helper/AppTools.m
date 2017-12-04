@@ -31,35 +31,55 @@ char *formattedLogDate(void)
 }
 
 
+@interface AppTools ()
 
+@property (nonatomic, strong) AWTabBarController *tabBarController;
+@property (nonatomic, strong) AWNavigationController *loginNav;
+
+@end
 
 @implementation AppTools
 singleton_implementation(AppTools);
 
 
-+ (void)startApp
+- (void)startApp
 {
-    AWNavigationController *nav = [[AWNavigationController alloc]initWithRootViewController: [LoginViewController new]];
-    [self switchWindowRootViewController:nav];
+    _tabBarController = [AWTabBarController new];
+    kAppDelegate.window.rootViewController = _tabBarController;
+    
+    
+    // 没有获取本地存储的 用户id 用户token
+    if (YES) {
+        [_tabBarController presentViewController:self.loginNav animated:NO completion:nil];
+    }
 }
 
-+ (void)switchWindowRootViewController:(UIViewController *)rootVC
-{
-    kAppDelegate.window.rootViewController = rootVC;
-}
 
-+ (void)afterLoginSucceed
+
+- (void)afterLoginSucceed
 {
     // 保存用户id  token等
     
-    AWTabBarController *tab = [AWTabBarController new];
-    [self switchWindowRootViewController:tab];
+    
+    [self.loginNav dismissViewControllerAnimated:YES completion:nil];
+    self.loginNav = nil;
 }
 
-+ (void)userLogoutSucceed
+- (void)userLogoutSucceed
 {
     // 清空用户id token等
     
+    
+    [_tabBarController presentViewController:self.loginNav animated:NO completion:nil];
+}
+
+- (AWNavigationController *)loginNav
+{
+    if (nil == _loginNav) {
+        _loginNav = [[AWNavigationController alloc]initWithRootViewController: [LoginViewController new]];
+        
+    }
+    return _loginNav;
 }
 
 

@@ -18,10 +18,10 @@ char *formattedLogDate(void);
 singleton_interface(AppTools);
 
 
-+ (void)startApp;
+- (void)startApp;
 
-+ (void)afterLoginSucceed;
+- (void)afterLoginSucceed;
 
-+ (void)userLogoutSucceed;
+- (void)userLogoutSucceed;
 
 @end
