@@ -24,4 +24,6 @@ singleton_interface(AppTools);
 
 - (void)userLogoutSucceed;
 
++ (void)showTipWithError:(NSError *)error;
+
 @end

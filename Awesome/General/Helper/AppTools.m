@@ -83,4 +83,37 @@ singleton_implementation(AppTools);
 }
 
 
+
+
++ (void)showTipWithError:(NSError *)error
+{
+    if (error.code && error.localizedDescription.length) {
+        UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+        NSString *tip = [NSString stringWithFormat:@"错误码：%ld\n%@", (long)error.code, error.localizedDescription];
+        [window jk_makeToast:tip duration:1 position:@"center"];
+        
+        if (@available(iOS 10.0, *)){
+            if (error.code == -1009) {
+                NSString *appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
+                NSString *netTip = [NSString stringWithFormat:@"您好像未打开联网权限,\n请到'设置'->'%@'->开启'无线数据'", appName];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:netTip preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *setting = [UIAlertAction actionWithTitle:@"去设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                }];
+                UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+                [alert addAction:setting];
+                [alert addAction:cancel];
+                
+                UIViewController *vc = window.rootViewController;
+                if (window.rootViewController.presentedViewController) {
+                    vc = window.rootViewController.presentedViewController;
+                }
+                [vc presentViewController:alert animated:YES completion:nil];
+            }
+        }
+        
+    }
+}
+
+
 @end

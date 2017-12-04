@@ -9,6 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "Singleton.h"
 
+
+
+
+
+
+#define kConfigEnv_DEBUG
+//#define kConfigEnv_RELEASE
+
+
+
+
+
 @interface AWConfigManager : NSObject
 singleton_interface(AWConfigManager);
 

@@ -12,11 +12,6 @@
 singleton_implementation(AWConfigManager);
 
 
-#define kConfigEnv_DEBUG
-//#define kConfigEnv_RELEASE
-
-
-
 - (NSString *)baseURL
 {
     if (nil == _baseURL) {
