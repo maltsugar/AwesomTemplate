@@ -149,6 +149,7 @@ shouldPrevent = NO; \
 #import "UIKit+AFNetworking.h"
 #import "UIDevice+YYAdd.h"
 #import "UIViewController+Extension.h"
+#import "UIView+JKToast.h"
 
 #import "HYBNetworking.h"
 #import "AWConfigManager.h"

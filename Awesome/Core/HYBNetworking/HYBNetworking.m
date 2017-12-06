@@ -13,6 +13,7 @@
 
 #import <CommonCrypto/CommonDigest.h>
 
+
 @interface NSString (md5)
 
 + (NSString *)hybnetworking_md5:(NSString *)string;
@@ -332,8 +333,6 @@ static inline NSString *cachePath() {
                                                       params:params];
                             }
                             [self successResponse:response callback:success];
-                            
-                            
                         }
                         return nil;
                     }
@@ -350,7 +349,6 @@ static inline NSString *cachePath() {
                                                   params:params];
                         }
                         [self successResponse:response callback:success];
-
                     }
                     return nil;
                 }
@@ -370,6 +368,20 @@ static inline NSString *cachePath() {
             
             [self successResponse:responseObject callback:success];
             
+//            BaseResonseModel *baseModel = [BaseResonseModel mj_objectWithKeyValues:responseObject];
+//            if ([baseModel.responseCode isEqualToString:kResponseLoginverdueCode]){
+//                [[AppTools sharedAppTools] userLogoutSucceed];
+//            }else
+//            {
+//                if (![baseModel.responseCode isEqualToString:kResponseSuccessCode] && baseModel.responseMsg) {
+//                    UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+//                    [window jk_makeToast:baseModel.responseMsg duration:1 position:JKToastPositionCenter];
+//                }
+//            }
+            
+            
+            
+            
             if (sg_cacheGet) {
                 [self cacheResponseObject:responseObject request:task.currentRequest parameters:params];
             }
@@ -379,7 +391,7 @@ static inline NSString *cachePath() {
             
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [[self allTasks] removeObject:task];
-            
+            [AppTools showTipWithError:error];
             if ([error code] < 0 && sg_cacheGet) {// 获取缓存
                 id response = [HYBNetworking cahceResponseWithURL:absolute
                                                        parameters:params];
@@ -390,8 +402,8 @@ static inline NSString *cachePath() {
                                                      url:absolute
                                                   params:params];
                         }
-                        [self successResponse:response callback:success];
                         
+                        [self successResponse:response callback:success];
                         
                     }
                 } else {
@@ -399,16 +411,12 @@ static inline NSString *cachePath() {
                         [self logWithFailError:error url:absolute params:params];
                     }
                     [self handleCallbackWithError:error fail:fail];
-                    
-                    
                 }
             } else {
                 if ([self isDebug]) {
                     [self logWithFailError:error url:absolute params:params];
                 }
                 [self handleCallbackWithError:error fail:fail];
-                
-                
             }
         }];
     } else if (httpMethod == 2) {
@@ -425,8 +433,6 @@ static inline NSString *cachePath() {
                                                       params:params];
                             }
                             [self successResponse:response callback:success];
-                            
-                            
                         }
                         return nil;
                     }
@@ -443,8 +449,6 @@ static inline NSString *cachePath() {
                                                   params:params];
                         }
                         [self successResponse:response callback:success];
-                        
-                        
                     }
                     return nil;
                 }
@@ -461,8 +465,18 @@ static inline NSString *cachePath() {
                                          url:absolute
                                       params:params];
             }
-            
             [self successResponse:responseObject callback:success];
+            
+//            BaseResonseModel *baseModel = [BaseResonseModel mj_objectWithKeyValues:responseObject];
+//            if ([baseModel.responseCode isEqualToString:kResponseLoginverdueCode]){
+//                [[AppTools sharedAppTools] userLogoutSucceed];
+//            }else
+//            {
+//                if (![baseModel.responseCode isEqualToString:kResponseSuccessCode] && baseModel.responseMsg) {
+//                    UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+//                    [window jk_makeToast:baseModel.responseMsg duration:1 position:JKToastPositionCenter];
+//                }
+//            }
             
             if (sg_cachePost) {
                 [self cacheResponseObject:responseObject request:task.currentRequest  parameters:params];
@@ -473,7 +487,7 @@ static inline NSString *cachePath() {
             
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             [[self allTasks] removeObject:task];
-            
+            [AppTools showTipWithError:error];
             if ([error code] < 0 && sg_cachePost) {// 获取缓存
                 id response = [HYBNetworking cahceResponseWithURL:absolute
                                                        parameters:params];
@@ -485,27 +499,19 @@ static inline NSString *cachePath() {
                                                      url:absolute
                                                   params:params];
                         }
-                        
                         [self successResponse:response callback:success];
-                        
-                        
                     }
                 } else {
-                    
                     if ([self isDebug]) {
                         [self logWithFailError:error url:absolute params:params];
                     }
                     [self handleCallbackWithError:error fail:fail];
-                    
-                    
                 }
             } else {
                 if ([self isDebug]) {
                     [self logWithFailError:error url:absolute params:params];
                 }
                 [self handleCallbackWithError:error fail:fail];
-                
-                
             }
         }];
     }
@@ -550,21 +556,19 @@ static inline NSString *cachePath() {
     } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         [[self allTasks] removeObject:session];
         
+        [self successResponse:responseObject callback:success];
         
         if (error) {
             if ([self isDebug]) {
                 [self logWithFailError:error url:response.URL.absoluteString params:nil];
             }
             [self handleCallbackWithError:error fail:fail];
-            
-            
         } else {
             if ([self isDebug]) {
                 [self logWithSuccessResponse:responseObject
                                          url:response.URL.absoluteString
                                       params:nil];
             }
-            [self successResponse:responseObject callback:success];
         }
     }];
     
@@ -603,7 +607,6 @@ static inline NSString *cachePath() {
     NSString *absolute = [self absoluteUrlWithPath:url];
     
 //    parameters = [AWConfigManager convertToPublicParam:parameters];
-    
     AFHTTPSessionManager *manager = [self manager];
     HYBURLSessionTask *session = [manager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         NSData *imageData = UIImageJPEGRepresentation(image, 1);
@@ -623,22 +626,21 @@ static inline NSString *cachePath() {
             progress(uploadProgress.completedUnitCount, uploadProgress.totalUnitCount);
         }
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [[self allTasks] removeObject:task];
-        
         if ([self isDebug]) {
             [self logWithSuccessResponse:responseObject
                                      url:absolute
                                   params:parameters];
         }
+        
+        [[self allTasks] removeObject:task];
         [self successResponse:responseObject callback:success];
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [[self allTasks] removeObject:task];
-        
         if ([self isDebug]) {
             [self logWithFailError:error url:absolute params:nil];
         }
+        [[self allTasks] removeObject:task];
         [self handleCallbackWithError:error fail:fail];
         
         
@@ -688,12 +690,9 @@ static inline NSString *cachePath() {
                 HYBAppLog(@"Download success for url %@",
                           [self absoluteUrlWithPath:url]);
             }
-            
             if (success) {
                 success(filePath.absoluteString);
             }
-            
-            
         } else {
             if ([self isDebug]) {
                 HYBAppLog(@"Download fail for url %@, reason : %@",
@@ -805,7 +804,6 @@ static inline NSString *cachePath() {
 }
 
 + (void)logWithSuccessResponse:(id)response url:(NSString *)url params:(NSDictionary *)params {
-    HYBAppLog(@"\n");
     HYBAppLog(@"\nRequest success, URL: %@\n params:%@\n response:%@\n\n",
               [self generateGETAbsoluteURL:url params:params],
               params,
@@ -819,7 +817,6 @@ static inline NSString *cachePath() {
         params = @"";
     }
     
-    HYBAppLog(@"\n");
     if ([error code] == NSURLErrorCancelled) {
         HYBAppLog(@"\nRequest was canceled mannully, URL: %@ %@%@\n\n",
                   [self generateGETAbsoluteURL:url params:params],

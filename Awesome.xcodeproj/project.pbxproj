@@ -109,6 +109,7 @@
 		914F3D871FB9689F001C35F3 /* DemoViewController0.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F3D851FB9689F001C35F3 /* DemoViewController0.m */; };
 		914F3D881FB9689F001C35F3 /* DemoViewController0.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914F3D861FB9689F001C35F3 /* DemoViewController0.xib */; };
 		914F3D8F1FBA756D001C35F3 /* AWConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F3D8E1FBA756D001C35F3 /* AWConfigManager.m */; };
+		916376A01FD78CE900E0AF77 /* UIView+JKToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 9163769F1FD78CE900E0AF77 /* UIView+JKToast.m */; };
 		916C74871F7F48CF0056F06B /* NSArray+AvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C74701F7F487B0056F06B /* NSArray+AvoidCrash.m */; };
 		916C74881F7F48CF0056F06B /* NSString+AvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C74721F7F487B0056F06B /* NSString+AvoidCrash.m */; };
 		916C74891F7F48CF0056F06B /* NSDictionary+AvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 916C74731F7F487B0056F06B /* NSDictionary+AvoidCrash.m */; };
@@ -369,6 +370,8 @@
 		914F3D861FB9689F001C35F3 /* DemoViewController0.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoViewController0.xib; sourceTree = "<group>"; };
 		914F3D8D1FBA756D001C35F3 /* AWConfigManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWConfigManager.h; sourceTree = "<group>"; };
 		914F3D8E1FBA756D001C35F3 /* AWConfigManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWConfigManager.m; sourceTree = "<group>"; };
+		9163769E1FD78CE900E0AF77 /* UIView+JKToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKToast.h"; sourceTree = "<group>"; };
+		9163769F1FD78CE900E0AF77 /* UIView+JKToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKToast.m"; sourceTree = "<group>"; };
 		916C74701F7F487B0056F06B /* NSArray+AvoidCrash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AvoidCrash.m"; sourceTree = "<group>"; };
 		916C74711F7F487B0056F06B /* AvoidCrash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvoidCrash.h; sourceTree = "<group>"; };
 		916C74721F7F487B0056F06B /* NSString+AvoidCrash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+AvoidCrash.m"; sourceTree = "<group>"; };
@@ -592,6 +595,8 @@
 				91D83C151FB44E82004595DE /* NSDate */,
 				914932F21FBD5F0C005C3A00 /* UIViewController+Extension.h */,
 				914932F11FBD5F0B005C3A00 /* UIViewController+Extension.m */,
+				9163769E1FD78CE900E0AF77 /* UIView+JKToast.h */,
+				9163769F1FD78CE900E0AF77 /* UIView+JKToast.m */,
 				91C1730D1FC6C0EC0050F371 /* UIBarButtonItem+Extension.h */,
 				91C1730C1FC6C0EB0050F371 /* UIBarButtonItem+Extension.m */,
 				2DBF7D861F74F7AD005EDBE6 /* UIView+Extension.h */,
@@ -1493,6 +1498,7 @@
 				5699316A1F79F13200BA1BEB /* MASLayoutConstraint.m in Sources */,
 				2DBF7D621F74EFD5005EDBE6 /* main.m in Sources */,
 				569931FC1F79F4FF00BA1BEB /* NSNumber+YYAdd.m in Sources */,
+				916376A01FD78CE900E0AF77 /* UIView+JKToast.m in Sources */,
 				569931701F79F14500BA1BEB /* ViewController+MASAdditions.m in Sources */,
 				2DBF7D931F74F9FC005EDBE6 /* MBProgressHUD.m in Sources */,
 				91EC95651FAABF2A005C5021 /* OAStackViewAlignmentStrategy.m in Sources */,
