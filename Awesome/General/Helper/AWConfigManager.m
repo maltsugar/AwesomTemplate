@@ -28,9 +28,9 @@ singleton_implementation(AWConfigManager);
 {
     if (nil == _path) {
 #if defined kConfigEnv_DEBUG
-         _path = @"/demo/path";
+         _path = @"demo/path";
 #else
-         _path = @"/demo/path";
+         _path = @"demo/path";
 #endif
     }
     return _path;

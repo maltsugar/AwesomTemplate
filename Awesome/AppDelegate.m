@@ -27,7 +27,7 @@
     
     // 配置请求类，采用AWConfigManager不用宏 可以动态设置URL，便于调试
     AWConfigManager *config = [AWConfigManager sharedAWConfigManager];
-    [HYBNetworking updateBaseUrl:[NSString stringWithFormat:@"%@%@", config.baseURL, config.path]];
+    [HYBNetworking updateBaseUrl:[NSString stringWithFormat:@"%@/%@", config.baseURL, config.path]];
     [HYBNetworking setTimeout:30];
     [HYBNetworking enableInterfaceDebug:YES];
     

@@ -125,6 +125,8 @@
 		9174A49F1FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9174A4971FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.m */; };
 		9174A4A01FC90BE8005FD18E /* NSSet+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9174A4991FC90BE8005FD18E /* NSSet+HYBUnicodeReadable.m */; };
 		9182A0B91F8DB06100EE238F /* AppTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9182A0B81F8DB06100EE238F /* AppTools.m */; };
+		91AF02CB1FD7E4480096E737 /* ChangeURLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91AF02C91FD7E4480096E737 /* ChangeURLViewController.xib */; };
+		91AF02CC1FD7E4480096E737 /* ChangeURLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91AF02CA1FD7E4480096E737 /* ChangeURLViewController.m */; };
 		91C172E11FC66FE20050F371 /* HYBNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C172E01FC66FE20050F371 /* HYBNetworking.m */; };
 		91C1730E1FC6C0EC0050F371 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1730C1FC6C0EB0050F371 /* UIBarButtonItem+Extension.m */; };
 		91D83C141FB4459E004595DE /* NSString+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C131FB4459E004595DE /* NSString+Tools.m */; };
@@ -408,6 +410,9 @@
 		919DD82A1FB92564004EFB9F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		919DD82B1FB9256A004EFB9F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		919DD82C1FB9256F004EFB9F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		91AF02C81FD7E4480096E737 /* ChangeURLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeURLViewController.h; sourceTree = "<group>"; };
+		91AF02C91FD7E4480096E737 /* ChangeURLViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeURLViewController.xib; sourceTree = "<group>"; };
+		91AF02CA1FD7E4480096E737 /* ChangeURLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeURLViewController.m; sourceTree = "<group>"; };
 		91C172DF1FC66FE20050F371 /* HYBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBNetworking.h; sourceTree = "<group>"; };
 		91C172E01FC66FE20050F371 /* HYBNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBNetworking.m; sourceTree = "<group>"; };
 		91C1730C1FC6C0EB0050F371 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
@@ -664,6 +669,9 @@
 				2DBF7D971F74FAC2005EDBE6 /* LoginViewController.h */,
 				2DBF7D981F74FAC2005EDBE6 /* LoginViewController.m */,
 				2DBF7D991F74FAC2005EDBE6 /* LoginViewController.xib */,
+				91AF02C81FD7E4480096E737 /* ChangeURLViewController.h */,
+				91AF02CA1FD7E4480096E737 /* ChangeURLViewController.m */,
+				91AF02C91FD7E4480096E737 /* ChangeURLViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1330,6 +1338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91AF02CB1FD7E4480096E737 /* ChangeURLViewController.xib in Resources */,
 				2DBF7D9B1F74FAC2005EDBE6 /* LoginViewController.xib in Resources */,
 				2DBF7D701F74EFD5005EDBE6 /* LaunchScreen.storyboard in Resources */,
 				91EC94FF1FA9618F005C5021 /* TableViewCell.xib in Resources */,
@@ -1459,6 +1468,7 @@
 				5699318D1F79F20200BA1BEB /* NSObject+MJClass.m in Sources */,
 				5699318E1F79F20200BA1BEB /* NSObject+MJCoding.m in Sources */,
 				5699318F1F79F20200BA1BEB /* NSObject+MJKeyValue.m in Sources */,
+				91AF02CC1FD7E4480096E737 /* ChangeURLViewController.m in Sources */,
 				914F3D821FB9688B001C35F3 /* DemoViewController1.m in Sources */,
 				9146CE3A1F9F1AA000AD33D8 /* MJRefreshStateHeader.m in Sources */,
 				91D83C291FB44E82004595DE /* NSDate+JKFormatter.m in Sources */,

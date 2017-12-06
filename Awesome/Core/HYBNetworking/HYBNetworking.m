@@ -985,7 +985,7 @@ static inline NSString *cachePath() {
 
 + (NSString *)absoluteUrlWithPath:(NSString *)path {
     if (path == nil || path.length == 0) {
-        return @"";
+        path = @"";
     }
     
     if ([self baseUrl] == nil || [[self baseUrl] length] == 0) {
@@ -1008,8 +1008,14 @@ static inline NSString *cachePath() {
             if ([path hasPrefix:@"/"]) {
                 absoluteUrl = [NSString stringWithFormat:@"%@%@",[self baseUrl], path];
             } else {
-                absoluteUrl = [NSString stringWithFormat:@"%@/%@",
-                               [self baseUrl], path];
+                if (path.length) {
+                    absoluteUrl = [NSString stringWithFormat:@"%@/%@",
+                                   [self baseUrl], path];
+                }else
+                {
+                    absoluteUrl = [self baseUrl];
+                }
+
             }
         }
     }
