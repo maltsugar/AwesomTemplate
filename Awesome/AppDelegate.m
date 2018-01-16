@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AvoidCrash.h"
-
+#import "IQKeyboardManager.h"
 
 @interface AppDelegate ()
 
@@ -30,6 +30,9 @@
     [HYBNetworking updateBaseUrl:[NSString stringWithFormat:@"%@/%@", config.baseURL, config.path]];
     [HYBNetworking setTimeout:30];
     [HYBNetworking enableInterfaceDebug:YES];
+    
+    // 设置键盘
+    [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];
     
     
 #ifdef DEBUG
