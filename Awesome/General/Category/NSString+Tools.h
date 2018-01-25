@@ -16,4 +16,6 @@
 
 - (NSString *)transferDateString:(NSString *)dateStr originFormat:(NSString *)ofmt toFormat:(NSString *)nfmt;
 
+- (BOOL)isPhoneNumber;
+
 @end

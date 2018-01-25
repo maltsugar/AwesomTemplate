@@ -55,5 +55,14 @@
     return [formatter2 stringFromDate:date];
 }
 
+- (BOOL)isPhoneNumber
+{
+    NSString * regex = @"^1\\d{10}$";
+    NSPredicate * pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    BOOL isMatch = [pred evaluateWithObject:self];
+    return isMatch;
+    
+}
+
 
 @end

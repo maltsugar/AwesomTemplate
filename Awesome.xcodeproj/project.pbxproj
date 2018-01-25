@@ -65,6 +65,9 @@
 		56C094A21F7A0724002C3ECE /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0947D1F7A06FD002C3ECE /* AFURLResponseSerialization.m */; };
 		56C094A31F7A0724002C3ECE /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0947F1F7A06FD002C3ECE /* AFURLSessionManager.m */; };
 		56C094A61F7A18B5002C3ECE /* NSDate+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C094A51F7A18B5002C3ECE /* NSDate+YYAdd.m */; };
+		9141BA0F20108A4400E311EC /* UIControl+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141BA0E20108A4400E311EC /* UIControl+YYAdd.m */; };
+		9141BA1220108B0B00E311EC /* UIColor+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141BA1020108B0B00E311EC /* UIColor+YYAdd.m */; };
+		9141BA6E2013135C00E311EC /* UIButton+JKBackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141BA6C2013135C00E311EC /* UIButton+JKBackgroundColor.m */; };
 		9146CE2D1F9F1AA000AD33D8 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 9146CDFF1F9F1AA000AD33D8 /* UIScrollView+MJRefresh.m */; };
 		9146CE2E1F9F1AA000AD33D8 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 9146CE001F9F1AA000AD33D8 /* MJRefreshConst.m */; };
 		9146CE2F1F9F1AA000AD33D8 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9146CE041F9F1AA000AD33D8 /* MJRefresh.bundle */; };
@@ -287,6 +290,12 @@
 		56C094941F7A0703002C3ECE /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		56C094A41F7A18B5002C3ECE /* NSDate+YYAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+YYAdd.h"; sourceTree = "<group>"; };
 		56C094A51F7A18B5002C3ECE /* NSDate+YYAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YYAdd.m"; sourceTree = "<group>"; };
+		9141BA0D20108A4400E311EC /* UIControl+YYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+YYAdd.h"; sourceTree = "<group>"; };
+		9141BA0E20108A4400E311EC /* UIControl+YYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+YYAdd.m"; sourceTree = "<group>"; };
+		9141BA1020108B0B00E311EC /* UIColor+YYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+YYAdd.m"; sourceTree = "<group>"; };
+		9141BA1120108B0B00E311EC /* UIColor+YYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+YYAdd.h"; sourceTree = "<group>"; };
+		9141BA6C2013135C00E311EC /* UIButton+JKBackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKBackgroundColor.m"; sourceTree = "<group>"; };
+		9141BA6D2013135C00E311EC /* UIButton+JKBackgroundColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JKBackgroundColor.h"; sourceTree = "<group>"; };
 		9146CDFF1F9F1AA000AD33D8 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		9146CE001F9F1AA000AD33D8 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
 		9146CE011F9F1AA000AD33D8 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
@@ -603,6 +612,8 @@
 				91D83C151FB44E82004595DE /* NSDate */,
 				914932F21FBD5F0C005C3A00 /* UIViewController+Extension.h */,
 				914932F11FBD5F0B005C3A00 /* UIViewController+Extension.m */,
+				9141BA6D2013135C00E311EC /* UIButton+JKBackgroundColor.h */,
+				9141BA6C2013135C00E311EC /* UIButton+JKBackgroundColor.m */,
 				9163769E1FD78CE900E0AF77 /* UIView+JKToast.h */,
 				9163769F1FD78CE900E0AF77 /* UIView+JKToast.m */,
 				91C1730D1FC6C0EC0050F371 /* UIBarButtonItem+Extension.h */,
@@ -764,6 +775,10 @@
 			isa = PBXGroup;
 			children = (
 				569931F01F79F4A200BA1BEB /* YYKitMacro.h */,
+				9141BA1120108B0B00E311EC /* UIColor+YYAdd.h */,
+				9141BA1020108B0B00E311EC /* UIColor+YYAdd.m */,
+				9141BA0D20108A4400E311EC /* UIControl+YYAdd.h */,
+				9141BA0E20108A4400E311EC /* UIControl+YYAdd.m */,
 				569932021F79F52E00BA1BEB /* NSArray+YYAdd.h */,
 				569932011F79F52E00BA1BEB /* NSArray+YYAdd.m */,
 				569932031F79F52F00BA1BEB /* NSObject+YYAdd.h */,
@@ -1419,6 +1434,7 @@
 				9146CE6A1F9F1AC100AD33D8 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				91EC95641FAABF2A005C5021 /* OAStackViewDistributionStrategy.m in Sources */,
 				914932F31FBD5F0C005C3A00 /* UIViewController+Extension.m in Sources */,
+				9141BA1220108B0B00E311EC /* UIColor+YYAdd.m in Sources */,
 				56C094991F7A0724002C3ECE /* UIButton+AFNetworking.m in Sources */,
 				917413C41FD91E080003BDD4 /* UIViewController+BackButtonHandler.m in Sources */,
 				91EC95631FAABF2A005C5021 /* OATransformLayer.m in Sources */,
@@ -1496,6 +1512,7 @@
 				569931FF1F79F51000BA1BEB /* UIApplication+YYAdd.m in Sources */,
 				914F3D6D1FB963D0001C35F3 /* AWNavigationController.m in Sources */,
 				569931691F79F13000BA1BEB /* MASConstraintMaker.m in Sources */,
+				9141BA6E2013135C00E311EC /* UIButton+JKBackgroundColor.m in Sources */,
 				9146CE401F9F1AA000AD33D8 /* MJRefreshComponent.m in Sources */,
 				5699316F1F79F14200BA1BEB /* View+MASAdditions.m in Sources */,
 				9146CE721F9F1AC100AD33D8 /* IQUIView+Hierarchy.m in Sources */,
@@ -1504,6 +1521,7 @@
 				9146CE681F9F1AC100AD33D8 /* IQTitleBarButtonItem.m in Sources */,
 				2DBF7D891F74F7AD005EDBE6 /* UIView+Extension.m in Sources */,
 				5699316B1F79F13600BA1BEB /* MASViewAttribute.m in Sources */,
+				9141BA0F20108A4400E311EC /* UIControl+YYAdd.m in Sources */,
 				5699316E1F79F14000BA1BEB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				2DBF7D651F74EFD5005EDBE6 /* AppDelegate.m in Sources */,
 				9146CE341F9F1AA000AD33D8 /* MJRefreshBackStateFooter.m in Sources */,
