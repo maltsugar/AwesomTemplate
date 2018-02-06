@@ -151,6 +151,8 @@ shouldPrevent = NO; \
 #import "UIViewController+Extension.h"
 #import "UIView+JKToast.h"
 #import "UIControl+YYAdd.h"
+#import "UIAlertView+JKBlock.h"
+
 
 
 #import "HYBNetworking.h"

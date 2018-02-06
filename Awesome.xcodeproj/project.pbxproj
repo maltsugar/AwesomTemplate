@@ -159,6 +159,7 @@
 		91EC95651FAABF2A005C5021 /* OAStackViewAlignmentStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC95541FAABF2A005C5021 /* OAStackViewAlignmentStrategy.m */; };
 		91EC95661FAABF2A005C5021 /* OAStackViewAlignmentStrategyBaseline.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC95551FAABF2A005C5021 /* OAStackViewAlignmentStrategyBaseline.m */; };
 		91EC956F1FAACB75005C5021 /* VerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC956E1FAACB75005C5021 /* VerticalButton.m */; };
+		91EF7C952021B80B00755759 /* UIAlertView+JKBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EF7C932021B80B00755759 /* UIAlertView+JKBlock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -481,6 +482,8 @@
 		91EC955C1FAABF2A005C5021 /* OAStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAStackView.h; sourceTree = "<group>"; };
 		91EC956D1FAACB74005C5021 /* VerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalButton.h; sourceTree = "<group>"; };
 		91EC956E1FAACB75005C5021 /* VerticalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalButton.m; sourceTree = "<group>"; };
+		91EF7C932021B80B00755759 /* UIAlertView+JKBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+JKBlock.m"; sourceTree = "<group>"; };
+		91EF7C942021B80B00755759 /* UIAlertView+JKBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+JKBlock.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -620,6 +623,8 @@
 				91C1730C1FC6C0EB0050F371 /* UIBarButtonItem+Extension.m */,
 				917413C31FD91E080003BDD4 /* UIViewController+BackButtonHandler.h */,
 				917413C21FD91E080003BDD4 /* UIViewController+BackButtonHandler.m */,
+				91EF7C942021B80B00755759 /* UIAlertView+JKBlock.h */,
+				91EF7C932021B80B00755759 /* UIAlertView+JKBlock.m */,
 				2DBF7D861F74F7AD005EDBE6 /* UIView+Extension.h */,
 				2DBF7D871F74F7AD005EDBE6 /* UIView+Extension.m */,
 				91D83C121FB4459E004595DE /* NSString+Tools.h */,
@@ -1491,6 +1496,7 @@
 				5699318E1F79F20200BA1BEB /* NSObject+MJCoding.m in Sources */,
 				5699318F1F79F20200BA1BEB /* NSObject+MJKeyValue.m in Sources */,
 				91AF02CC1FD7E4480096E737 /* ChangeURLViewController.m in Sources */,
+				91EF7C952021B80B00755759 /* UIAlertView+JKBlock.m in Sources */,
 				914F3D821FB9688B001C35F3 /* DemoViewController1.m in Sources */,
 				9146CE3A1F9F1AA000AD33D8 /* MJRefreshStateHeader.m in Sources */,
 				91D83C291FB44E82004595DE /* NSDate+JKFormatter.m in Sources */,
