@@ -15,7 +15,6 @@
 
 @implementation AWNavigationController
 
-
 + (void)initialize
 {
     // 导航
@@ -46,6 +45,26 @@
     [super pushViewController:viewController animated:animated];
 }
 
+- (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated
+{
+    self.interactivePopGestureRecognizer.enabled = NO;
+    
+    if (viewControllers.count > 0) {
+        
+        int i = 0;
+        for (UIViewController *vc in viewControllers) {
+            
+            if (i > 0) {
+                vc.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"navigationbar_back" highImage: @"navigationbar_back"];
+                vc.hidesBottomBarWhenPushed = YES;
+            }
+            i ++;
+        }
+    }
+    
+    [super setViewControllers:viewControllers animated:animated];
+}
+
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     self.interactivePopGestureRecognizer.enabled = YES;
@@ -60,6 +79,9 @@
 
 
 /*    两种自定义导航的方式（1.更换整个返回按钮 2.只更换返回指示器），都要保证侧滑手势有效
+      ✨✨✨✨✨使用其中一种，将下面对应某一种代码全部复制，替换上面的所有方法✨✨✨✨✨
+ 
+ 
  
  
  1. 整个替换导航返回按钮image
@@ -94,6 +116,26 @@
  }
  
  [super pushViewController:viewController animated:animated];
+ }
+ 
+ - (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated
+ {
+ self.interactivePopGestureRecognizer.enabled = NO;
+ 
+ if (viewControllers.count > 0) {
+ 
+ int i = 0;
+ for (UIViewController *vc in viewControllers) {
+ 
+ if (i > 0) {
+ vc.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"navigationbar_back" highImage: @"navigationbar_back"];
+ vc.hidesBottomBarWhenPushed = YES;
+ }
+ i ++;
+ }
+ }
+ 
+ [super setViewControllers:viewControllers animated:animated];
  }
  
  - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
@@ -158,6 +200,20 @@
  }
  
  [super pushViewController:viewController animated:animated];
+ }
+ 
+ - (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated
+ {
+ if (viewControllers.count > 0) {
+ int i = 0;
+ for (UIViewController *vc in viewControllers) {
+ if (i > 0) {
+ vc.hidesBottomBarWhenPushed = YES;
+ }
+ i ++;
+ }
+ }
+ [super setViewControllers:viewControllers animated:animated];
  }
  
  
