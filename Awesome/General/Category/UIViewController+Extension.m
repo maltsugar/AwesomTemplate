@@ -7,6 +7,7 @@
 //
 
 #import "UIViewController+Extension.h"
+#import "UIImage+JKColor.h"
 
 @implementation UIViewController (Extension)
 
@@ -25,4 +26,15 @@
     }
     
 }
+
+- (void)setNaviBarAlpha:(CGFloat)alpha
+{
+    UIImage *bgImg = [UIImage jk_imageWithColor:[[UIColor whiteColor] colorWithAlphaComponent:alpha]];
+    UIImage *line = [UIImage jk_imageWithColor:[[UIColor lightGrayColor] colorWithAlphaComponent:alpha]];
+    UINavigationBar *navBar = self.navigationController.navigationBar;
+    [navBar setBackgroundImage:bgImg forBarMetrics:UIBarMetricsDefault];
+    [navBar setShadowImage:line];
+}
+
+
 @end

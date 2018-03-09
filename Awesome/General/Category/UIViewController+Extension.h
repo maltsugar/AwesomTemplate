@@ -13,4 +13,6 @@
 // 在底部添加一个空白视图，挡住上拉加载
 - (void)addEmptyViewAdaptIPhoneX;
 
+- (void)setNaviBarAlpha:(CGFloat)alpha;
+
 @end

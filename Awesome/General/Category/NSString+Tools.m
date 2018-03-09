@@ -36,6 +36,13 @@
     return YES;
 }
 
++ (BOOL)isEmptyString:(NSString *)str
+{
+    BOOL flag = [self judgeNotEmptyFor:str];
+    return !flag;
+}
+
+
 - (NSString *)formatDateWithTimeStamp:(NSTimeInterval)timestamp format:(NSString *)format
 {
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
