@@ -21,6 +21,12 @@
         //setObject:forKey:
         [AvoidCrash exchangeInstanceMethod:dictionaryM method1Sel:@selector(setObject:forKey:) method2Sel:@selector(avoidCrashSetObject:forKey:)];
         
+        //setObject:forKeyedSubscript:
+        if (AvoidCrashIsiOS(11.0)) {
+            [AvoidCrash exchangeInstanceMethod:dictionaryM method1Sel:@selector(setObject:forKeyedSubscript:) method2Sel:@selector(avoidCrashSetObject:forKeyedSubscript:)];
+        }
+        
+        
         
         //removeObjectForKey:
         Method removeObjectForKey = class_getInstanceMethod(dictionaryM, @selector(removeObjectForKey:));
@@ -47,6 +53,23 @@
         
     }
 }
+
+//=================================================================
+//                  setObject:forKeyedSubscript:
+//=================================================================
+#pragma mark - setObject:forKeyedSubscript:
+- (void)avoidCrashSetObject:(id)obj forKeyedSubscript:(id<NSCopying>)key {
+    @try {
+        [self avoidCrashSetObject:obj forKeyedSubscript:key];
+    }
+    @catch (NSException *exception) {
+        [AvoidCrash noteErrorWithException:exception defaultToDo:AvoidCrashDefaultIgnore];
+    }
+    @finally {
+        
+    }
+}
+
 
 //=================================================================
 //                       removeObjectForKey:

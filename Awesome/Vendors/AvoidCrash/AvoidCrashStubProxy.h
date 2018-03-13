@@ -10,12 +10,12 @@
 
 
 #define AvoidCrashNotification @"AvoidCrashNotification"
-
+#define AvoidCrashIsiOS(version) ([[UIDevice currentDevice].systemVersion floatValue] >= version)
 
 
 //user can ignore below define
-#define AvoidCrashDefaultReturnNil  @"This framework default is to return nil to avoid crash."
-#define AvoidCrashDefaultIgnore     @"This framework default is to ignore this operation to avoid crash."
+#define AvoidCrashDefaultReturnNil  @"AvoidCrash default is to return nil to avoid crash."
+#define AvoidCrashDefaultIgnore     @"AvoidCrash default is to ignore this operation to avoid crash."
 
 #define AvoidCrashSeparator         @"================================================================"
 #define AvoidCrashSeparatorWithFlag @"========================AvoidCrash Log=========================="

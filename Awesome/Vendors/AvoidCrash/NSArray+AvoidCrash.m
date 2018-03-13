@@ -48,6 +48,11 @@
         
         [AvoidCrash exchangeInstanceMethod:__NSArray0 method1Sel:@selector(objectAtIndex:) method2Sel:@selector(__NSArray0AvoidCrashObjectAtIndex:)];
         
+        //objectAtIndexedSubscript:
+        if (AvoidCrashIsiOS(11.0)) {
+            [AvoidCrash exchangeInstanceMethod:__NSArrayI method1Sel:@selector(objectAtIndexedSubscript:) method2Sel:@selector(__NSArrayIAvoidCrashObjectAtIndexedSubscript:)];
+        }
+        
         
         //getObjects:range:
         [AvoidCrash exchangeInstanceMethod:__NSArray method1Sel:@selector(getObjects:range:) method2Sel:@selector(NSArrayAvoidCrashGetObjects:range:)];
@@ -76,7 +81,7 @@
     }
     @catch (NSException *exception) {
         
-        NSString *defaultToDo = @"This framework default is to remove nil object and instance a array.";
+        NSString *defaultToDo = @"AvoidCrash default is to remove nil object and instance a array.";
         [AvoidCrash noteErrorWithException:exception defaultToDo:defaultToDo];
         
         //以下是对错误数据的处理，把为nil的数据去掉,然后初始化数组
@@ -102,11 +107,11 @@
 //                     objectAtIndexedSubscript:
 //=================================================================
 #pragma mark - objectAtIndexedSubscript:
-- (id)avoidCrashObjectAtIndexedSubscript:(NSUInteger)idx {
+- (id)__NSArrayIAvoidCrashObjectAtIndexedSubscript:(NSUInteger)idx {
     id object = nil;
     
     @try {
-        object = [self avoidCrashObjectAtIndexedSubscript:idx];
+        object = [self __NSArrayIAvoidCrashObjectAtIndexedSubscript:idx];
     }
     @catch (NSException *exception) {
         NSString *defaultToDo = AvoidCrashDefaultReturnNil;

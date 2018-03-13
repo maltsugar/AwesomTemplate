@@ -6,6 +6,11 @@
 //  Copyright © 2016年 chenfanfang. All rights reserved.
 //
 
+//===================================================
+//   使用方法和注意事项:
+//   https://www.jianshu.com/p/2b90aa96c0a0
+//===================================================
+
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
@@ -33,13 +38,10 @@
 
 @interface AvoidCrash : NSObject
 
-/**
- *  你如果想要得到导致崩溃的原因，你可以在AppDelegate中监听通知
- *  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dealwithCrashMessage:) name:AvoidCrashNotification object:nil];
- *  具体使用方法，请查看 https://github.com/chenfanfang/AvoidCrash
- *
- */
-
+//===================================================
+//   使用方法和注意事项:
+//   https://www.jianshu.com/p/2b90aa96c0a0
+//===================================================
 
 
 
@@ -62,7 +64,10 @@
  *  相比于becomeEffective，增加
  *  对”unrecognized selector sent to instance”防止崩溃的处理
  *
- *  但是必须配合setupClassStringsArr:使用
+ *  但是必须配合:
+ *            setupClassStringsArr:和
+ *            setupNoneSelClassStringPrefixsArr
+ *            这两个方法可以同时使用
  */
 + (void)makeAllEffective;
 
@@ -70,17 +75,36 @@
 
 /** 
  *  初始化一个需要防止”unrecognized selector sent to instance”的崩溃的类名数组
+ *  ⚠️不可将@"NSObject"加入classStrings数组中
+ *  ⚠️不可将UI前缀的字符串加入classStrings数组中
  */
 + (void)setupNoneSelClassStringsArr:(NSArray<NSString *> *)classStrings;
 
 
+/**
+ *  初始化一个需要防止”unrecognized selector sent to instance”的崩溃的类名前缀的数组
+ *  ⚠️不可将UI前缀的字符串(包括@"UI")加入classStringPrefixs数组中
+ *  ⚠️不可将NS前缀的字符串(包括@"NS")加入classStringPrefixs数组中
+ */
++ (void)setupNoneSelClassStringPrefixsArr:(NSArray<NSString *> *)classStringPrefixs;
 
 
 
 
 
-//you can ignore below method <您可以忽略以下方法>
 
+
+
+
+
+
+
+
+
+
+
+
+//您可以忽略以下方法
 
 + (void)exchangeClassMethod:(Class)anClass method1Sel:(SEL)method1Sel method2Sel:(SEL)method2Sel;
 
