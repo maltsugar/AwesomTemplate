@@ -132,6 +132,7 @@
 		9182A0B91F8DB06100EE238F /* AppTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9182A0B81F8DB06100EE238F /* AppTools.m */; };
 		91AF02CB1FD7E4480096E737 /* ChangeURLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91AF02C91FD7E4480096E737 /* ChangeURLViewController.xib */; };
 		91AF02CC1FD7E4480096E737 /* ChangeURLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91AF02CA1FD7E4480096E737 /* ChangeURLViewController.m */; };
+		91B0BAE020622A2500B31447 /* AWUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B0BADF20622A2500B31447 /* AWUserManager.m */; };
 		91C172E11FC66FE20050F371 /* HYBNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C172E01FC66FE20050F371 /* HYBNetworking.m */; };
 		91C1730E1FC6C0EC0050F371 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1730C1FC6C0EB0050F371 /* UIBarButtonItem+Extension.m */; };
 		91D83C141FB4459E004595DE /* NSString+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C131FB4459E004595DE /* NSString+Tools.m */; };
@@ -429,6 +430,8 @@
 		91AF02C81FD7E4480096E737 /* ChangeURLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeURLViewController.h; sourceTree = "<group>"; };
 		91AF02C91FD7E4480096E737 /* ChangeURLViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeURLViewController.xib; sourceTree = "<group>"; };
 		91AF02CA1FD7E4480096E737 /* ChangeURLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeURLViewController.m; sourceTree = "<group>"; };
+		91B0BADE20622A2500B31447 /* AWUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWUserManager.h; sourceTree = "<group>"; };
+		91B0BADF20622A2500B31447 /* AWUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWUserManager.m; sourceTree = "<group>"; };
 		91C172DF1FC66FE20050F371 /* HYBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBNetworking.h; sourceTree = "<group>"; };
 		91C172E01FC66FE20050F371 /* HYBNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBNetworking.m; sourceTree = "<group>"; };
 		91C1730C1FC6C0EB0050F371 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
@@ -652,6 +655,8 @@
 			children = (
 				9182A0B71F8DB06100EE238F /* AppTools.h */,
 				9182A0B81F8DB06100EE238F /* AppTools.m */,
+				91B0BADE20622A2500B31447 /* AWUserManager.h */,
+				91B0BADF20622A2500B31447 /* AWUserManager.m */,
 				914F3D8D1FBA756D001C35F3 /* AWConfigManager.h */,
 				914F3D8E1FBA756D001C35F3 /* AWConfigManager.m */,
 			);
@@ -1481,6 +1486,7 @@
 				569931F21F79F4C900BA1BEB /* UIDevice+YYAdd.m in Sources */,
 				569931F31F79F4C900BA1BEB /* YYCache.m in Sources */,
 				9174A49F1FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.m in Sources */,
+				91B0BAE020622A2500B31447 /* AWUserManager.m in Sources */,
 				9146CE351F9F1AA000AD33D8 /* MJRefreshBackNormalFooter.m in Sources */,
 				9146CE3C1F9F1AA000AD33D8 /* MJRefreshFooter.m in Sources */,
 				91EC955D1FAABF2A005C5021 /* OAStackView+Hiding.m in Sources */,

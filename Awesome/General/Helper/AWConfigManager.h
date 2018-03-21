@@ -28,4 +28,15 @@ singleton_interface(AWConfigManager);
 @property (nonatomic,   copy) NSString *baseURL;
 @property (nonatomic,   copy) NSString *path;
 
+@property (nonatomic,   copy) NSString *OSSPolicyBaseURL;
+@property (nonatomic,   copy) NSString *OSSPolicyPath;
+
+// 接口版本
+@property (readonly, copy) NSString *apiVersion;
+
+
+// 公共参数
++ (NSDictionary *)convertToPublicParam:(NSDictionary *)orignParam;
+
+
 @end

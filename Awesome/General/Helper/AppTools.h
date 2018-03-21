@@ -10,9 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "Singleton.h"
 
-BOOL isIPhoneX(void);
-char *formattedLogDate(void);
-
+@class PopOverVieConfiguration;
 
 @interface AppTools : NSObject
 singleton_interface(AppTools);
@@ -27,3 +25,32 @@ singleton_interface(AppTools);
 + (void)showTipWithError:(NSError *)error;
 
 @end
+
+
+
+// 公用函数
+BOOL isIPhoneX(void);
+char *formattedLogDate(void);
+
+
+// 弹出视图配置（用不到可删除）
+//PopOverVieConfiguration *defaultGrayBgConfig();
+
+
+// 一些常量
+extern NSString *const kInterfaceBizKey;
+extern NSString *const kUserIDKey;
+extern NSString *const kUserTokenKey;
+
+
+
+
+
+// "我的"页面，table的区高 行高
+extern float const AMSectionHeight;
+extern float const AMRowHeight;
+
+
+
+
+

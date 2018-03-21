@@ -11,25 +11,6 @@
 #import "LoginViewController.h"
 #import "AWTabBarController.h"
 
-BOOL isIPhoneX(void) {
-    if ([UIScreen instancesRespondToSelector:@selector(currentMode)]) {
-        return CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size);
-    }else{
-        return NO;
-    }
-}
-
-char *formattedLogDate(void)
-{
-    time_t rawtime;
-    struct tm *timeinfo;
-    static char buffer [128];
-    time (&rawtime);
-    timeinfo = localtime (&rawtime);
-    strftime (buffer,sizeof(buffer),"%Y-%m-%d %H:%M:%S",timeinfo);
-    return buffer;
-}
-
 
 @interface AppTools ()
 
@@ -48,10 +29,10 @@ singleton_implementation(AppTools);
     kAppDelegate.window.rootViewController = _tabBarController;
     
     
-    // 没有获取本地存储的 用户id 用户token
-    if (YES) {
-        [_tabBarController presentViewController:self.loginNav animated:NO completion:nil];
-    }
+//    // 没有获取本地存储的 用户id 用户token
+//    if (YES) {
+//        [_tabBarController presentViewController:self.loginNav animated:NO completion:nil];
+//    }
 }
 
 
@@ -76,7 +57,9 @@ singleton_implementation(AppTools);
 - (AWNavigationController *)loginNav
 {
     if (nil == _loginNav) {
-        _loginNav = [[AWNavigationController alloc]initWithRootViewController: [LoginViewController new]];
+        LoginViewController *loginVC = [LoginViewController new];
+        _loginNav = [[AWNavigationController alloc]initWithRootViewController:loginVC];
+        loginVC.navigationController.navigationBarHidden = YES;
         
     }
     return _loginNav;
@@ -117,3 +100,50 @@ singleton_implementation(AppTools);
 
 
 @end
+
+
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>公用配置<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+// 一些常量
+NSString *const kInterfaceBizKey        = @"bizType";
+NSString *const kUserIDKey              = @"TCS_USERID";
+NSString *const kUserTokenKey           = @"TCS_USERTOKEN";
+
+
+BOOL isIPhoneX(void) {
+    if ([UIScreen instancesRespondToSelector:@selector(currentMode)]) {
+        return CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size);
+    }else{
+        return NO;
+    }
+}
+
+char *formattedLogDate(void)
+{
+    time_t rawtime;
+    struct tm *timeinfo;
+    static char buffer [128];
+    time (&rawtime);
+    timeinfo = localtime (&rawtime);
+    strftime (buffer,sizeof(buffer),"%Y-%m-%d %H:%M:%S",timeinfo);
+    return buffer;
+}
+
+//PopOverVieConfiguration *defaultGrayBgConfig()
+//{
+//    PopOverVieConfiguration *config = [PopOverVieConfiguration new];
+//    config.triAngelHeight = 0;
+//    config.triAngelWidth = 0;
+//    config.containerViewCornerRadius = 0;
+//    config.roundMargin = 0;
+//    config.isNeedAnimate = NO;
+//    return config;
+//}
+
+
+
+float const AMSectionHeight = 12.f;
+float const AMRowHeight = 60.f;
+
