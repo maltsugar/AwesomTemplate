@@ -4,7 +4,7 @@
 //
 //  Created by qm on 2017/10/11.
 //  Copyright © 2017年 zgy. All rights reserved.
-//
+//  App管理类，包括弹出登录，取消登录，退出，保存用户信息
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -19,6 +19,11 @@ singleton_interface(AppTools);
 - (void)startApp;
 
 - (void)afterLoginSucceed;
+
+// 未登录时强制登录
+- (void)forceUserLoginAnimated:(BOOL)animated;
+
+- (void)cancelLogin;
 
 - (void)userLogoutSucceed;
 

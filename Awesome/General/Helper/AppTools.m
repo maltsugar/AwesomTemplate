@@ -28,11 +28,6 @@ singleton_implementation(AppTools);
     _tabBarController = [AWTabBarController new];
     kAppDelegate.window.rootViewController = _tabBarController;
     
-    
-//    // 没有获取本地存储的 用户id 用户token
-//    if (YES) {
-//        [_tabBarController presentViewController:self.loginNav animated:NO completion:nil];
-//    }
 }
 
 
@@ -42,6 +37,19 @@ singleton_implementation(AppTools);
     // 保存用户id  token等
     
     
+    [self cancelLogin];
+}
+
+- (void)forceUserLoginAnimated:(BOOL)animated
+{
+    // 没有获取本地存储的 用户id 用户token
+    if (YES) {
+        [_tabBarController presentViewController:self.loginNav animated:animated completion:nil];
+    }
+}
+
+- (void)cancelLogin
+{
     [self.loginNav dismissViewControllerAnimated:YES completion:nil];
     self.loginNav = nil;
 }
