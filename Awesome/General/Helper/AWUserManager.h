@@ -17,6 +17,10 @@ singleton_interface(AWUserManager);
 @property (nonatomic,   copy) NSString *token;
 //@property (nonatomic, strong) LoginData *loginData;
 
+// 用户是否已登录
+- (BOOL)isUserLogined;
+
+- (void)saveUserInfo;
 
 - (void)clearUserInfo;
 

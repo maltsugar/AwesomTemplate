@@ -23,7 +23,7 @@ singleton_interface(AppTools);
 // 未登录时强制登录
 - (void)forceUserLoginAnimated:(BOOL)animated;
 
-- (void)cancelLogin;
+- (void)dismissLoginVC;
 
 - (void)userLogoutSucceed;
 

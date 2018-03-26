@@ -13,6 +13,20 @@
 singleton_implementation(AWUserManager);
 
 
+// 用户是否已登录
+- (BOOL)isUserLogined
+{
+    // 获取用户token等
+    
+    return YES;
+}
+
+
+- (void)saveUserInfo
+{
+    // 保存用户信息
+}
+
 - (void)clearUserInfo
 {
     self.token = nil;

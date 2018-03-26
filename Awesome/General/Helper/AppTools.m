@@ -10,7 +10,7 @@
 #import "AWNavigationController.h"
 #import "LoginViewController.h"
 #import "AWTabBarController.h"
-
+#import "AWUserManager.h"
 
 @interface AppTools ()
 
@@ -35,20 +35,20 @@ singleton_implementation(AppTools);
 - (void)afterLoginSucceed
 {
     // 保存用户id  token等
+    [[AWUserManager sharedAWUserManager] saveUserInfo];
     
-    
-    [self cancelLogin];
+    [self dismissLoginVC];
 }
 
 - (void)forceUserLoginAnimated:(BOOL)animated
 {
     // 没有获取本地存储的 用户id 用户token
-    if (YES) {
+    if (![[AWUserManager sharedAWUserManager] isUserLogined]) {
         [_tabBarController presentViewController:self.loginNav animated:animated completion:nil];
     }
 }
 
-- (void)cancelLogin
+- (void)dismissLoginVC
 {
     [self.loginNav dismissViewControllerAnimated:YES completion:nil];
     self.loginNav = nil;
@@ -57,7 +57,7 @@ singleton_implementation(AppTools);
 - (void)userLogoutSucceed
 {
     // 清空用户id token等
-    
+    [[AWUserManager sharedAWUserManager] clearUserInfo];
     
     [_tabBarController presentViewController:self.loginNav animated:NO completion:nil];
 }
