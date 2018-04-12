@@ -43,15 +43,18 @@
 }
 
 
-- (NSString *)formatDateWithTimeStamp:(NSTimeInterval)timestamp format:(NSString *)format
++ (NSString *)formatDateWithTimeStamp:(NSTimeInterval)timestamp format:(NSString *)format
 {
+    if ([[NSString stringWithFormat:@"%.0f", timestamp] length] > 10) {
+        timestamp = timestamp/1000;
+    }
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = format;
     return [formatter stringFromDate:date];
 }
 
-- (NSString *)transferDateString:(NSString *)dateStr originFormat:(NSString *)ofmt toFormat:(NSString *)nfmt
++ (NSString *)transferDateString:(NSString *)dateStr originFormat:(NSString *)ofmt toFormat:(NSString *)nfmt
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = ofmt;
@@ -71,5 +74,13 @@
     
 }
 
++ (NSString *)chineseWithInteger:(NSInteger)integer
+{
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.numberStyle = kCFNumberFormatterRoundHalfDown;
+    formatter.locale = [NSLocale localeWithLocaleIdentifier:@"zh_Hans"];
+    NSString *string = [formatter stringFromNumber:@(integer)];
+    return string;
+}
 
 @end

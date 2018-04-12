@@ -46,7 +46,7 @@ char *formattedLogDate(void);
 extern NSString *const kInterfaceBizKey;
 extern NSString *const kUserIDKey;
 extern NSString *const kUserTokenKey;
-
+extern NSString *const kBadNetworkTip;
 
 
 

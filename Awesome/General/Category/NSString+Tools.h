@@ -17,12 +17,14 @@
 + (BOOL)isEmptyString:(NSString *)str;
 
 // 将时间戳转成指定格式的日期字符串
-- (NSString *)formatDateWithTimeStamp:(NSTimeInterval)timestamp format:(NSString *)format;
++ (NSString *)formatDateWithTimeStamp:(NSTimeInterval)timestamp format:(NSString *)format;
 
 // 将一种日期格式转为另一种格式，如：20180101   2018-01-01
-- (NSString *)transferDateString:(NSString *)dateStr originFormat:(NSString *)ofmt toFormat:(NSString *)nfmt;
++ (NSString *)transferDateString:(NSString *)dateStr originFormat:(NSString *)ofmt toFormat:(NSString *)nfmt;
 
 // 是否是手机号码（宽松判断：1开头+10位数字）
 - (BOOL)isPhoneNumber;
 
+// 数字转中文
++ (NSString *)chineseWithInteger:(NSInteger)integer;
 @end

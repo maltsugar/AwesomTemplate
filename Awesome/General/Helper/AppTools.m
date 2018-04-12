@@ -118,6 +118,7 @@ singleton_implementation(AppTools);
 NSString *const kInterfaceBizKey        = @"bizType";
 NSString *const kUserIDKey              = @"TCS_USERID";
 NSString *const kUserTokenKey           = @"TCS_USERTOKEN";
+NSString *const kBadNetworkTip          = @"请求失败，请稍后重试";
 
 
 BOOL isIPhoneX(void) {

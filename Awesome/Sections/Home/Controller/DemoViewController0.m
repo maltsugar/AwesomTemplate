@@ -7,6 +7,7 @@
 //
 
 #import "DemoViewController0.h"
+#import "NSString+Tools.h"
 
 @interface DemoViewController0 ()
 
@@ -16,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    NSLog(@"%@", [NSString chineseWithInteger:1232321]);
 }
 
 

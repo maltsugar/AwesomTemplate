@@ -18,7 +18,7 @@ singleton_implementation(AWUserManager);
 {
     // 获取用户token等
     
-    return YES;
+    return NO;
 }
 
 
