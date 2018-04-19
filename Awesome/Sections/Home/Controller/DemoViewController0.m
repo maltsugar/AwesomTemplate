@@ -9,6 +9,10 @@
 #import "DemoViewController0.h"
 #import "NSString+Tools.h"
 
+
+// test
+#import "NSString+Tools.h"
+
 @interface DemoViewController0 ()
 
 @end
@@ -20,6 +24,13 @@
     
     
     NSLog(@"%@", [NSString chineseWithInteger:1232321]);
+    
+    if ([NSString judgeNotEmptyFor:nil]) {
+        NSLog(@"111");
+    }else
+    {
+        NSLog(@"222");
+    }
 }
 
 

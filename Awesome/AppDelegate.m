@@ -10,6 +10,7 @@
 #import "AvoidCrash.h"
 #import "IQKeyboardManager.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -33,6 +34,7 @@
     
     // 设置键盘
     [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];
+    
     
     
 #ifdef DEBUG

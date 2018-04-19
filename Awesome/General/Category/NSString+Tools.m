@@ -10,11 +10,14 @@
 
 @implementation NSString (Tools)
 
+
 + (BOOL)judgeNotEmptyFor:(NSString *)str
 {
-    if (nil == str) {
+    if (![str isKindOfClass:[NSString class]]) {
+        NSLog(@"⚠️⚠️⚠️判断的对象不是字符串⚠️⚠️⚠️");
         return NO;
-    }else{
+    }else
+    {
         if ([[str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0) {
             return NO;
         }else if ([str isEqualToString:@"(null)"] ||
@@ -22,19 +25,37 @@
                   [str isEqualToString:@"<null>"]
                   ) {
             return NO;
-        }else
-        {
-            if ([[str class] isKindOfClass:[NSNumber class]] || [[str class] isKindOfClass:[NSNull class]]) {
-                return NO;
-            }
-            
         }
     }
     
-    
-    
     return YES;
 }
+
+//+ (BOOL)judgeNotEmptyFor:(NSString *)str
+//{
+//    if (nil == str) {
+//        return NO;
+//    }else{
+//        if ([[str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0) {
+//            return NO;
+//        }else if ([str isEqualToString:@"(null)"] ||
+//                  [str isEqualToString:@"null"] ||
+//                  [str isEqualToString:@"<null>"]
+//                  ) {
+//            return NO;
+//        }else
+//        {
+//            if ([[str class] isKindOfClass:[NSNumber class]] || [[str class] isKindOfClass:[NSNull class]]) {
+//                return NO;
+//            }
+//
+//        }
+//    }
+//
+//
+//
+//    return YES;
+//}
 
 + (BOOL)isEmptyString:(NSString *)str
 {
