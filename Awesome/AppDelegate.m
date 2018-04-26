@@ -6,6 +6,16 @@
 //  Copyright © 2017年 zgy. All rights reserved.
 //
 
+/**
+ 用法提示
+ HYBNetworking.m
+
+ Line: 320、602  添加接口公共参数，如userID等
+ Line: 371、465 附近，统一提示接口返回的错误信息
+
+ */
+
+
 #import "AppDelegate.h"
 #import "AvoidCrash.h"
 #import "IQKeyboardManager.h"

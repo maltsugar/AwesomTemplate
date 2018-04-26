@@ -368,18 +368,12 @@ static inline NSString *cachePath() {
             
             [self successResponse:responseObject callback:success];
             
-//            BaseResonseModel *baseModel = [BaseResonseModel mj_objectWithKeyValues:responseObject];
-//            if ([baseModel.responseCode isEqualToString:kResponseLoginverdueCode]){
-//                [[AppTools sharedAppTools] userLogoutSucceed];
-//            }else
-//            {
-//                if (![baseModel.responseCode isEqualToString:kResponseSuccessCode] && baseModel.responseMsg) {
-//                    UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
-//                    [window jk_makeToast:baseModel.responseMsg duration:1 position:JKToastPositionCenter];
-//                }
-//            }
-            
-            
+            // 此处统一提示接口返回的错误信息
+            //            BaseResonseModel *model = [BaseResonseModel mj_objectWithKeyValues:[self tryToParseData:responseObject]];
+            //            if (![model.responseCode isEqualToString:kResponseSuccessCode] && model.responseMsg) {
+            //                UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+            //                [window jk_makeToast:model.responseMsg duration:0.5 position:JKToastPositionCenter];
+            //            }
             
             
             if (sg_cacheGet) {
@@ -467,16 +461,13 @@ static inline NSString *cachePath() {
             }
             [self successResponse:responseObject callback:success];
             
-//            BaseResonseModel *baseModel = [BaseResonseModel mj_objectWithKeyValues:responseObject];
-//            if ([baseModel.responseCode isEqualToString:kResponseLoginverdueCode]){
-//                [[AppTools sharedAppTools] userLogoutSucceed];
-//            }else
-//            {
-//                if (![baseModel.responseCode isEqualToString:kResponseSuccessCode] && baseModel.responseMsg) {
-//                    UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
-//                    [window jk_makeToast:baseModel.responseMsg duration:1 position:JKToastPositionCenter];
-//                }
+            // 此处统一提示接口返回的错误信息 
+//            BaseResonseModel *model = [BaseResonseModel mj_objectWithKeyValues:[self tryToParseData:responseObject]];
+//            if (![model.responseCode isEqualToString:kResponseSuccessCode] && model.responseMsg) {
+//                UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+//                [window jk_makeToast:model.responseMsg duration:0.5 position:JKToastPositionCenter];
 //            }
+            
             
             if (sg_cachePost) {
                 [self cacheResponseObject:responseObject request:task.currentRequest  parameters:params];
@@ -902,6 +893,7 @@ static inline NSString *cachePath() {
 + (void)successResponse:(id)responseData callback:(HYBResponseSuccess)success {
     if (success) {
         success([self tryToParseData:responseData]);
+        // 不在此处提示错误信息，是怕取的缓存数据
     }
 }
 
