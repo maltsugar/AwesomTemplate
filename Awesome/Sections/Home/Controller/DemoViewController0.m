@@ -25,11 +25,11 @@
     
     NSLog(@"%@", [NSString chineseWithInteger:1232321]);
     
-    if ([NSString judgeNotEmptyFor:nil]) {
-        NSLog(@"111");
+    if ([NSString isEmptyString:@"null"]) {
+        NSLog(@"空");
     }else
     {
-        NSLog(@"222");
+        NSLog(@"字符串不为空");
     }
 }
 

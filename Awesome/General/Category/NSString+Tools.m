@@ -11,52 +11,52 @@
 @implementation NSString (Tools)
 
 
-+ (BOOL)judgeNotEmptyFor:(NSString *)str
++ (BOOL)judgeNotEmptyFor:(NSString *)str strict:(BOOL)isStrict
 {
     if (![str isKindOfClass:[NSString class]]) {
-        NSLog(@"⚠️⚠️⚠️判断的对象不是字符串⚠️⚠️⚠️");
+        NSMutableString *tipInfo = @"⚠️⚠️⚠️判断的对象不是字符串⚠️⚠️⚠️".mutableCopy;
+        if (nil == str) {
+            [tipInfo appendString:@", 是nil"];
+        }
+        
+        if ([str isKindOfClass:[NSNull class]]) {
+            [tipInfo appendString:@", 是NSNull对象"];
+        }
+        
+        NSLog(@"%@", tipInfo);
         return NO;
     }else
     {
-        if ([[str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0) {
+        NSUInteger length = [[str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length];
+        if (length == 0) {
             return NO;
-        }else if ([str isEqualToString:@"(null)"] ||
-                  [str isEqualToString:@"null"] ||
-                  [str isEqualToString:@"<null>"]
-                  ) {
-            return NO;
+        }else
+        {
+            if (isStrict) {
+                if ([str isEqualToString:@"(null)"] ||
+                    [str isEqualToString:@"null"] ||
+                    [str isEqualToString:@"<null>"]
+                    ) {
+                    return NO;
+                }
+            }
         }
+
     }
     
     return YES;
 }
++ (BOOL)judgeNotEmptyFor:(NSString *)str
+{
+    return [self judgeNotEmptyFor:str strict:NO];
+}
 
-//+ (BOOL)judgeNotEmptyFor:(NSString *)str
-//{
-//    if (nil == str) {
-//        return NO;
-//    }else{
-//        if ([[str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length] == 0) {
-//            return NO;
-//        }else if ([str isEqualToString:@"(null)"] ||
-//                  [str isEqualToString:@"null"] ||
-//                  [str isEqualToString:@"<null>"]
-//                  ) {
-//            return NO;
-//        }else
-//        {
-//            if ([[str class] isKindOfClass:[NSNumber class]] || [[str class] isKindOfClass:[NSNull class]]) {
-//                return NO;
-//            }
-//
-//        }
-//    }
-//
-//
-//
-//    return YES;
-//}
 
++ (BOOL)isEmptyString:(NSString *)str strict:(BOOL)isStrict
+{
+    BOOL flag = [self judgeNotEmptyFor:str strict:isStrict];
+    return !flag;
+}
 + (BOOL)isEmptyString:(NSString *)str
 {
     BOOL flag = [self judgeNotEmptyFor:str];

@@ -10,10 +10,18 @@
 
 @interface NSString (Tools)
 
-// 判断是否  非空
+/**
+ 判断是否  非空
+
+ @param str 需判断的字符串
+ @param isStrict 是否严格判断，严格判断 (null)、null、<null>也算空
+ @return 字符串为空 返回NO， 字符串非空 返回YES
+ */
++ (BOOL)judgeNotEmptyFor:(NSString *)str strict:(BOOL)isStrict;
 + (BOOL)judgeNotEmptyFor:(NSString *)str;
 
 // 判断是否  为空
++ (BOOL)isEmptyString:(NSString *)str strict:(BOOL)isStrict;
 + (BOOL)isEmptyString:(NSString *)str;
 
 // 将时间戳转成指定格式的日期字符串
