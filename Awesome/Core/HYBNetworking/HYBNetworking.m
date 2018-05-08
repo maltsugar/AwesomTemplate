@@ -369,11 +369,9 @@ static inline NSString *cachePath() {
             [self successResponse:responseObject callback:success];
             
             // 此处统一提示接口返回的错误信息
-            //            BaseResonseModel *model = [BaseResonseModel mj_objectWithKeyValues:[self tryToParseData:responseObject]];
-            //            if (![model.responseCode isEqualToString:kResponseSuccessCode] && model.responseMsg) {
-            //                UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
-            //                [window jk_makeToast:model.responseMsg duration:0.5 position:JKToastPositionCenter];
-            //            }
+            BaseResonseModel *model = [BaseResonseModel mj_objectWithKeyValues:[self tryToParseData:responseObject]];
+            [[AppTools sharedAppTools] manageBaseResponseModle:model];
+        
             
             
             if (sg_cacheGet) {
@@ -462,11 +460,8 @@ static inline NSString *cachePath() {
             [self successResponse:responseObject callback:success];
             
             // 此处统一提示接口返回的错误信息 
-//            BaseResonseModel *model = [BaseResonseModel mj_objectWithKeyValues:[self tryToParseData:responseObject]];
-//            if (![model.responseCode isEqualToString:kResponseSuccessCode] && model.responseMsg) {
-//                UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
-//                [window jk_makeToast:model.responseMsg duration:0.5 position:JKToastPositionCenter];
-//            }
+            BaseResonseModel *model = [BaseResonseModel mj_objectWithKeyValues:[self tryToParseData:responseObject]];
+            [[AppTools sharedAppTools] manageBaseResponseModle:model];
             
             
             if (sg_cachePost) {

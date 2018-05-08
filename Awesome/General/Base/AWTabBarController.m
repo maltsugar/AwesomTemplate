@@ -8,12 +8,14 @@
 
 #import "AWTabBarController.h"
 #import "AWNavigationController.h"
+#import "AWUserManager.h"
+
 
 #import "DemoViewController0.h"
 #import "DemoViewController1.h"
 #import "DemoViewController2.h"
 
-@interface AWTabBarController ()
+@interface AWTabBarController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -31,8 +33,53 @@
     DemoViewController2 *vc2 = [DemoViewController2 new];
     [self addChildVc:vc2 title:@"我的" image:@"tabbar_2" selectedImage:@"tabbar_2hl"];
     
+    
+    self.delegate = self;
+    
+    // 去掉tabbar上方线
+//    self.tabBar.shadowImage = [UIImage jk_imageWithColor:kColorNaviLineGray];
+//    self.tabBar.backgroundImage = [UIImage jk_imageWithColor:[UIColor whiteColor]];
+    
+    //    [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -2)];
 }
 
+
+- (void)setSelectedIndex:(NSUInteger)selectedIndex
+{
+    BOOL flag = YES;
+    if (selectedIndex == 1 || selectedIndex == 2 || selectedIndex == 4) {
+        flag = [[AWUserManager sharedAWUserManager] isUserLogined];
+        [[AppTools sharedAppTools] forceUserLoginAnimated:YES];
+    }
+    
+    if (flag) {
+        [super setSelectedIndex:selectedIndex];
+    }
+}
+
+#pragma mark- UITabBarControllerDelegate
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+{
+    NSUInteger index = [tabBarController.viewControllers indexOfObject:viewController];
+    BOOL flag = YES;
+    if (index == 1 || index == 2 || index == 4) {
+        flag = [[AWUserManager sharedAWUserManager] isUserLogined];
+        [[AppTools sharedAppTools] forceUserLoginAnimated:YES];
+    }
+    
+    
+//    UIViewController *thirdVC = [tabBarController.viewControllers objectAtIndex:2];
+//    if (viewController == thirdVC) {
+//        PublishViewController *vc = [PublishViewController new];
+//        AWNavigationController *nav = [[AWNavigationController alloc] initWithRootViewController:vc];
+//        [self presentViewController:nav animated:YES completion:nil];
+//        return NO;
+//    }
+    return flag;
+}
+
+
+#pragma mark- Helper
 - (void)addChildVc:(UIViewController *)childVc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage
 {
     // 设置子控制器的文字

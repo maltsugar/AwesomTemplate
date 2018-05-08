@@ -172,4 +172,45 @@
 }
 
 
+- (UIImage *)tintedImageWithColor:(UIColor *)color
+{
+    if (! color) {
+        return self;
+    }
+    
+    CGRect rect = CGRectMake(0.f, 0.f, self.size.width, self.size.height);
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.f);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextTranslateCTM(context, 0.f, self.size.height);
+    CGContextScaleCTM(context, 1.0f, -1.f);
+    
+    CGContextDrawImage(context, rect, self.CGImage);
+    CGContextSetBlendMode(context, kCGBlendModeSourceIn);
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+    
+    UIImage *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return tintedImage;
+}
+
+//改变图片颜色
+- (UIImage *)imageWithColor:(UIColor *)color
+{
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, self.scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(context, 0, self.size.height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextSetBlendMode(context, kCGBlendModeNormal);
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
+    CGContextClipToMask(context, rect, self.CGImage);
+    [color setFill];
+    CGContextFillRect(context, rect);
+    UIImage*newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
 @end

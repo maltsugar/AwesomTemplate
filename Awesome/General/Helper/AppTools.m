@@ -59,8 +59,36 @@ singleton_implementation(AppTools);
     // 清空用户id token等
     [[AWUserManager sharedAWUserManager] clearUserInfo];
     
-    [_tabBarController presentViewController:self.loginNav animated:NO completion:nil];
+//    [_tabBarController presentViewController:self.loginNav animated:NO completion:nil];
+    self.tabBarController.selectedIndex = 0;
 }
+
+
+// 处理请求通用的情况
+- (void)manageBaseResponseModle:(BaseResonseModel *)model
+{
+    if ([model.responseCode isEqualToString:kResponseLoginverdueCode]){
+        [self userLogoutSucceed];
+        [self forceUserLoginAnimated:YES];
+    }else
+    {
+        // 统一提示接口返回错误信息
+        if (![model.responseCode isEqualToString:kResponseSuccessCode] && model.responseMsg) {
+            UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+            [window jk_makeToast:model.responseMsg duration:0.5 position:JKToastPositionCenter];
+        }
+    }
+}
+
+
+// 切换tab
+- (void)switchTabbarControllerIndex:(NSUInteger)index
+{
+    [_tabBarController setSelectedIndex:index];
+}
+
+
+
 
 - (AWNavigationController *)loginNav
 {

@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "Singleton.h"
 
-@class PopOverVieConfiguration;
+@class PopOverVieConfiguration, BaseResonseModel;
 
 @interface AppTools : NSObject
 singleton_interface(AppTools);
@@ -26,6 +26,16 @@ singleton_interface(AppTools);
 - (void)dismissLoginVC;
 
 - (void)userLogoutSucceed;
+
+
+// 处理请求通用的情况
+- (void)manageBaseResponseModle:(BaseResonseModel *)model;
+
+
+// 切换tab
+- (void)switchTabbarControllerIndex:(NSUInteger)index;
+
+
 
 + (void)showTipWithError:(NSError *)error;
 

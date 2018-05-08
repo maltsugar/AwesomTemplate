@@ -50,4 +50,8 @@
  */
 + (UIImage*)jk_covertToGrayImageFromImage:(UIImage*)sourceImage;
 
+
+- (UIImage *)tintedImageWithColor:(UIColor *)color;
+
+- (UIImage *)imageWithColor:(UIColor *)color;
 @end

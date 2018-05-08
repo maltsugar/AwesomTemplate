@@ -7,13 +7,17 @@
 //
 
 #import "DemoViewController0.h"
-#import "NSString+Tools.h"
 
 
 // test
 #import "NSString+Tools.h"
+#import "UIImage+JKColor.h"
 
 @interface DemoViewController0 ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+
+
 
 @end
 
@@ -31,6 +35,10 @@
     {
         NSLog(@"字符串不为空");
     }
+    
+    
+    UIImage *img = _imgView.image;
+    _imgView.image = [img tintedImageWithColor:[UIColor yellowColor]];
 }
 
 

@@ -8,6 +8,8 @@
 
 #import "NSString+Tools.h"
 
+static BOOL __stringDebug = NO;
+
 @implementation NSString (Tools)
 
 
@@ -23,7 +25,7 @@
             [tipInfo appendString:@", 是NSNull对象"];
         }
         
-        NSLog(@"%@", tipInfo);
+        if (__stringDebug) NSLog(@"%@", tipInfo);
         return NO;
     }else
     {
