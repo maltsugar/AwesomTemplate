@@ -43,7 +43,9 @@ singleton_implementation(AppTools);
 - (void)forceUserLoginAnimated:(BOOL)animated
 {
     // 没有获取本地存储的 用户id 用户token
-    if (![[AWUserManager sharedAWUserManager] isUserLogined]) {
+    // 没有获取本地存储的 用户id 用户token
+    BOOL flag = [[AWUserManager sharedAWUserManager] isUserLogined];
+    if (!flag && nil == _tabBarController.presentedViewController) {
         [_tabBarController presentViewController:self.loginNav animated:animated completion:nil];
     }
 }
