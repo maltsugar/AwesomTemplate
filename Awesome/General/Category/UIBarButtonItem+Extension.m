@@ -19,7 +19,7 @@
  *
  *  @return 创建完的item
  */
-+ (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage
++ (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage imageEdgeInsets:(UIEdgeInsets)insets
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
@@ -28,6 +28,7 @@
     [btn setImage:[UIImage imageNamed:highImage] forState:UIControlStateHighlighted];
     // 设置尺寸
     btn.size = CGSizeMake(40, 40);
+    btn.imageEdgeInsets = insets;
     return [[UIBarButtonItem alloc] initWithCustomView:btn];
 }
 @end

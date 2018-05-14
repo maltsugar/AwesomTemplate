@@ -92,9 +92,37 @@
  {
  // 导航
  UINavigationBar *navBar = [UINavigationBar appearance];
- navBar.barTintColor = [UIColor redColor];
- NSDictionary *dict = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+ navBar.barTintColor = [UIColor whiteColor];
+ NSDictionary *dict = @{NSForegroundColorAttributeName : kColorNaviText};
  [navBar setTitleTextAttributes:dict];
+ 
+ 
+ // 设置整个项目所有item的主题样式
+ UIBarButtonItem *item = [UIBarButtonItem appearance];
+ 
+ // 设置普通状态
+ UIFont *font = [UIFont systemFontOfSize:17];
+ NSDictionary *normalAttr = @{
+ NSForegroundColorAttributeName: kColorNaviText,
+ NSFontAttributeName: font
+ };
+ [item setTitleTextAttributes:normalAttr forState:UIControlStateNormal];
+ 
+ // 设置不可用状态
+ NSDictionary *disableAttr = @{
+ NSForegroundColorAttributeName: [UIColor lightGrayColor],
+ NSFontAttributeName: font
+ };
+ [item setTitleTextAttributes:disableAttr forState:UIControlStateDisabled];
+ // 返回按钮
+ // 设置文字，水平偏移到看不见的位置
+ //    [item setBackButtonTitlePositionAdjustment:UIOffsetMake(LONG_MIN, 0) forBarMetrics:UIBarMetricsDefault];
+ 
+ 
+ // 设置导航阴影，去掉原有的阴影线条
+ [navBar setBackgroundImage:[UIImage jk_imageWithColor:[UIColor whiteColor]] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+ [navBar setShadowImage:[UIImage jk_imageWithColor:kColorNaviLineGray]];
+ 
  }
  
  - (void)viewDidLoad
@@ -109,7 +137,7 @@
  {
  self.interactivePopGestureRecognizer.enabled = NO;
  if (self.viewControllers.count > 0) { // 这时push进来的控制器viewController，不是第一个子控制器（不是根控制器）
- viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"navigationbar_back" highImage: @"navigationbar_back"];
+ viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"navi_back" highImage: @"navi_back" imageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
  viewController.hidesBottomBarWhenPushed = YES;
  
  
@@ -128,7 +156,7 @@
  for (UIViewController *vc in viewControllers) {
  
  if (i > 0) {
- vc.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"navigationbar_back" highImage: @"navigationbar_back"];
+ vc.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"navi_back" highImage: @"navi_back" imageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
  vc.hidesBottomBarWhenPushed = YES;
  }
  i ++;
@@ -148,6 +176,11 @@
  {
  [self popViewControllerAnimated:YES];
  }
+ 
+ 
+ 
+ 
+ 
  
  <====================================================================================>
  
