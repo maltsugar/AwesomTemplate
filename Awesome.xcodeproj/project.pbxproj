@@ -151,16 +151,6 @@
 		91D83C401FB454F9004595DE /* UIView+WZLBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C3C1FB454F9004595DE /* UIView+WZLBadge.m */; };
 		91EC94FE1FA9618F005C5021 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC94FC1FA9618F005C5021 /* TableViewCell.m */; };
 		91EC94FF1FA9618F005C5021 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91EC94FD1FA9618F005C5021 /* TableViewCell.xib */; };
-		91EC955D1FAABF2A005C5021 /* OAStackView+Hiding.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC954B1FAABF2A005C5021 /* OAStackView+Hiding.m */; };
-		91EC955E1FAABF2A005C5021 /* OAStackView+Constraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC954C1FAABF2A005C5021 /* OAStackView+Constraint.m */; };
-		91EC955F1FAABF2A005C5021 /* OAStackView+Traversal.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC954D1FAABF2A005C5021 /* OAStackView+Traversal.m */; };
-		91EC95601FAABF2A005C5021 /* _OALayoutGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC954E1FAABF2A005C5021 /* _OALayoutGuide.m */; };
-		91EC95611FAABF2A005C5021 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 91EC95501FAABF2A005C5021 /* .gitkeep */; };
-		91EC95621FAABF2A005C5021 /* OAStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC95511FAABF2A005C5021 /* OAStackView.m */; };
-		91EC95631FAABF2A005C5021 /* OATransformLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC95521FAABF2A005C5021 /* OATransformLayer.m */; };
-		91EC95641FAABF2A005C5021 /* OAStackViewDistributionStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC95531FAABF2A005C5021 /* OAStackViewDistributionStrategy.m */; };
-		91EC95651FAABF2A005C5021 /* OAStackViewAlignmentStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC95541FAABF2A005C5021 /* OAStackViewAlignmentStrategy.m */; };
-		91EC95661FAABF2A005C5021 /* OAStackViewAlignmentStrategyBaseline.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC95551FAABF2A005C5021 /* OAStackViewAlignmentStrategyBaseline.m */; };
 		91EC956F1FAACB75005C5021 /* VerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC956E1FAACB75005C5021 /* VerticalButton.m */; };
 		91EF7C952021B80B00755759 /* UIAlertView+JKBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EF7C932021B80B00755759 /* UIAlertView+JKBlock.m */; };
 /* End PBXBuildFile section */
@@ -470,25 +460,6 @@
 		91EC94FB1FA9618F005C5021 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		91EC94FC1FA9618F005C5021 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		91EC94FD1FA9618F005C5021 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
-		91EC954A1FAABF2A005C5021 /* OAStackViewAlignmentStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAStackViewAlignmentStrategy.h; sourceTree = "<group>"; };
-		91EC954B1FAABF2A005C5021 /* OAStackView+Hiding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAStackView+Hiding.m"; sourceTree = "<group>"; };
-		91EC954C1FAABF2A005C5021 /* OAStackView+Constraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAStackView+Constraint.m"; sourceTree = "<group>"; };
-		91EC954D1FAABF2A005C5021 /* OAStackView+Traversal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OAStackView+Traversal.m"; sourceTree = "<group>"; };
-		91EC954E1FAABF2A005C5021 /* _OALayoutGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _OALayoutGuide.m; sourceTree = "<group>"; };
-		91EC954F1FAABF2A005C5021 /* OAStackViewAlignmentStrategyBaseline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAStackViewAlignmentStrategyBaseline.h; sourceTree = "<group>"; };
-		91EC95501FAABF2A005C5021 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		91EC95511FAABF2A005C5021 /* OAStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAStackView.m; sourceTree = "<group>"; };
-		91EC95521FAABF2A005C5021 /* OATransformLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OATransformLayer.m; sourceTree = "<group>"; };
-		91EC95531FAABF2A005C5021 /* OAStackViewDistributionStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAStackViewDistributionStrategy.m; sourceTree = "<group>"; };
-		91EC95541FAABF2A005C5021 /* OAStackViewAlignmentStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAStackViewAlignmentStrategy.m; sourceTree = "<group>"; };
-		91EC95551FAABF2A005C5021 /* OAStackViewAlignmentStrategyBaseline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAStackViewAlignmentStrategyBaseline.m; sourceTree = "<group>"; };
-		91EC95561FAABF2A005C5021 /* _OALayoutGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _OALayoutGuide.h; sourceTree = "<group>"; };
-		91EC95571FAABF2A005C5021 /* OAStackView+Traversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OAStackView+Traversal.h"; sourceTree = "<group>"; };
-		91EC95581FAABF2A005C5021 /* OAStackView+Constraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OAStackView+Constraint.h"; sourceTree = "<group>"; };
-		91EC95591FAABF2A005C5021 /* OAStackView+Hiding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OAStackView+Hiding.h"; sourceTree = "<group>"; };
-		91EC955A1FAABF2A005C5021 /* OAStackViewDistributionStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAStackViewDistributionStrategy.h; sourceTree = "<group>"; };
-		91EC955B1FAABF2A005C5021 /* OATransformLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OATransformLayer.h; sourceTree = "<group>"; };
-		91EC955C1FAABF2A005C5021 /* OAStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAStackView.h; sourceTree = "<group>"; };
 		91EC956D1FAACB74005C5021 /* VerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalButton.h; sourceTree = "<group>"; };
 		91EC956E1FAACB75005C5021 /* VerticalButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalButton.m; sourceTree = "<group>"; };
 		91EF7C932021B80B00755759 /* UIAlertView+JKBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+JKBlock.m"; sourceTree = "<group>"; };
@@ -594,7 +565,6 @@
 			isa = PBXGroup;
 			children = (
 				91D83C2E1FB454F9004595DE /* WZLBadge */,
-				91EC95491FAABF2A005C5021 /* OAStackView */,
 				9146CE411F9F1AC000AD33D8 /* IQKeyboardManager */,
 				9146CDFE1F9F1AA000AD33D8 /* MJRefresh */,
 				916C746F1F7F487B0056F06B /* AvoidCrash */,
@@ -1293,32 +1263,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		91EC95491FAABF2A005C5021 /* OAStackView */ = {
-			isa = PBXGroup;
-			children = (
-				91EC954A1FAABF2A005C5021 /* OAStackViewAlignmentStrategy.h */,
-				91EC954B1FAABF2A005C5021 /* OAStackView+Hiding.m */,
-				91EC954C1FAABF2A005C5021 /* OAStackView+Constraint.m */,
-				91EC954D1FAABF2A005C5021 /* OAStackView+Traversal.m */,
-				91EC954E1FAABF2A005C5021 /* _OALayoutGuide.m */,
-				91EC954F1FAABF2A005C5021 /* OAStackViewAlignmentStrategyBaseline.h */,
-				91EC95501FAABF2A005C5021 /* .gitkeep */,
-				91EC95511FAABF2A005C5021 /* OAStackView.m */,
-				91EC95521FAABF2A005C5021 /* OATransformLayer.m */,
-				91EC95531FAABF2A005C5021 /* OAStackViewDistributionStrategy.m */,
-				91EC95541FAABF2A005C5021 /* OAStackViewAlignmentStrategy.m */,
-				91EC95551FAABF2A005C5021 /* OAStackViewAlignmentStrategyBaseline.m */,
-				91EC95561FAABF2A005C5021 /* _OALayoutGuide.h */,
-				91EC95571FAABF2A005C5021 /* OAStackView+Traversal.h */,
-				91EC95581FAABF2A005C5021 /* OAStackView+Constraint.h */,
-				91EC95591FAABF2A005C5021 /* OAStackView+Hiding.h */,
-				91EC955A1FAABF2A005C5021 /* OAStackViewDistributionStrategy.h */,
-				91EC955B1FAABF2A005C5021 /* OATransformLayer.h */,
-				91EC955C1FAABF2A005C5021 /* OAStackView.h */,
-			);
-			path = OAStackView;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1388,7 +1332,6 @@
 				914F3D831FB9688B001C35F3 /* DemoViewController1.xib in Resources */,
 				9146CE2F1F9F1AA000AD33D8 /* MJRefresh.bundle in Resources */,
 				2DBF7D6D1F74EFD5005EDBE6 /* Assets.xcassets in Resources */,
-				91EC95611FAABF2A005C5021 /* .gitkeep in Resources */,
 				914F3D7E1FB9687C001C35F3 /* DemoViewController2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1433,7 +1376,6 @@
 				916C748C1F7F48CF0056F06B /* NSObject+AvoidCrash.m in Sources */,
 				916C748D1F7F48CF0056F06B /* NSMutableArray+AvoidCrash.m in Sources */,
 				9146CE361F9F1AA000AD33D8 /* MJRefreshAutoStateFooter.m in Sources */,
-				91EC95621FAABF2A005C5021 /* OAStackView.m in Sources */,
 				916C748E1F7F48CF0056F06B /* NSMutableAttributedString+AvoidCrash.m in Sources */,
 				916C748F1F7F48CF0056F06B /* NSAttributedString+AvoidCrash.m in Sources */,
 				91D83C2A1FB44E82004595DE /* NSDate+JKUtilities.m in Sources */,
@@ -1445,21 +1387,16 @@
 				916C74911F7F48CF0056F06B /* AvoidCrashStubProxy.m in Sources */,
 				56C094951F7A0724002C3ECE /* AFAutoPurgingImageCache.m in Sources */,
 				56C094961F7A0724002C3ECE /* AFImageDownloader.m in Sources */,
-				91EC955E1FAABF2A005C5021 /* OAStackView+Constraint.m in Sources */,
 				560D28F91F7DD14900C7ACEC /* AWTabBarController.m in Sources */,
-				91EC95661FAABF2A005C5021 /* OAStackViewAlignmentStrategyBaseline.m in Sources */,
 				56C094971F7A0724002C3ECE /* AFNetworkActivityIndicatorManager.m in Sources */,
-				91EC95601FAABF2A005C5021 /* _OALayoutGuide.m in Sources */,
 				56C094981F7A0724002C3ECE /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				91D83C2D1FB44E82004595DE /* NSDate+JKCupertinoYankee.m in Sources */,
 				9146CE6D1F9F1AC100AD33D8 /* IQKeyboardManager.m in Sources */,
 				9146CE6A1F9F1AC100AD33D8 /* IQUIView+IQKeyboardToolbar.m in Sources */,
-				91EC95641FAABF2A005C5021 /* OAStackViewDistributionStrategy.m in Sources */,
 				914932F31FBD5F0C005C3A00 /* UIViewController+Extension.m in Sources */,
 				9141BA1220108B0B00E311EC /* UIColor+YYAdd.m in Sources */,
 				56C094991F7A0724002C3ECE /* UIButton+AFNetworking.m in Sources */,
 				917413C41FD91E080003BDD4 /* UIViewController+BackButtonHandler.m in Sources */,
-				91EC95631FAABF2A005C5021 /* OATransformLayer.m in Sources */,
 				91D83C281FB44E82004595DE /* NSDate+JKInternetDateTime.m in Sources */,
 				9146CE2D1F9F1AA000AD33D8 /* UIScrollView+MJRefresh.m in Sources */,
 				914F3D7D1FB9687C001C35F3 /* DemoViewController2.m in Sources */,
@@ -1495,7 +1432,6 @@
 				91B0BAE020622A2500B31447 /* AWUserManager.m in Sources */,
 				9146CE351F9F1AA000AD33D8 /* MJRefreshBackNormalFooter.m in Sources */,
 				9146CE3C1F9F1AA000AD33D8 /* MJRefreshFooter.m in Sources */,
-				91EC955D1FAABF2A005C5021 /* OAStackView+Hiding.m in Sources */,
 				569931F41F79F4C900BA1BEB /* YYDiskCache.m in Sources */,
 				9146CE301F9F1AA000AD33D8 /* UIScrollView+MJExtension.m in Sources */,
 				569931F51F79F4C900BA1BEB /* YYKVStorage.m in Sources */,
@@ -1519,7 +1455,6 @@
 				9146CE3A1F9F1AA000AD33D8 /* MJRefreshStateHeader.m in Sources */,
 				91D83C291FB44E82004595DE /* NSDate+JKFormatter.m in Sources */,
 				91EC94FE1FA9618F005C5021 /* TableViewCell.m in Sources */,
-				91EC955F1FAABF2A005C5021 /* OAStackView+Traversal.m in Sources */,
 				569931901F79F20200BA1BEB /* NSObject+MJProperty.m in Sources */,
 				569931911F79F20200BA1BEB /* NSString+MJExtension.m in Sources */,
 				9146CE3F1F9F1AA000AD33D8 /* MJRefreshAutoFooter.m in Sources */,
@@ -1559,7 +1494,6 @@
 				916376A01FD78CE900E0AF77 /* UIView+JKToast.m in Sources */,
 				569931701F79F14500BA1BEB /* ViewController+MASAdditions.m in Sources */,
 				2DBF7D931F74F9FC005EDBE6 /* MBProgressHUD.m in Sources */,
-				91EC95651FAABF2A005C5021 /* OAStackViewAlignmentStrategy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
