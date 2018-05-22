@@ -104,6 +104,15 @@
 		9146CE731F9F1AC100AD33D8 /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9146CE631F9F1AC000AD33D8 /* IQUIViewController+Additions.m */; };
 		9146CE741F9F1AC100AD33D8 /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9146CE651F9F1AC000AD33D8 /* IQKeyboardReturnKeyHandler.m */; };
 		914932F31FBD5F0C005C3A00 /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 914932F11FBD5F0B005C3A00 /* UIViewController+Extension.m */; };
+		914F0A2220B3B3DB00339165 /* UIView+RJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F0A0B20B3B3DB00339165 /* UIView+RJBadge.m */; };
+		914F0A2320B3B3DB00339165 /* UIBarButtonItem+RJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F0A0E20B3B3DB00339165 /* UIBarButtonItem+RJBadge.m */; };
+		914F0A2420B3B3DB00339165 /* UITabBarItem+RJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F0A1020B3B3DB00339165 /* UITabBarItem+RJBadge.m */; };
+		914F0A2520B3B3DB00339165 /* RJBadgeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F0A1420B3B3DB00339165 /* RJBadgeInfo.m */; };
+		914F0A2620B3B3DB00339165 /* RJBadgeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F0A1720B3B3DB00339165 /* RJBadgeModel.m */; };
+		914F0A2720B3B3DB00339165 /* RJBadgeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F0A1920B3B3DB00339165 /* RJBadgeManager.m */; };
+		914F0A2820B3B3DB00339165 /* NSObject+RJBadgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F0A1D20B3B3DB00339165 /* NSObject+RJBadgeController.m */; };
+		914F0A2920B3B3DB00339165 /* RJBadgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F0A1E20B3B3DB00339165 /* RJBadgeController.m */; };
+		914F0A2A20B3B3DB00339165 /* NSString+RJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F0A2120B3B3DB00339165 /* NSString+RJBadge.m */; };
 		914F3D6D1FB963D0001C35F3 /* AWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F3D6C1FB963D0001C35F3 /* AWNavigationController.m */; };
 		914F3D7D1FB9687C001C35F3 /* DemoViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F3D7B1FB9687C001C35F3 /* DemoViewController2.m */; };
 		914F3D7E1FB9687C001C35F3 /* DemoViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914F3D7C1FB9687C001C35F3 /* DemoViewController2.xib */; };
@@ -145,10 +154,6 @@
 		91D83C2B1FB44E82004595DE /* NSDate+JKReporting.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C201FB44E82004595DE /* NSDate+JKReporting.m */; };
 		91D83C2C1FB44E82004595DE /* NSDate+JKZeroDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C211FB44E82004595DE /* NSDate+JKZeroDate.m */; };
 		91D83C2D1FB44E82004595DE /* NSDate+JKCupertinoYankee.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C251FB44E82004595DE /* NSDate+JKCupertinoYankee.m */; };
-		91D83C3D1FB454F9004595DE /* CAAnimation+WAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C301FB454F9004595DE /* CAAnimation+WAnimation.m */; };
-		91D83C3E1FB454F9004595DE /* UIBarButtonItem+WZLBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C351FB454F9004595DE /* UIBarButtonItem+WZLBadge.m */; };
-		91D83C3F1FB454F9004595DE /* UITabBarItem+WZLBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C361FB454F9004595DE /* UITabBarItem+WZLBadge.m */; };
-		91D83C401FB454F9004595DE /* UIView+WZLBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C3C1FB454F9004595DE /* UIView+WZLBadge.m */; };
 		91EC94FE1FA9618F005C5021 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC94FC1FA9618F005C5021 /* TableViewCell.m */; };
 		91EC94FF1FA9618F005C5021 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91EC94FD1FA9618F005C5021 /* TableViewCell.xib */; };
 		91EC956F1FAACB75005C5021 /* VerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC956E1FAACB75005C5021 /* VerticalButton.m */; };
@@ -363,6 +368,27 @@
 		9146CE651F9F1AC000AD33D8 /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
 		914932F11FBD5F0B005C3A00 /* UIViewController+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
 		914932F21FBD5F0C005C3A00 /* UIViewController+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extension.h"; sourceTree = "<group>"; };
+		914F0A0A20B3B3DB00339165 /* RJBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJBadgeView.h; sourceTree = "<group>"; };
+		914F0A0B20B3B3DB00339165 /* UIView+RJBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RJBadge.m"; sourceTree = "<group>"; };
+		914F0A0C20B3B3DB00339165 /* UIBarButtonItem+RJBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+RJBadge.h"; sourceTree = "<group>"; };
+		914F0A0D20B3B3DB00339165 /* UITabBarItem+RJBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+RJBadge.h"; sourceTree = "<group>"; };
+		914F0A0E20B3B3DB00339165 /* UIBarButtonItem+RJBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+RJBadge.m"; sourceTree = "<group>"; };
+		914F0A0F20B3B3DB00339165 /* UIView+RJBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RJBadge.h"; sourceTree = "<group>"; };
+		914F0A1020B3B3DB00339165 /* UITabBarItem+RJBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+RJBadge.m"; sourceTree = "<group>"; };
+		914F0A1120B3B3DB00339165 /* RJBadgeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJBadgeKit.h; sourceTree = "<group>"; };
+		914F0A1320B3B3DB00339165 /* RJBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJBadge.h; sourceTree = "<group>"; };
+		914F0A1420B3B3DB00339165 /* RJBadgeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJBadgeInfo.m; sourceTree = "<group>"; };
+		914F0A1520B3B3DB00339165 /* RJBadgeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJBadgeModel.h; sourceTree = "<group>"; };
+		914F0A1620B3B3DB00339165 /* RJBadgeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJBadgeInfo.h; sourceTree = "<group>"; };
+		914F0A1720B3B3DB00339165 /* RJBadgeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJBadgeModel.m; sourceTree = "<group>"; };
+		914F0A1920B3B3DB00339165 /* RJBadgeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJBadgeManager.m; sourceTree = "<group>"; };
+		914F0A1A20B3B3DB00339165 /* RJBadgeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJBadgeController.h; sourceTree = "<group>"; };
+		914F0A1B20B3B3DB00339165 /* NSObject+RJBadgeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RJBadgeController.h"; sourceTree = "<group>"; };
+		914F0A1C20B3B3DB00339165 /* RJBadgeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJBadgeManager.h; sourceTree = "<group>"; };
+		914F0A1D20B3B3DB00339165 /* NSObject+RJBadgeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RJBadgeController.m"; sourceTree = "<group>"; };
+		914F0A1E20B3B3DB00339165 /* RJBadgeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJBadgeController.m; sourceTree = "<group>"; };
+		914F0A2020B3B3DB00339165 /* NSString+RJBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RJBadge.h"; sourceTree = "<group>"; };
+		914F0A2120B3B3DB00339165 /* NSString+RJBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RJBadge.m"; sourceTree = "<group>"; };
 		914F3D6B1FB963D0001C35F3 /* AWNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWNavigationController.h; sourceTree = "<group>"; };
 		914F3D6C1FB963D0001C35F3 /* AWNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWNavigationController.m; sourceTree = "<group>"; };
 		914F3D7A1FB9687C001C35F3 /* DemoViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController2.h; sourceTree = "<group>"; };
@@ -447,16 +473,6 @@
 		91D83C231FB44E82004595DE /* NSDate+JKInternetDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+JKInternetDateTime.h"; sourceTree = "<group>"; };
 		91D83C241FB44E82004595DE /* NSDate+JKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+JKExtension.h"; sourceTree = "<group>"; };
 		91D83C251FB44E82004595DE /* NSDate+JKCupertinoYankee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+JKCupertinoYankee.m"; sourceTree = "<group>"; };
-		91D83C301FB454F9004595DE /* CAAnimation+WAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+WAnimation.m"; sourceTree = "<group>"; };
-		91D83C311FB454F9004595DE /* CAAnimation+WAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+WAnimation.h"; sourceTree = "<group>"; };
-		91D83C331FB454F9004595DE /* UIBarButtonItem+WZLBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WZLBadge.h"; sourceTree = "<group>"; };
-		91D83C341FB454F9004595DE /* UITabBarItem+WZLBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+WZLBadge.h"; sourceTree = "<group>"; };
-		91D83C351FB454F9004595DE /* UIBarButtonItem+WZLBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WZLBadge.m"; sourceTree = "<group>"; };
-		91D83C361FB454F9004595DE /* UITabBarItem+WZLBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+WZLBadge.m"; sourceTree = "<group>"; };
-		91D83C371FB454F9004595DE /* WZLBadgeImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLBadgeImport.h; sourceTree = "<group>"; };
-		91D83C391FB454F9004595DE /* WZLBadgeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLBadgeProtocol.h; sourceTree = "<group>"; };
-		91D83C3B1FB454F9004595DE /* UIView+WZLBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WZLBadge.h"; sourceTree = "<group>"; };
-		91D83C3C1FB454F9004595DE /* UIView+WZLBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WZLBadge.m"; sourceTree = "<group>"; };
 		91EC94FB1FA9618F005C5021 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		91EC94FC1FA9618F005C5021 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		91EC94FD1FA9618F005C5021 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
@@ -564,7 +580,7 @@
 		2DBF7D7B1F74F08B005EDBE6 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				91D83C2E1FB454F9004595DE /* WZLBadge */,
+				914F0A0820B3B3DB00339165 /* RJBadgeKit */,
 				9146CE411F9F1AC000AD33D8 /* IQKeyboardManager */,
 				9146CDFE1F9F1AA000AD33D8 /* MJRefresh */,
 				916C746F1F7F487B0056F06B /* AvoidCrash */,
@@ -1034,6 +1050,66 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		914F0A0820B3B3DB00339165 /* RJBadgeKit */ = {
+			isa = PBXGroup;
+			children = (
+				914F0A0920B3B3DB00339165 /* BadgeView */,
+				914F0A1120B3B3DB00339165 /* RJBadgeKit.h */,
+				914F0A1220B3B3DB00339165 /* BadgeModel */,
+				914F0A1820B3B3DB00339165 /* BadgeController */,
+				914F0A1F20B3B3DB00339165 /* Helper */,
+			);
+			path = RJBadgeKit;
+			sourceTree = "<group>";
+		};
+		914F0A0920B3B3DB00339165 /* BadgeView */ = {
+			isa = PBXGroup;
+			children = (
+				914F0A0A20B3B3DB00339165 /* RJBadgeView.h */,
+				914F0A0B20B3B3DB00339165 /* UIView+RJBadge.m */,
+				914F0A0C20B3B3DB00339165 /* UIBarButtonItem+RJBadge.h */,
+				914F0A0D20B3B3DB00339165 /* UITabBarItem+RJBadge.h */,
+				914F0A0E20B3B3DB00339165 /* UIBarButtonItem+RJBadge.m */,
+				914F0A0F20B3B3DB00339165 /* UIView+RJBadge.h */,
+				914F0A1020B3B3DB00339165 /* UITabBarItem+RJBadge.m */,
+			);
+			path = BadgeView;
+			sourceTree = "<group>";
+		};
+		914F0A1220B3B3DB00339165 /* BadgeModel */ = {
+			isa = PBXGroup;
+			children = (
+				914F0A1320B3B3DB00339165 /* RJBadge.h */,
+				914F0A1420B3B3DB00339165 /* RJBadgeInfo.m */,
+				914F0A1520B3B3DB00339165 /* RJBadgeModel.h */,
+				914F0A1620B3B3DB00339165 /* RJBadgeInfo.h */,
+				914F0A1720B3B3DB00339165 /* RJBadgeModel.m */,
+			);
+			path = BadgeModel;
+			sourceTree = "<group>";
+		};
+		914F0A1820B3B3DB00339165 /* BadgeController */ = {
+			isa = PBXGroup;
+			children = (
+				914F0A1920B3B3DB00339165 /* RJBadgeManager.m */,
+				914F0A1A20B3B3DB00339165 /* RJBadgeController.h */,
+				914F0A1B20B3B3DB00339165 /* NSObject+RJBadgeController.h */,
+				914F0A1C20B3B3DB00339165 /* RJBadgeManager.h */,
+				914F0A1D20B3B3DB00339165 /* NSObject+RJBadgeController.m */,
+				914F0A1E20B3B3DB00339165 /* RJBadgeController.m */,
+			);
+			path = BadgeController;
+			sourceTree = "<group>";
+		};
+		914F0A1F20B3B3DB00339165 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				914F0A2020B3B3DB00339165 /* NSString+RJBadge.h */,
+				914F0A2120B3B3DB00339165 /* NSString+RJBadge.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		914F3D6E1FB967CE001C35F3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -1214,55 +1290,6 @@
 			path = NSDate;
 			sourceTree = "<group>";
 		};
-		91D83C2E1FB454F9004595DE /* WZLBadge */ = {
-			isa = PBXGroup;
-			children = (
-				91D83C371FB454F9004595DE /* WZLBadgeImport.h */,
-				91D83C2F1FB454F9004595DE /* CategorySupport */,
-				91D83C321FB454F9004595DE /* BarItem */,
-				91D83C381FB454F9004595DE /* Protocol */,
-				91D83C3A1FB454F9004595DE /* View */,
-			);
-			path = WZLBadge;
-			sourceTree = "<group>";
-		};
-		91D83C2F1FB454F9004595DE /* CategorySupport */ = {
-			isa = PBXGroup;
-			children = (
-				91D83C301FB454F9004595DE /* CAAnimation+WAnimation.m */,
-				91D83C311FB454F9004595DE /* CAAnimation+WAnimation.h */,
-			);
-			path = CategorySupport;
-			sourceTree = "<group>";
-		};
-		91D83C321FB454F9004595DE /* BarItem */ = {
-			isa = PBXGroup;
-			children = (
-				91D83C331FB454F9004595DE /* UIBarButtonItem+WZLBadge.h */,
-				91D83C341FB454F9004595DE /* UITabBarItem+WZLBadge.h */,
-				91D83C351FB454F9004595DE /* UIBarButtonItem+WZLBadge.m */,
-				91D83C361FB454F9004595DE /* UITabBarItem+WZLBadge.m */,
-			);
-			path = BarItem;
-			sourceTree = "<group>";
-		};
-		91D83C381FB454F9004595DE /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				91D83C391FB454F9004595DE /* WZLBadgeProtocol.h */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
-		91D83C3A1FB454F9004595DE /* View */ = {
-			isa = PBXGroup;
-			children = (
-				91D83C3B1FB454F9004595DE /* UIView+WZLBadge.h */,
-				91D83C3C1FB454F9004595DE /* UIView+WZLBadge.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1377,6 +1404,7 @@
 				916C748D1F7F48CF0056F06B /* NSMutableArray+AvoidCrash.m in Sources */,
 				9146CE361F9F1AA000AD33D8 /* MJRefreshAutoStateFooter.m in Sources */,
 				916C748E1F7F48CF0056F06B /* NSMutableAttributedString+AvoidCrash.m in Sources */,
+				914F0A2220B3B3DB00339165 /* UIView+RJBadge.m in Sources */,
 				916C748F1F7F48CF0056F06B /* NSAttributedString+AvoidCrash.m in Sources */,
 				91D83C2A1FB44E82004595DE /* NSDate+JKUtilities.m in Sources */,
 				91C172E11FC66FE20050F371 /* HYBNetworking.m in Sources */,
@@ -1399,6 +1427,7 @@
 				917413C41FD91E080003BDD4 /* UIViewController+BackButtonHandler.m in Sources */,
 				91D83C281FB44E82004595DE /* NSDate+JKInternetDateTime.m in Sources */,
 				9146CE2D1F9F1AA000AD33D8 /* UIScrollView+MJRefresh.m in Sources */,
+				914F0A2620B3B3DB00339165 /* RJBadgeModel.m in Sources */,
 				914F3D7D1FB9687C001C35F3 /* DemoViewController2.m in Sources */,
 				9146CE6E1F9F1AC100AD33D8 /* IQNSArray+Sort.m in Sources */,
 				56C0949A1F7A0724002C3ECE /* UIImageView+AFNetworking.m in Sources */,
@@ -1410,6 +1439,7 @@
 				9146CE701F9F1AC100AD33D8 /* IQUITextFieldView+Additions.m in Sources */,
 				56C0949C1F7A0724002C3ECE /* UIRefreshControl+AFNetworking.m in Sources */,
 				56C0949D1F7A0724002C3ECE /* UIWebView+AFNetworking.m in Sources */,
+				914F0A2720B3B3DB00339165 /* RJBadgeManager.m in Sources */,
 				91D83C141FB4459E004595DE /* NSString+Tools.m in Sources */,
 				56C0949E1F7A0724002C3ECE /* AFHTTPSessionManager.m in Sources */,
 				56C0949F1F7A0724002C3ECE /* AFNetworkReachabilityManager.m in Sources */,
@@ -1420,14 +1450,14 @@
 				91D83C271FB44E82004595DE /* NSDate+JKExtension.m in Sources */,
 				56C094A21F7A0724002C3ECE /* AFURLResponseSerialization.m in Sources */,
 				9146CE331F9F1AA000AD33D8 /* MJRefreshBackGifFooter.m in Sources */,
-				91D83C401FB454F9004595DE /* UIView+WZLBadge.m in Sources */,
 				91D83C2B1FB44E82004595DE /* NSDate+JKReporting.m in Sources */,
 				56C094A31F7A0724002C3ECE /* AFURLSessionManager.m in Sources */,
-				91D83C3E1FB454F9004595DE /* UIBarButtonItem+WZLBadge.m in Sources */,
 				569932051F79F52F00BA1BEB /* NSArray+YYAdd.m in Sources */,
 				569931F11F79F4C900BA1BEB /* NSString+YYAdd.m in Sources */,
 				569931F21F79F4C900BA1BEB /* UIDevice+YYAdd.m in Sources */,
 				569931F31F79F4C900BA1BEB /* YYCache.m in Sources */,
+				914F0A2920B3B3DB00339165 /* RJBadgeController.m in Sources */,
+				914F0A2420B3B3DB00339165 /* UITabBarItem+RJBadge.m in Sources */,
 				9174A49F1FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.m in Sources */,
 				91B0BAE020622A2500B31447 /* AWUserManager.m in Sources */,
 				9146CE351F9F1AA000AD33D8 /* MJRefreshBackNormalFooter.m in Sources */,
@@ -1435,6 +1465,7 @@
 				569931F41F79F4C900BA1BEB /* YYDiskCache.m in Sources */,
 				9146CE301F9F1AA000AD33D8 /* UIScrollView+MJExtension.m in Sources */,
 				569931F51F79F4C900BA1BEB /* YYKVStorage.m in Sources */,
+				914F0A2A20B3B3DB00339165 /* NSString+RJBadge.m in Sources */,
 				9146CE3D1F9F1AA000AD33D8 /* MJRefreshHeader.m in Sources */,
 				9146CE311F9F1AA000AD33D8 /* NSBundle+MJRefresh.m in Sources */,
 				9174A4A01FC90BE8005FD18E /* NSSet+HYBUnicodeReadable.m in Sources */,
@@ -1443,11 +1474,13 @@
 				9146CE2E1F9F1AA000AD33D8 /* MJRefreshConst.m in Sources */,
 				569931891F79F20200BA1BEB /* MJFoundation.m in Sources */,
 				5699318A1F79F20200BA1BEB /* MJProperty.m in Sources */,
+				914F0A2320B3B3DB00339165 /* UIBarButtonItem+RJBadge.m in Sources */,
 				5699318B1F79F20200BA1BEB /* MJPropertyKey.m in Sources */,
 				5699318C1F79F20200BA1BEB /* MJPropertyType.m in Sources */,
 				569932041F79F52F00BA1BEB /* NSObject+YYAdd.m in Sources */,
 				5699318D1F79F20200BA1BEB /* NSObject+MJClass.m in Sources */,
 				5699318E1F79F20200BA1BEB /* NSObject+MJCoding.m in Sources */,
+				914F0A2520B3B3DB00339165 /* RJBadgeInfo.m in Sources */,
 				5699318F1F79F20200BA1BEB /* NSObject+MJKeyValue.m in Sources */,
 				91AF02CC1FD7E4480096E737 /* ChangeURLViewController.m in Sources */,
 				91EF7C952021B80B00755759 /* UIAlertView+JKBlock.m in Sources */,
@@ -1467,7 +1500,6 @@
 				9146CE381F9F1AA000AD33D8 /* MJRefreshAutoNormalFooter.m in Sources */,
 				91C1730E1FC6C0EC0050F371 /* UIBarButtonItem+Extension.m in Sources */,
 				2DBF7D9A1F74FAC2005EDBE6 /* LoginViewController.m in Sources */,
-				91D83C3D1FB454F9004595DE /* CAAnimation+WAnimation.m in Sources */,
 				569931FF1F79F51000BA1BEB /* UIApplication+YYAdd.m in Sources */,
 				914F3D6D1FB963D0001C35F3 /* AWNavigationController.m in Sources */,
 				569931691F79F13000BA1BEB /* MASConstraintMaker.m in Sources */,
@@ -1485,13 +1517,13 @@
 				2DBF7D651F74EFD5005EDBE6 /* AppDelegate.m in Sources */,
 				9146CE341F9F1AA000AD33D8 /* MJRefreshBackStateFooter.m in Sources */,
 				569931671F79F12800BA1BEB /* MASCompositeConstraint.m in Sources */,
-				91D83C3F1FB454F9004595DE /* UITabBarItem+WZLBadge.m in Sources */,
 				9174A49E1FC90BE8005FD18E /* NSArray+HYBUnicodeReadable.m in Sources */,
 				91EC956F1FAACB75005C5021 /* VerticalButton.m in Sources */,
 				5699316A1F79F13200BA1BEB /* MASLayoutConstraint.m in Sources */,
 				2DBF7D621F74EFD5005EDBE6 /* main.m in Sources */,
 				569931FC1F79F4FF00BA1BEB /* NSNumber+YYAdd.m in Sources */,
 				916376A01FD78CE900E0AF77 /* UIView+JKToast.m in Sources */,
+				914F0A2820B3B3DB00339165 /* NSObject+RJBadgeController.m in Sources */,
 				569931701F79F14500BA1BEB /* ViewController+MASAdditions.m in Sources */,
 				2DBF7D931F74F9FC005EDBE6 /* MBProgressHUD.m in Sources */,
 			);

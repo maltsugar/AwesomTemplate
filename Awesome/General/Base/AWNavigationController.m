@@ -36,7 +36,7 @@
 {
     self.interactivePopGestureRecognizer.enabled = NO;
     if (self.viewControllers.count > 0) { // 这时push进来的控制器viewController，不是第一个子控制器（不是根控制器）
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"navigationbar_back" highImage: @"navigationbar_back"];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"navigationbar_back" highImage: @"navigationbar_back" imageEdgeInsets:UIEdgeInsetsZero];
         viewController.hidesBottomBarWhenPushed = YES;
         
         
@@ -55,7 +55,7 @@
         for (UIViewController *vc in viewControllers) {
             
             if (i > 0) {
-                vc.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"navigationbar_back" highImage: @"navigationbar_back"];
+                vc.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"navigationbar_back" highImage: @"navigationbar_back" imageEdgeInsets:UIEdgeInsetsZero];
                 vc.hidesBottomBarWhenPushed = YES;
             }
             i ++;
