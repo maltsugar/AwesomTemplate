@@ -25,7 +25,7 @@ singleton_interface(AppTools);
 
 - (void)dismissLoginVC;
 
-- (void)userLogoutSucceedWithTip:(BOOL)showTip presentLogin:(BOOL)login;
+- (void)userLogoutSucceedWithTip:(NSString *)showTip presentLogin:(BOOL)login;
 
 
 // 处理请求通用的情况

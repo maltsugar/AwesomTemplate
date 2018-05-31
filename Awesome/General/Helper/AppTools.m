@@ -60,16 +60,16 @@ singleton_implementation(AppTools);
 }
 
 
-- (void)userLogoutSucceedWithTip:(BOOL)showTip presentLogin:(BOOL)login
+- (void)userLogoutSucceedWithTip:(NSString *)showTip presentLogin:(BOOL)login
 {
     // 清空用户id token等
     [[AWUserManager sharedAWUserManager] clearUserInfo];
     
     self.tabBarController.selectedIndex = 0;
     
-    if (showTip) {
+    if (showTip.length) {
         UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
-        [window jk_makeToast:@"退出成功" duration:0.5 position:JKToastPositionCenter];
+        [window jk_makeToast:showTip duration:0.5 position:JKToastPositionCenter];
     }
     if (login) {
         [self forceUserLoginAnimated:YES];
@@ -81,7 +81,7 @@ singleton_implementation(AppTools);
 - (void)manageBaseResponseModle:(BaseResonseModel *)model
 {
     if ([model.responseCode isEqualToString:kResponseLoginverdueCode]){
-        [self userLogoutSucceedWithTip:NO presentLogin:YES];
+        [self userLogoutSucceedWithTip:nil presentLogin:YES];
     }else
     {
         // 统一提示接口返回错误信息
