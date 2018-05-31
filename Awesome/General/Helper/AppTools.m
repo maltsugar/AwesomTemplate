@@ -40,13 +40,16 @@ singleton_implementation(AppTools);
     [self dismissLoginVC];
 }
 
+
 - (void)forceUserLoginAnimated:(BOOL)animated
 {
     // 没有获取本地存储的 用户id 用户token
-    // 没有获取本地存储的 用户id 用户token
     BOOL flag = [[AWUserManager sharedAWUserManager] isUserLogined];
-    if (!flag && nil == _tabBarController.presentedViewController) {
-        [_tabBarController presentViewController:self.loginNav animated:animated completion:nil];
+    UIViewController *parentVC = _tabBarController;
+    if (parentVC.presentedViewController) parentVC = parentVC.presentedViewController;
+    
+    if (!flag) {
+        [parentVC presentViewController:self.loginNav animated:animated completion:nil];
     }
 }
 
@@ -56,13 +59,21 @@ singleton_implementation(AppTools);
     self.loginNav = nil;
 }
 
-- (void)userLogoutSucceed
+
+- (void)userLogoutSucceedWithTip:(BOOL)showTip presentLogin:(BOOL)login
 {
     // 清空用户id token等
     [[AWUserManager sharedAWUserManager] clearUserInfo];
     
-//    [_tabBarController presentViewController:self.loginNav animated:NO completion:nil];
     self.tabBarController.selectedIndex = 0;
+    
+    if (showTip) {
+        UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+        [window jk_makeToast:@"退出成功" duration:0.5 position:JKToastPositionCenter];
+    }
+    if (login) {
+        [self forceUserLoginAnimated:YES];
+    }
 }
 
 
@@ -70,8 +81,7 @@ singleton_implementation(AppTools);
 - (void)manageBaseResponseModle:(BaseResonseModel *)model
 {
     if ([model.responseCode isEqualToString:kResponseLoginverdueCode]){
-        [self userLogoutSucceed];
-        [self forceUserLoginAnimated:YES];
+        [self userLogoutSucceedWithTip:NO presentLogin:YES];
     }else
     {
         // 统一提示接口返回错误信息
