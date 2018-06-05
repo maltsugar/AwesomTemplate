@@ -146,7 +146,6 @@ shouldPrevent = NO; \
 #import "MJRefresh.h"
 #import "MJExtension.h"
 #import "YYCache.h"
-#import "UIKit+AFNetworking.h"
 #import "UIDevice+YYAdd.h"
 #import "UIViewController+Extension.h"
 #import "UIView+JKToast.h"
