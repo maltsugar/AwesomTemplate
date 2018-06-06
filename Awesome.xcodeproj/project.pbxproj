@@ -165,7 +165,7 @@
 		91AF02CB1FD7E4480096E737 /* ChangeURLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91AF02C91FD7E4480096E737 /* ChangeURLViewController.xib */; };
 		91AF02CC1FD7E4480096E737 /* ChangeURLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91AF02CA1FD7E4480096E737 /* ChangeURLViewController.m */; };
 		91B0BAE020622A2500B31447 /* AWUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B0BADF20622A2500B31447 /* AWUserManager.m */; };
-		91B34ACB20C7B68200A9DA66 /* XCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B34AC920C7B68200A9DA66 /* XCFileManager.m */; };
+		91B34ACF20C7B72E00A9DA66 /* XCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B34ACD20C7B72E00A9DA66 /* XCFileManager.m */; };
 		91C172E11FC66FE20050F371 /* HYBNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C172E01FC66FE20050F371 /* HYBNetworking.m */; };
 		91C1730E1FC6C0EC0050F371 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1730C1FC6C0EB0050F371 /* UIBarButtonItem+Extension.m */; };
 		91D83C141FB4459E004595DE /* NSString+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C131FB4459E004595DE /* NSString+Tools.m */; };
@@ -517,8 +517,8 @@
 		91AF02CA1FD7E4480096E737 /* ChangeURLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeURLViewController.m; sourceTree = "<group>"; };
 		91B0BADE20622A2500B31447 /* AWUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWUserManager.h; sourceTree = "<group>"; };
 		91B0BADF20622A2500B31447 /* AWUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWUserManager.m; sourceTree = "<group>"; };
-		91B34AC920C7B68200A9DA66 /* XCFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCFileManager.m; sourceTree = "<group>"; };
-		91B34ACA20C7B68200A9DA66 /* XCFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCFileManager.h; sourceTree = "<group>"; };
+		91B34ACD20C7B72E00A9DA66 /* XCFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCFileManager.m; sourceTree = "<group>"; };
+		91B34ACE20C7B72E00A9DA66 /* XCFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCFileManager.h; sourceTree = "<group>"; };
 		91C172DF1FC66FE20050F371 /* HYBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBNetworking.h; sourceTree = "<group>"; };
 		91C172E01FC66FE20050F371 /* HYBNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBNetworking.m; sourceTree = "<group>"; };
 		91C1730C1FC6C0EB0050F371 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
@@ -648,7 +648,7 @@
 		2DBF7D7B1F74F08B005EDBE6 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				91B34AC820C7B68200A9DA66 /* XCFileManager */,
+				91B34ACC20C7B72E00A9DA66 /* XCFileManager */,
 				91255E1320C68720008C12FB /* SDWebImage */,
 				914F0A0820B3B3DB00339165 /* RJBadgeKit */,
 				9146CE411F9F1AC000AD33D8 /* IQKeyboardManager */,
@@ -1379,15 +1379,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		91B34AC820C7B68200A9DA66 /* XCFileManager */ = {
+		91B34ACC20C7B72E00A9DA66 /* XCFileManager */ = {
 			isa = PBXGroup;
 			children = (
-				91B34ACA20C7B68200A9DA66 /* XCFileManager.h */,
-				91B34AC920C7B68200A9DA66 /* XCFileManager.m */,
+				91B34ACE20C7B72E00A9DA66 /* XCFileManager.h */,
+				91B34ACD20C7B72E00A9DA66 /* XCFileManager.m */,
 			);
-			name = XCFileManager;
-			path = "Collector(看情况使用)/XCFileManager";
-			sourceTree = SOURCE_ROOT;
+			path = XCFileManager;
+			sourceTree = "<group>";
 		};
 		91D83C151FB44E82004595DE /* NSDate */ = {
 			isa = PBXGroup;
@@ -1593,7 +1592,7 @@
 				9146CE301F9F1AA000AD33D8 /* UIScrollView+MJExtension.m in Sources */,
 				569931F51F79F4C900BA1BEB /* YYKVStorage.m in Sources */,
 				91255E5520C68720008C12FB /* UIImageView+HighlightedWebCache.m in Sources */,
-				91B34ACB20C7B68200A9DA66 /* XCFileManager.m in Sources */,
+				91B34ACF20C7B72E00A9DA66 /* XCFileManager.m in Sources */,
 				914F0A2A20B3B3DB00339165 /* NSString+RJBadge.m in Sources */,
 				9146CE3D1F9F1AA000AD33D8 /* MJRefreshHeader.m in Sources */,
 				9146CE311F9F1AA000AD33D8 /* NSBundle+MJRefresh.m in Sources */,
