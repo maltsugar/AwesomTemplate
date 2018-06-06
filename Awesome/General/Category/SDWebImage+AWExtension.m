@@ -8,6 +8,13 @@
 
 #import "SDWebImage+AWExtension.h"
 
+//#import <UIImageView+WebCache.h>
+//#import <UIButton+WebCache.h>
+
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+
+
 static SDWebImageOptions __sdImageOptions = SDWebImageAllowInvalidSSLCertificates;
 
 
@@ -23,6 +30,17 @@ static SDWebImageOptions __sdImageOptions = SDWebImageAllowInvalidSSLCertificate
     [self sd_setImageWithURL:url placeholderImage:placeholder options:__sdImageOptions];
 }
 
+- (void)aw_setImageWithURL:(nullable NSURL *)url
+          placeholderImage:(nullable UIImage *)placeholder
+                  progress:(nullable SDWebImageDownloaderProgressBlock)progressBlock
+                 completed:(nullable SDExternalCompletionBlock)completedBlock
+{
+    [self sd_setImageWithURL:url
+            placeholderImage:placeholder
+                     options:__sdImageOptions
+                    progress:progressBlock
+                   completed:completedBlock];
+}
 
 @end
 

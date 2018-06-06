@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import "AWTabBarController.h"
 #import "AWUserManager.h"
+#import "XCFileManager.h"
 
 @interface AppTools ()
 
@@ -144,6 +145,49 @@ singleton_implementation(AppTools);
         }
         
     }
+}
+
+/**
+ 缓存包括以下几个地方
+ 1. Cache 文件夹下的所有文件
+ 2. 不用获取了 SD 的图片缓存 (/Library/Caches/default/com.hackemist.SDWebImageCache.default)
+ 3. HYBNetWorking的请求缓存
+ 
+ */
++ (void)getAllCacheSize:(GetCacheSizeComplete)block
+{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSUInteger totalSize = 0;
+        
+        NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
+        NSNumber *num = [XCFileManager sizeOfDirectoryAtPath:cachePath];
+        totalSize += num.unsignedLongLongValue;
+        totalSize += [HYBNetworking totalCacheSize];
+        
+        // 计算完成回调
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            
+            if (block) {
+                block(totalSize);
+            }
+        });
+    });
+    
+}
+
++ (void)clearAllCache:(void(^)())completion
+{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        [XCFileManager clearCachesDirectory];
+        [HYBNetworking clearCaches];
+        
+        if (completion) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion();
+            });
+        }
+    });
 }
 
 

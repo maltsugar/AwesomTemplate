@@ -12,6 +12,8 @@
 
 @class PopOverVieConfiguration, BaseResonseModel;
 
+typedef void(^GetCacheSizeComplete)(NSUInteger size);
+
 @interface AppTools : NSObject
 singleton_interface(AppTools);
 
@@ -38,6 +40,11 @@ singleton_interface(AppTools);
 
 
 + (void)showTipWithError:(NSError *)error;
+
+
+// 缓存相关 单位：byte
++ (void)getAllCacheSize:(GetCacheSizeComplete)block;
++ (void)clearAllCache:(void(^)())completion;
 
 @end
 
