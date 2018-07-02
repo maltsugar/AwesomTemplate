@@ -100,6 +100,9 @@ blue:((float)(hexValue & 0xFF)) / 255.0 alpha:1.0]
 // 通知中心 （单例对象）
 #define kNotificationCenter [NSNotificationCenter defaultCenter]
 
+// 上次展示开屏引导页的版本号Key，不需要显示时，直接启动时同步为当前版本号即可， 需要显示时在点击确定后同步为当前版本号
+#define kLastShowIntrolductionVersionKey @"kLastShowIntrolductionVersionKey"
+
 
 #define kAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 

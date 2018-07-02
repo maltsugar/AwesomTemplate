@@ -38,6 +38,9 @@ singleton_interface(AppTools);
 - (void)switchTabbarControllerIndex:(NSUInteger)index;
 
 
+// 显示引导页
+- (void)showIntrolductionPages;
+
 
 + (void)showTipWithError:(NSError *)error;
 

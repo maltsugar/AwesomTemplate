@@ -12,11 +12,14 @@
 #import "AWTabBarController.h"
 #import "AWUserManager.h"
 #import "XCFileManager.h"
+#import "ZWIntroductionViewController.h"
+
 
 @interface AppTools ()
 
 @property (nonatomic, strong) AWTabBarController *tabBarController;
 @property (nonatomic, strong) AWNavigationController *loginNav;
+@property (nonatomic, strong) ZWIntroductionView *introductionView;
 
 @end
 
@@ -98,6 +101,35 @@ singleton_implementation(AppTools);
 - (void)switchTabbarControllerIndex:(NSUInteger)index
 {
     [_tabBarController setSelectedIndex:index];
+}
+
+
+// 显示引导页
+- (void)showIntrolductionPages;
+{
+    UIWindow *window = kAppDelegate.window;
+    
+    UIButton *enterButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    enterButton.backgroundColor = [UIColor orangeColor];
+    [enterButton setTitle:@"立即进入" forState:UIControlStateNormal];
+    
+    
+    NSArray *imgNames = @[@"img_index_01bg", @"img_index_02bg", @"img_index_03bg"];
+    ZWIntroductionView *introductionView = [[ZWIntroductionView alloc] initWithCoverImageNames:imgNames backgroundImageNames:nil button:enterButton];
+    [window addSubview:introductionView];
+    self.introductionView = introductionView;
+    
+    kWeakSelf(self);
+    [introductionView setDidSelectedEnter:^{
+        kStrongSelf(self);
+        [self.introductionView removeFromSuperview];
+        self.introductionView = nil;
+        
+        NSString *lastIntrolVersion = [kAppVersion copy];
+        [kUserDefaults setObject:lastIntrolVersion forKey:kLastShowIntrolductionVersionKey];
+        [kUserDefaults synchronize];
+    }];
+    
 }
 
 

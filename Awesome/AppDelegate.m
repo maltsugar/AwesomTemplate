@@ -60,6 +60,27 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dealwithCrashMessage:) name:AvoidCrashNotification object:nil];
 #endif
     
+    
+    // 版本引导页，并不是每个小版本都显示，具体控制由下面注释处3行代码控制
+    NSString *lastIntrolVersion = [[NSUserDefaults standardUserDefaults] objectForKey:kLastShowIntrolductionVersionKey];
+    if (lastIntrolVersion) {
+        // 默认不显示引导页，直接执行下面3行代码
+        // 需要显示引导页，注释下面3行代码
+        lastIntrolVersion = [kAppVersion copy];
+        [kUserDefaults setObject:lastIntrolVersion forKey:kLastShowIntrolductionVersionKey];
+        [kUserDefaults synchronize];
+        
+        
+        if (![lastIntrolVersion isEqualToString:kAppVersion]) {
+            [[AppTools sharedAppTools] showIntrolductionPages];
+        }
+        
+    }else
+    {
+        [[AppTools sharedAppTools] showIntrolductionPages];
+    }
+    
+    
     return YES;
 }
 
