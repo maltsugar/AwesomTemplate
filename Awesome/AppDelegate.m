@@ -72,11 +72,13 @@
         
         
         if (![lastIntrolVersion isEqualToString:kAppVersion]) {
+            // 引导页结束后， 同步当前版本号到kLastShowIntrolductionVersionKey
             [[AppTools sharedAppTools] showIntrolductionPages];
         }
         
     }else
     {
+        // 引导页结束后， 同步当前版本号到kLastShowIntrolductionVersionKey
         [[AppTools sharedAppTools] showIntrolductionPages];
     }
     
