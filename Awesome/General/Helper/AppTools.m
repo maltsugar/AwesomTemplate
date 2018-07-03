@@ -12,14 +12,14 @@
 #import "AWTabBarController.h"
 #import "AWUserManager.h"
 #import "XCFileManager.h"
-#import "ZWIntroductionViewController.h"
+#import "GYIntroductionView.h"
 
 
 @interface AppTools ()
 
 @property (nonatomic, strong) AWTabBarController *tabBarController;
 @property (nonatomic, strong) AWNavigationController *loginNav;
-@property (nonatomic, strong) ZWIntroductionView *introductionView;
+@property (nonatomic, strong) GYIntroductionView *introductionView;
 
 @end
 
@@ -109,18 +109,23 @@ singleton_implementation(AppTools);
 {
     UIWindow *window = kAppDelegate.window;
     
-    UIButton *enterButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    enterButton.backgroundColor = [UIColor orangeColor];
-    [enterButton setTitle:@"立即进入" forState:UIControlStateNormal];
     
     
     NSArray *imgNames = @[@"img_index_01bg", @"img_index_02bg", @"img_index_03bg"];
-    ZWIntroductionView *introductionView = [[ZWIntroductionView alloc] initWithCoverImageNames:imgNames backgroundImageNames:nil button:enterButton];
+    GYIntroductionView *introductionView = [[GYIntroductionView alloc] initWithImgNames:imgNames bgImgNames:nil];
     [window addSubview:introductionView];
     self.introductionView = introductionView;
     
+    
+    UIButton *enterButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    enterButton.backgroundColor = [UIColor orangeColor];
+    [enterButton setTitle:@"立即进入" forState:UIControlStateNormal];
+    enterButton.bounds = CGRectMake(0, 0, 200, 60);
+    enterButton.center = CGPointMake(kScreenWidth * 0.5, kScreenHeight - 160);
+    introductionView.enterButton = enterButton;
+    
     kWeakSelf(self);
-    [introductionView setDidSelectedEnter:^{
+    [introductionView setEnterBlock:^{
         kStrongSelf(self);
         [self.introductionView removeFromSuperview];
         self.introductionView = nil;
