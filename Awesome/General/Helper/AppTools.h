@@ -49,6 +49,10 @@ singleton_interface(AppTools);
 + (void)getAllCacheSize:(GetCacheSizeComplete)block;
 + (void)clearAllCache:(void(^)())completion;
 
+// 获取网络类型
++ (NSString *)getNetconnTypeIsDetail:(BOOL)detail;
+
+
 @end
 
 

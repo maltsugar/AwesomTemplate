@@ -15,4 +15,7 @@
 
 - (void)setNaviBarAlpha:(CGFloat)alpha;
 
+
+- (void)setNaviBarTitleHidenAlpha:(CGFloat)alpha title:(NSString *)title;
+
 @end

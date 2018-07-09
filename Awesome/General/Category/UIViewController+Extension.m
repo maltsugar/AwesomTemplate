@@ -27,14 +27,61 @@
     
 }
 
+//- (void)setNaviBarAlpha:(CGFloat)alpha
+//{
+//    UIImage *bgImg = [UIImage jk_imageWithColor:[[UIColor whiteColor] colorWithAlphaComponent:alpha]];
+//    UIImage *line = [UIImage jk_imageWithColor:[[UIColor lightGrayColor] colorWithAlphaComponent:alpha]];
+//    UINavigationBar *navBar = self.navigationController.navigationBar;
+//    [navBar setBackgroundImage:bgImg forBarMetrics:UIBarMetricsDefault];
+//    [navBar setShadowImage:line];
+//}
+
 - (void)setNaviBarAlpha:(CGFloat)alpha
 {
     UIImage *bgImg = [UIImage jk_imageWithColor:[[UIColor whiteColor] colorWithAlphaComponent:alpha]];
-    UIImage *line = [UIImage jk_imageWithColor:[[UIColor lightGrayColor] colorWithAlphaComponent:alpha]];
+//    UIImage *line = [UIImage jk_imageWithColor:[kColorNaviLineGray colorWithAlphaComponent:alpha]];
     UINavigationBar *navBar = self.navigationController.navigationBar;
     [navBar setBackgroundImage:bgImg forBarMetrics:UIBarMetricsDefault];
-    [navBar setShadowImage:line];
+//    [navBar setShadowImage:line];
+    
+    UIButton *leftBtn = nil;
+    if ([self.navigationItem.leftBarButtonItem.customView isKindOfClass:[UIButton class]]) {
+        leftBtn = self.navigationItem.leftBarButtonItem.customView;
+    }
+    
+    if (alpha > 0.9) {
+//        NSDictionary *dict = @{NSForegroundColorAttributeName : kColorNaviText};
+//        [navBar setTitleTextAttributes:dict];
+        if (leftBtn) {
+            [leftBtn setImage:kImageNamed(@"aw_naviBack_black") forState:UIControlStateNormal];
+        }
+        //        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+        
+    }else
+    {
+        NSDictionary *dict = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+        [navBar setTitleTextAttributes:dict];
+        if (leftBtn) {
+            //            [leftBtn setImage:kImageNamed(@"aw_naviBack_gray") forState:UIControlStateNormal];
+            [leftBtn setImage:kImageNamed(@"aw_naviBack_white") forState:UIControlStateNormal];
+            
+        }
+        
+        //        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+        
+    }
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
+- (void)setNaviBarTitleHidenAlpha:(CGFloat)alpha title:(NSString *)title
+{
+    [self setNaviBarAlpha:alpha];
+    if (alpha > 0.9) {
+        self.title = title;
+    }else
+    {
+        self.title = nil;
+    }
+}
 
 @end
