@@ -55,7 +55,8 @@
 	- 4.2 Build Settings,搜索 info, 修改Info.plist File 值为：`MyProject/Info.plist`
 	<img src="http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl6wv4dj21c00vqgqu.jpg" width="600">
 	
-- ### 5.bulid succeed!别忘了把最外面的文件夹名称也改下，删除`.git`隐藏文件夹(终端cd项目目录, `rm -rf .git`)
+- ### 5.这时就可以Bulid Succeed!
+	- 别忘了把最外面的文件夹名称也改成MyProject，删除`.git`隐藏文件夹(终端cd项目目录, `rm -rf .git`)
 	<img src="http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl7g077j20og01wwem.jpg" width="600">   
 	 
 # 注意
