@@ -37,7 +37,7 @@
 	<img src="http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl3uel1j216o0o0q4j.jpg" width="600">
 
 - ### 3.修改工程目录名称  
-	- 3.1 右键项目文件夹，Show In Finder,修改此目录为MyProject，修改后所有文件变红色
+	- 3.1 右键项目文件夹，Show in Finder,修改此目录为MyProject，修改后所有文件变红色
 	
 	<img src="http://wx3.sinaimg.cn/mw690/72aba7efgy1flhdl4k7qaj20ky0vqq7w.jpg" width="600">
 	
@@ -45,7 +45,7 @@
 	
 	<img src="http://wx3.sinaimg.cn/mw690/72aba7efgy1flhi3a4r3yj20fm0r2765.jpg" width="600">   
 	
-	- 3.3 选择第一步改名后的项目目录（MyProject文件夹）
+	- 3.3 选择第一步改名后的项目目录（MyProject文件夹）, 点击Choose
 	<img src="http://wx2.sinaimg.cn/mw690/72aba7efgy1flhdl5s9cij20p80nmq5r.jpg" width="600">
 	
 - ### 4.修改pch文件和info.plist文件目录
