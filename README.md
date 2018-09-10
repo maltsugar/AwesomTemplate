@@ -16,7 +16,8 @@
 库如果有重大更新，比如适配iPhone X的MJRefresh，我也会更新的！
 
 
-<h1 id="awdes">更改整个项目名称教程</h1>
+# 更改整个项目名称教程
+<a id="awdes">·</a>
 此处演示是xcode9，我之前用xcode8 也改过，从xcode5以后基本都一样。[我参考的这篇文章](http://www.cnblogs.com/tbfirstone/p/3601541.html)
 #### 将Awesome改为MyProject
 - ### 1.修改工程名
