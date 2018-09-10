@@ -21,31 +21,32 @@
 #### 将Awesome改为MyProject
 - ### 1.修改工程名
 	- 1.1 单击如图箭头，键盘Enter键，修改为MyProject
-	<img src="http://wx2.sinaimg.cn/mw690/72aba7efgy1flhiprp2unj20dq0b0taa.jpg" width="400"> 
+	<img src="http://wx2.sinaimg.cn/mw690/72aba7efgy1flhiprp2unj20dq0b0taa.jpg" width="600"> 
+	
 	- 1.2 会出现以下提示, 点击 Rename，再点击OK
-	<img src="http://wx2.sinaimg.cn/mw690/72aba7efgy1flhdl2mkvbj20rs0l4gnn.jpg" width="400">  
+	<img src="http://wx2.sinaimg.cn/mw690/72aba7efgy1flhdl2mkvbj20rs0l4gnn.jpg" width="600">  
 	
 	
 	
 	
 - ### 2.修改Scheme 
 	- 2.1 点击Manage Schemes
-	<img src="http://wx3.sinaimg.cn/mw690/72aba7efgy1flhdl3b32kj20ju0bi40s.jpg" width="400">
+	<img src="http://wx3.sinaimg.cn/mw690/72aba7efgy1flhdl3b32kj20ju0bi40s.jpg" width="600">
 	
 	- 2.2 选中Awesome，Enter键，修改为MyProject
-	<img src="http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl3uel1j216o0o0q4j.jpg" width="400">
+	<img src="http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl3uel1j216o0o0q4j.jpg" width="600">
 
 - ### 3.修改工程目录名称  
 	- 3.1 右键项目文件夹，Show In Finder,修改此目录为MyProject，修改后所有文件变红色
 	
-	<img src="http://wx3.sinaimg.cn/mw690/72aba7efgy1flhdl4k7qaj20ky0vqq7w.jpg" width="400">
+	<img src="http://wx3.sinaimg.cn/mw690/72aba7efgy1flhdl4k7qaj20ky0vqq7w.jpg" width="600">
 	
 	- 3.2 修改此处Name文本 Awesome 为 MyProject, 之后点击灰色文件夹图标（图中圈住）
 	
-	<img src="http://wx3.sinaimg.cn/mw690/72aba7efgy1flhi3a4r3yj20fm0r2765.jpg" width="400">   
+	<img src="http://wx3.sinaimg.cn/mw690/72aba7efgy1flhi3a4r3yj20fm0r2765.jpg" width="600">   
 	
 	- 3.3 选择第一步改名后的项目目录（MyProject文件夹）
-	<img src="http://wx2.sinaimg.cn/mw690/72aba7efgy1flhdl5s9cij20p80nmq5r.jpg" width="400">
+	<img src="http://wx2.sinaimg.cn/mw690/72aba7efgy1flhdl5s9cij20p80nmq5r.jpg" width="600">
 	
 - ### 4.修改pch文件和info.plist文件目录
 	- 4.1 Build Settings,搜索 pch, 修改pch文件新的目录为：`$(SRCROOT)/MyProject/PrefixHeader.pch` 
