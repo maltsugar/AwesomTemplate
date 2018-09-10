@@ -15,8 +15,8 @@
 感谢为开源无私奉献的大神，这里面使用的库，也是亲身实践较好用的，没有其他目的，只是我感觉比较顺手。当然你也可以找自己顺手的，替换里面的库。
 库如果有重大更新，比如适配iPhone X的MJRefresh，我也会更新的！
 
-# 更改整个项目名称教程
 <a id="awdes">-</a>
+# 更改整个项目名称教程
 此处演示是xcode9，我之前用xcode8 也改过，从xcode5以后基本都一样。[我参考的这篇文章](http://www.cnblogs.com/tbfirstone/p/3601541.html)
 #### 将Awesome改为MyProject
 - ### 1.修改工程名
@@ -60,5 +60,5 @@
 	<img src="http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl7g077j20og01wwem.jpg" width="600">   
 	 
 # 注意
-该项目使用了YYCache，所有Xcode要8.0以上，可能有的同学的xcode版本问题，编译报错.   
+该项目使用了YYCache，所以Xcode要8.0以上，可能有的同学的xcode版本问题，编译报错.   
 ##### 尝试导入 `lizb.tbd`  `libsqlite3.tbd`
