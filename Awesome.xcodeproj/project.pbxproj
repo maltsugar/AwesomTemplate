@@ -211,7 +211,6 @@
 		2DBF7D991F74FAC2005EDBE6 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		560D28F71F7DD14900C7ACEC /* AWTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWTabBarController.h; sourceTree = "<group>"; };
 		560D28F81F7DD14900C7ACEC /* AWTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWTabBarController.m; sourceTree = "<group>"; };
-		5699314D1F79F12100BA1BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5699314E1F79F12100BA1BEB /* MASCompositeConstraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		5699314F1F79F12100BA1BEB /* MASCompositeConstraint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		569931501F79F12100BA1BEB /* MASConstraint+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -237,7 +236,6 @@
 		569931641F79F12100BA1BEB /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		569931651F79F12100BA1BEB /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		569931661F79F12100BA1BEB /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
-		569931721F79F1DE00BA1BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		569931731F79F1DE00BA1BEB /* MJExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
 		569931741F79F1DE00BA1BEB /* MJExtensionConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
 		569931751F79F1DE00BA1BEB /* MJExtensionConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConst.m; sourceTree = "<group>"; };
@@ -819,7 +817,6 @@
 		5699314C1F79F12100BA1BEB /* Masonry */ = {
 			isa = PBXGroup;
 			children = (
-				5699314D1F79F12100BA1BEB /* Info.plist */,
 				5699314E1F79F12100BA1BEB /* MASCompositeConstraint.h */,
 				5699314F1F79F12100BA1BEB /* MASCompositeConstraint.m */,
 				569931501F79F12100BA1BEB /* MASConstraint+Private.h */,
@@ -852,7 +849,6 @@
 		569931711F79F1DE00BA1BEB /* MJExtension */ = {
 			isa = PBXGroup;
 			children = (
-				569931721F79F1DE00BA1BEB /* Info.plist */,
 				569931731F79F1DE00BA1BEB /* MJExtension.h */,
 				569931741F79F1DE00BA1BEB /* MJExtensionConst.h */,
 				569931751F79F1DE00BA1BEB /* MJExtensionConst.m */,
