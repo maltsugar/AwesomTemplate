@@ -324,11 +324,21 @@ NSString *const kBadNetworkTip          = @"请求失败，请稍后重试";
 
 
 BOOL isIPhoneX(void) {
-    if ([UIScreen instancesRespondToSelector:@selector(currentMode)]) {
-        return CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size);
-    }else{
-        return NO;
+    BOOL iPhoneX = NO;
+    /// 先判断设备是否是iPhone/iPod
+    if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {
+        return iPhoneX;
     }
+    
+    if (@available(iOS 11.0, *)) {
+        /// 利用safeAreaInsets.bottom > 0.0来判断是否是iPhone X。
+        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+        if (mainWindow.safeAreaInsets.bottom > 0.0) {
+            iPhoneX = YES;
+        }
+    }
+    
+    return iPhoneX;
 }
 
 char *formattedLogDate(void)
