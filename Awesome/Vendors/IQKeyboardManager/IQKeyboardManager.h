@@ -22,6 +22,17 @@
 // THE SOFTWARE.
 
 #import "IQKeyboardManagerConstants.h"
+#import "IQUIView+IQKeyboardToolbar.h"
+#import "IQPreviousNextView.h"
+#import "IQUIViewController+Additions.h"
+#import "IQKeyboardReturnKeyHandler.h"
+#import "IQTextView.h"
+#import "IQToolbar.h"
+#import "IQUIScrollView+Additions.h"
+#import "IQUITextFieldView+Additions.h"
+#import "IQBarButtonItem.h"
+#import "IQTitleBarButtonItem.h"
+#import "IQUIView+Hierarchy.h"
 
 #import <CoreGraphics/CGBase.h>
 
@@ -61,7 +72,7 @@ extern NSInteger const kIQPreviousNextButtonToolbarTag;
 ///--------------------------
 
 /**
- Returns the default singleton instance.
+ Returns the default singleton instance. You are not allowed to create your own instances of this class.
  */
 + (nonnull instancetype)sharedManager;
 
@@ -77,8 +88,10 @@ extern NSInteger const kIQPreviousNextButtonToolbarTag;
 
 /**
  Prevent keyboard manager to slide up the rootView to more than keyboard height. Default is YES.
+ 
+ Due to change in core-logic of handling distance between textField and keyboard distance, this tweak is no longer needed and things will just work out of the box for most of the cases.
  */
-@property(nonatomic, assign) BOOL preventShowingBottomBlankSpace;
+@property(nonatomic, assign) BOOL preventShowingBottomBlankSpace __attribute__((deprecated("Due to change in core-logic of handling distance between textField and keyboard distance, this tweak is no longer needed and things will just work out of the box for most of the cases. This property will be removed in future release.")));
 
 /**
  Refreshes textField/textView position if any external changes is explicitly made by user.
@@ -137,13 +150,17 @@ extern NSInteger const kIQPreviousNextButtonToolbarTag;
 @property(nonatomic, assign) IQPreviousNextDisplayMode previousNextDisplayMode;
 
 /**
- Toolbar done button icon, If nothing is provided then check toolbarDoneBarButtonItemText to draw done button.
+ Toolbar previous/next/done button icon, If nothing is provided then check toolbarDoneBarButtonItemText to draw done button.
  */
+@property(nullable, nonatomic, strong) UIImage *toolbarPreviousBarButtonItemImage;
+@property(nullable, nonatomic, strong) UIImage *toolbarNextBarButtonItemImage;
 @property(nullable, nonatomic, strong) UIImage *toolbarDoneBarButtonItemImage;
 
 /**
- Toolbar done button text, If nothing is provided then system default 'UIBarButtonSystemItemDone' will be used.
+ Toolbar previous/next/done button text, If nothing is provided then system default 'UIBarButtonSystemItemDone' will be used.
  */
+@property(nullable, nonatomic, strong) NSString *toolbarPreviousBarButtonItemText;
+@property(nullable, nonatomic, strong) NSString *toolbarNextBarButtonItemText;
 @property(nullable, nonatomic, strong) NSString *toolbarDoneBarButtonItemText;
 
 /**
@@ -156,6 +173,16 @@ extern NSInteger const kIQPreviousNextButtonToolbarTag;
  Placeholder Font. Default is nil.
  */
 @property(nullable, nonatomic, strong) UIFont *placeholderFont;
+
+/**
+ Placeholder Color. Default is nil. Which means lightGray
+ */
+@property(nullable, nonatomic, strong) UIColor *placeholderColor;
+
+/**
+ Placeholder Button Color when it's treated as button. Default is nil. Which means iOS Blue for light toolbar and Yellow for dark toolbar
+ */
+@property(nullable, nonatomic, strong) UIColor *placeholderButtonColor;
 
 /**
  Reload all toolbar buttons on the fly.
@@ -238,7 +265,7 @@ extern NSInteger const kIQPreviousNextButtonToolbarTag;
 /**
  If YES, then always consider UINavigationController.view begin point as {0,0}, this is a workaround to fix a bug #464 because there are no notification mechanism exist when UINavigationController.view.frame gets changed internally.
  */
-@property(nonatomic, assign) BOOL shouldFixInteractivePopGestureRecognizer;
+@property(nonatomic, assign) BOOL shouldFixInteractivePopGestureRecognizer __attribute__((deprecated("Due to change in core-logic of handling distance between textField and keyboard distance, this tweak is no longer needed and things will just work out of the box for most of the cases. This property will be removed in future release.")));
 
 #ifdef __IPHONE_11_0
 ///---------------------------
@@ -248,7 +275,7 @@ extern NSInteger const kIQPreviousNextButtonToolbarTag;
 /**
  If YES, then library will try to adjust viewController.additionalSafeAreaInsets to automatically handle layout guide. Default is NO.
  */
-@property(nonatomic, assign) BOOL canAdjustAdditionalSafeAreaInsets;
+@property(nonatomic, assign) BOOL canAdjustAdditionalSafeAreaInsets __attribute__((deprecated("Due to change in core-logic of handling distance between textField and keyboard distance, this safe area tweak is no longer needed and things will just work out of the box regardless of constraint pinned with safeArea/layoutGuide/superview. This property will be removed in future release.")));
 #endif
 
 ///---------------------------------------------
@@ -319,7 +346,7 @@ extern NSInteger const kIQPreviousNextButtonToolbarTag;
 @property(nonatomic, assign) BOOL enableDebugging;
 
 /**
- @warning Use below methods to completely enable/disable notifications registered by library internally. Please keep in mind that library is totally dependent on NSNotification of UITextField, UITextField, Keyboard etc. If you do unregisterAllNotifications then library will not work at all. You should only use below methods if you want to completedly disable all library functions. You should use below methods at your own risk.
+ @warning Use these methods to completely enable/disable notifications registered by library internally. Please keep in mind that library is totally dependent on NSNotification of UITextField, UITextField, Keyboard etc. If you do unregisterAllNotifications then library will not work at all. You should only use below methods if you want to completedly disable all library functions. You should use below methods at your own risk.
  */
 -(void)registerAllNotifications;
 -(void)unregisterAllNotifications;
