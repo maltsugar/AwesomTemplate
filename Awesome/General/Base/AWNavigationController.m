@@ -32,6 +32,17 @@
     self.delegate = self;
 }
 
+- (UIViewController *)childViewControllerForStatusBarStyle
+{
+    return self.visibleViewController;
+}
+
+- (UIViewController *)childViewControllerForStatusBarHidden
+{
+    return self.visibleViewController;
+}
+
+
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     self.interactivePopGestureRecognizer.enabled = NO;
@@ -133,6 +144,16 @@
  self.delegate = self;
  }
  
+ - (UIViewController *)childViewControllerForStatusBarStyle
+ {
+ return self.visibleViewController;
+ }
+ 
+ - (UIViewController *)childViewControllerForStatusBarHidden
+ {
+ return self.visibleViewController;
+ }
+ 
  - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
  {
  self.interactivePopGestureRecognizer.enabled = NO;
@@ -224,6 +245,16 @@
  
  self.navigationBar.backIndicatorImage = [[UIImage imageNamed:@"navi_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
  self.navigationBar.backIndicatorTransitionMaskImage = [[UIImage imageNamed:@"navi_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+ }
+ 
+ - (UIViewController *)childViewControllerForStatusBarStyle
+ {
+ return self.visibleViewController;
+ }
+ 
+ - (UIViewController *)childViewControllerForStatusBarHidden
+ {
+ return self.visibleViewController;
  }
  
  - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
