@@ -18,4 +18,7 @@
 
 - (void)setNaviBarTitleHidenAlpha:(CGFloat)alpha title:(NSString *)title;
 
+// 重置为系统默认状态
+- (void)resetSystemNavibar;
+
 @end
