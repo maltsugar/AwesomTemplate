@@ -57,7 +57,7 @@
 //                            };
 //
 //    [HYBNetworking configRequestType:kHYBRequestTypeJSON responseType:kHYBResponseTypeJSON shouldAutoEncodeUrl:NO callbackOnCancelRequest:YES];
-//    [HYBNetworking postWithUrl:url refreshCache:NO params:param success:^(id response) {
+//    [HYBNetworking postWithUrl:url refreshCache:YES params:param success:^(id response) {
 //        NSLog(@"%@", response);
 //    } fail:^(NSError *error) {
 //        NSLog(@"%@", error.localizedDescription);
