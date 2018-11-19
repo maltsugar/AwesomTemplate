@@ -6,16 +6,6 @@
 //  Copyright © 2017年 zgy. All rights reserved.
 //
 
-/**
- 用法提示
- HYBNetworking.m
-
- Line: 320、602  添加接口公共参数，如userID等
- Line: 371、465 附近，统一提示接口返回的错误信息
-
- get 和 post，网络失败会自动提示错误code 描述
- */
-
 
 #import "AppDelegate.h"
 #import "AvoidCrash.h"
@@ -38,10 +28,10 @@
     [[AppTools sharedAppTools] startApp];
     
     // 配置请求类，采用AWConfigManager不用宏 可以动态设置URL，便于调试
-    AWConfigManager *config = [AWConfigManager sharedAWConfigManager];
-    [HYBNetworking updateBaseUrl:[NSString stringWithFormat:@"%@/%@", config.baseURL, config.path]];
-    [HYBNetworking setTimeout:30];
-    [HYBNetworking enableInterfaceDebug:YES];
+    // 调用该方法会调用内部setup方法，设置通用配置
+    [AWConfigManager sharedConfigManager];
+    
+  
     
     // 设置键盘
     [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];

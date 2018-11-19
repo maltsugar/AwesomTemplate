@@ -46,6 +46,9 @@
 		56C094A21F7A0724002C3ECE /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0947D1F7A06FD002C3ECE /* AFURLResponseSerialization.m */; };
 		56C094A31F7A0724002C3ECE /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C0947F1F7A06FD002C3ECE /* AFURLSessionManager.m */; };
 		56C094A61F7A18B5002C3ECE /* NSDate+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C094A51F7A18B5002C3ECE /* NSDate+YYAdd.m */; };
+		91226C0721A281A20000375B /* XMEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 91226C0021A281A20000375B /* XMEngine.m */; };
+		91226C0821A281A20000375B /* XMCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 91226C0121A281A20000375B /* XMCenter.m */; };
+		91226C0921A281A20000375B /* XMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 91226C0221A281A20000375B /* XMRequest.m */; };
 		91255E1220C686C7008C12FB /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91255E1120C686C7008C12FB /* AFNetworkActivityIndicatorManager.m */; };
 		9141BA0F20108A4400E311EC /* UIControl+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141BA0E20108A4400E311EC /* UIControl+YYAdd.m */; };
 		9141BA1220108B0B00E311EC /* UIColor+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141BA1020108B0B00E311EC /* UIColor+YYAdd.m */; };
@@ -96,7 +99,6 @@
 		91AF02CC1FD7E4480096E737 /* ChangeURLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91AF02CA1FD7E4480096E737 /* ChangeURLViewController.m */; };
 		91B0BAE020622A2500B31447 /* AWUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B0BADF20622A2500B31447 /* AWUserManager.m */; };
 		91B34ACF20C7B72E00A9DA66 /* XCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B34ACD20C7B72E00A9DA66 /* XCFileManager.m */; };
-		91C172E11FC66FE20050F371 /* HYBNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C172E01FC66FE20050F371 /* HYBNetworking.m */; };
 		91C1730E1FC6C0EC0050F371 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C1730C1FC6C0EB0050F371 /* UIBarButtonItem+Extension.m */; };
 		91D83C141FB4459E004595DE /* NSString+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C131FB4459E004595DE /* NSString+Tools.m */; };
 		91D83C261FB44E82004595DE /* NSDate+JKLunarCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D83C1A1FB44E82004595DE /* NSDate+JKLunarCalendar.m */; };
@@ -272,6 +274,14 @@
 		56C0947F1F7A06FD002C3ECE /* AFURLSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		56C094A41F7A18B5002C3ECE /* NSDate+YYAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+YYAdd.h"; sourceTree = "<group>"; };
 		56C094A51F7A18B5002C3ECE /* NSDate+YYAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YYAdd.m"; sourceTree = "<group>"; };
+		91226BFF21A281A20000375B /* XMConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMConst.h; sourceTree = "<group>"; };
+		91226C0021A281A20000375B /* XMEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMEngine.m; sourceTree = "<group>"; };
+		91226C0121A281A20000375B /* XMCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMCenter.m; sourceTree = "<group>"; };
+		91226C0221A281A20000375B /* XMRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMRequest.m; sourceTree = "<group>"; };
+		91226C0321A281A20000375B /* XMNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMNetworking.h; sourceTree = "<group>"; };
+		91226C0421A281A20000375B /* XMEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMEngine.h; sourceTree = "<group>"; };
+		91226C0521A281A20000375B /* XMRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMRequest.h; sourceTree = "<group>"; };
+		91226C0621A281A20000375B /* XMCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMCenter.h; sourceTree = "<group>"; };
 		91255E1020C686C7008C12FB /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
 		91255E1120C686C7008C12FB /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
 		9141BA0D20108A4400E311EC /* UIControl+YYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+YYAdd.h"; sourceTree = "<group>"; };
@@ -389,8 +399,6 @@
 		91B0BADF20622A2500B31447 /* AWUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWUserManager.m; sourceTree = "<group>"; };
 		91B34ACD20C7B72E00A9DA66 /* XCFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCFileManager.m; sourceTree = "<group>"; };
 		91B34ACE20C7B72E00A9DA66 /* XCFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCFileManager.h; sourceTree = "<group>"; };
-		91C172DF1FC66FE20050F371 /* HYBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBNetworking.h; sourceTree = "<group>"; };
-		91C172E01FC66FE20050F371 /* HYBNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBNetworking.m; sourceTree = "<group>"; };
 		91C1730C1FC6C0EB0050F371 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		91C1730D1FC6C0EC0050F371 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		91D83C121FB4459E004595DE /* NSString+Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Tools.h"; sourceTree = "<group>"; };
@@ -639,7 +647,7 @@
 		2DBF7D771F74F022005EDBE6 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				56C0946E1F7A06A2002C3ECE /* HYBNetworking */,
+				91226BFE21A281A20000375B /* XMNetworking */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -892,15 +900,6 @@
 			path = YYCache;
 			sourceTree = "<group>";
 		};
-		56C0946E1F7A06A2002C3ECE /* HYBNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				91C172DF1FC66FE20050F371 /* HYBNetworking.h */,
-				91C172E01FC66FE20050F371 /* HYBNetworking.m */,
-			);
-			path = HYBNetworking;
-			sourceTree = "<group>";
-		};
 		56C094721F7A06FD002C3ECE /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -921,6 +920,21 @@
 				56C0947F1F7A06FD002C3ECE /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		91226BFE21A281A20000375B /* XMNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				91226BFF21A281A20000375B /* XMConst.h */,
+				91226C0621A281A20000375B /* XMCenter.h */,
+				91226C0121A281A20000375B /* XMCenter.m */,
+				91226C0421A281A20000375B /* XMEngine.h */,
+				91226C0021A281A20000375B /* XMEngine.m */,
+				91226C0521A281A20000375B /* XMRequest.h */,
+				91226C0221A281A20000375B /* XMRequest.m */,
+				91226C0321A281A20000375B /* XMNetworking.h */,
+			);
+			path = XMNetworking;
 			sourceTree = "<group>";
 		};
 		914F0A0820B3B3DB00339165 /* RJBadgeKit */ = {
@@ -1606,6 +1620,7 @@
 				914F3D8F1FBA756D001C35F3 /* AWConfigManager.m in Sources */,
 				916C748A1F7F48CF0056F06B /* NSMutableDictionary+AvoidCrash.m in Sources */,
 				91E74409215484AF00F18CE6 /* UIView+MJExtension.m in Sources */,
+				91226C0921A281A20000375B /* XMRequest.m in Sources */,
 				91E744F921548B4500F18CE6 /* SDWebImageDownloader.m in Sources */,
 				91E744FF21548B4500F18CE6 /* SDWebImageCoder.m in Sources */,
 				91E7443D2154850500F18CE6 /* IQTitleBarButtonItem.m in Sources */,
@@ -1623,7 +1638,6 @@
 				916C748F1F7F48CF0056F06B /* NSAttributedString+AvoidCrash.m in Sources */,
 				91D83C2A1FB44E82004595DE /* NSDate+JKUtilities.m in Sources */,
 				91E74365215482F400F18CE6 /* ViewController+MASAdditions.m in Sources */,
-				91C172E11FC66FE20050F371 /* HYBNetworking.m in Sources */,
 				91716708202C1E5200ED39E5 /* UIImage+JKColor.m in Sources */,
 				916C74901F7F48CF0056F06B /* AvoidCrash.m in Sources */,
 				91E7443C2154850500F18CE6 /* IQToolbar.m in Sources */,
@@ -1640,10 +1654,12 @@
 				91D83C281FB44E82004595DE /* NSDate+JKInternetDateTime.m in Sources */,
 				91E7436A215482F400F18CE6 /* View+MASAdditions.m in Sources */,
 				91E74366215482F400F18CE6 /* MASCompositeConstraint.m in Sources */,
+				91226C0721A281A20000375B /* XMEngine.m in Sources */,
 				91E744F021548B4500F18CE6 /* MKAnnotationView+WebCache.m in Sources */,
 				91E744472154850500F18CE6 /* IQUIViewController+Additions.m in Sources */,
 				914F0A2620B3B3DB00339165 /* RJBadgeModel.m in Sources */,
 				91E7440A215484AF00F18CE6 /* MJRefreshBackGifFooter.m in Sources */,
+				91226C0821A281A20000375B /* XMCenter.m in Sources */,
 				91E7450821548B4500F18CE6 /* SDWebImageGIFCoder.m in Sources */,
 				91E744462154850500F18CE6 /* IQUIView+Hierarchy.m in Sources */,
 				914F3D7D1FB9687C001C35F3 /* DemoViewController2.m in Sources */,

@@ -32,8 +32,7 @@ singleton_implementation(AppTools);
 - (void)startApp
 {
     _tabBarController = [AWTabBarController new];
-    kAppDelegate.window.rootViewController = _tabBarController;
-    
+    kAppDelegate.window.rootViewController = _tabBarController;    
 }
 
 
@@ -190,7 +189,7 @@ singleton_implementation(AppTools);
  缓存包括以下几个地方
  1. Cache 文件夹下的所有文件
  2. 不用获取了 SD 的图片缓存 (/Library/Caches/default/com.hackemist.SDWebImageCache.default)
- 3. HYBNetWorking的请求缓存
+ 3. 请求缓存
  
  */
 + (void)getAllCacheSize:(GetCacheSizeComplete)block
@@ -201,7 +200,8 @@ singleton_implementation(AppTools);
         NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
         NSNumber *num = [XCFileManager sizeOfDirectoryAtPath:cachePath];
         totalSize += num.unsignedLongLongValue;
-        totalSize += [HYBNetworking totalCacheSize];
+        // 请求的缓存 totalSize += 请求的缓存;
+        
         
         // 计算完成回调
         dispatch_sync(dispatch_get_main_queue(), ^{
@@ -219,7 +219,7 @@ singleton_implementation(AppTools);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
         [XCFileManager clearCachesDirectory];
-        [HYBNetworking clearCaches];
+        // 清理请求的缓存
         
         if (completion) {
             dispatch_async(dispatch_get_main_queue(), ^{

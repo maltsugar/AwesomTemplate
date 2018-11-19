@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    AWConfigManager *config = [AWConfigManager sharedAWConfigManager];
+    AWConfigManager *config = [AWConfigManager sharedConfigManager];
     _baseURLTF.text = config.baseURL;
     _pathTF.text = config.path;
 }
@@ -37,10 +37,10 @@
 - (IBAction)handleConfirmAction
 {
 #ifdef DEBUG
-    AWConfigManager *config = [AWConfigManager sharedAWConfigManager];
+    AWConfigManager *config = [AWConfigManager sharedConfigManager];
     config.baseURL = _baseURLTF.text;
     config.path = _pathTF.text;
-    [HYBNetworking updateBaseUrl:[NSString stringWithFormat:@"%@/%@", config.baseURL, config.path]];
+    [XMCenter defaultCenter].generalServer = [NSString stringWithFormat:@"%@/%@", config.baseURL, config.path];
 #endif
     
     [self dismissViewControllerAnimated:YES completion:nil];

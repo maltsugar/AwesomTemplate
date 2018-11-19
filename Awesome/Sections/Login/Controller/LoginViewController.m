@@ -56,11 +56,15 @@
 //                            @"version": @"4.0"
 //                            };
 //
-//    [HYBNetworking configRequestType:kHYBRequestTypeJSON responseType:kHYBResponseTypeJSON shouldAutoEncodeUrl:NO callbackOnCancelRequest:YES];
-//    [HYBNetworking postWithUrl:url refreshCache:YES params:param success:^(id response) {
-//        NSLog(@"%@", response);
-//    } fail:^(NSError *error) {
-//        NSLog(@"%@", error.localizedDescription);
+//
+//    [XMCenter sendRequest:^(XMRequest * _Nonnull request) {
+//        request.server = url;
+//        request.parameters = param;
+//        request.requestSerializerType = kXMRequestSerializerJSON;
+//    } onSuccess:^(id  _Nullable responseObject) {
+//
+//    } onFailure:^(NSError * _Nullable error) {
+//
 //    }];
 
 }

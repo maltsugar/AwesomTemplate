@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Singleton.h"
 
 
+typedef NS_ENUM(NSInteger, XMNetworkErrorCode) {
+    kXMSuccessCode = 0,      //!< 接口请求成功
+    kXMErrorCode = 1,        //!< 接口请求失败
+    kXMUnknownCode = -1,     //!< 未知错误
+};
 
 
 
@@ -22,7 +26,6 @@
 
 
 @interface AWConfigManager : NSObject
-singleton_interface(AWConfigManager);
 
 
 @property (nonatomic,   copy) NSString *baseURL;
@@ -34,6 +37,9 @@ singleton_interface(AWConfigManager);
 // 接口版本
 @property (readonly, copy) NSString *apiVersion;
 
+
+
++ (instancetype)sharedConfigManager;
 
 // 公共参数
 + (NSDictionary *)convertToPublicParam:(NSDictionary *)orignParam;
