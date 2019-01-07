@@ -9,6 +9,13 @@
 #import "AWNavigationController.h"
 #import "UIBarButtonItem+Extension.h"
 
+
+#define kAWNavBackEdge UIEdgeInsetsMake(0, -15, 0, 15)
+#define kAWNavBackImgName @"navigationbar_back"
+#define kAWBackIndicatorImage @"navi_back"
+
+
+
 @interface AWNavigationController ()<UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 
 @end
@@ -47,7 +54,7 @@
 {
     self.interactivePopGestureRecognizer.enabled = NO;
     if (self.viewControllers.count > 0) { // 这时push进来的控制器viewController，不是第一个子控制器（不是根控制器）
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"navigationbar_back" highImage: @"navigationbar_back" imageEdgeInsets:UIEdgeInsetsZero];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:kAWNavBackImgName highImage:kAWNavBackImgName imageEdgeInsets:kAWNavBackEdge];
         viewController.hidesBottomBarWhenPushed = YES;
         
         
@@ -66,7 +73,7 @@
         for (UIViewController *vc in viewControllers) {
             
             if (i > 0) {
-                vc.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"navigationbar_back" highImage: @"navigationbar_back" imageEdgeInsets:UIEdgeInsetsZero];
+                vc.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:kAWNavBackImgName highImage:kAWNavBackImgName imageEdgeInsets:kAWNavBackEdge];
                 vc.hidesBottomBarWhenPushed = YES;
             }
             i ++;
@@ -158,7 +165,7 @@
  {
  self.interactivePopGestureRecognizer.enabled = NO;
  if (self.viewControllers.count > 0) { // 这时push进来的控制器viewController，不是第一个子控制器（不是根控制器）
- viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"navi_back" highImage: @"navi_back" imageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
+ viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:kAWNavBackImgName highImage:kAWNavBackImgName  imageEdgeInsets:kAWNavBackEdge];
  viewController.hidesBottomBarWhenPushed = YES;
  
  
@@ -177,7 +184,7 @@
  for (UIViewController *vc in viewControllers) {
  
  if (i > 0) {
- vc.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"navi_back" highImage: @"navi_back" imageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
+ vc.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:kAWNavBackImgName highImage:kAWNavBackImgName imageEdgeInsets:kAWNavBackEdge];
  vc.hidesBottomBarWhenPushed = YES;
  }
  i ++;
@@ -243,8 +250,8 @@
  {
  [super viewDidLoad];
  
- self.navigationBar.backIndicatorImage = [[UIImage imageNamed:@"navi_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
- self.navigationBar.backIndicatorTransitionMaskImage = [[UIImage imageNamed:@"navi_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+ self.navigationBar.backIndicatorImage = [[UIImage imageNamed:kAWBackIndicatorImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+ self.navigationBar.backIndicatorTransitionMaskImage = [[UIImage imageNamed:kAWBackIndicatorImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
  }
  
  - (UIViewController *)childViewControllerForStatusBarStyle
