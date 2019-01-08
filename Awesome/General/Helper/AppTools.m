@@ -341,6 +341,17 @@ BOOL isIPhoneX(void) {
     return iPhoneX;
 }
 
+CGFloat bottomSafeHeight(void)
+{
+    CGFloat safe = 0;
+    if (@available(iOS 11.0, *)) {
+        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+        safe = mainWindow.safeAreaInsets.bottom;
+    }
+    return safe;
+}
+
+
 char *formattedLogDate(void)
 {
     time_t rawtime;

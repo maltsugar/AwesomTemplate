@@ -59,7 +59,10 @@ singleton_interface(AppTools);
 
 // 公用函数
 BOOL isIPhoneX(void);
+CGFloat bottomSafeHeight(void);
 char *formattedLogDate(void);
+
+
 
 
 // 弹出视图配置（用不到可删除）

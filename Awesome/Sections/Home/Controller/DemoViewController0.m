@@ -39,6 +39,8 @@
     
     UIImage *img = _imgView.image;
     _imgView.image = [img tintedImageWithColor:[UIColor yellowColor]];
+    
+    NSLog(@"  ---%f  %f", kBottomSafeHeight , kTabBarHeight)
 }
 
 
