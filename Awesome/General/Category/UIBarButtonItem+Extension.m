@@ -21,14 +21,14 @@
  */
 + (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage imageEdgeInsets:(UIEdgeInsets)insets
 {
-    UIButton *btn = [self buttonWithTarget:self action:action image:image highImage:highImage btnSize:CGSizeMake(40, 40) imageEdgeInsets:insets];
+    UIButton *btn = [self buttonWithTarget:target action:action image:image highImage:highImage btnSize:CGSizeMake(40, 40) imageEdgeInsets:insets];
     return [[UIBarButtonItem alloc] initWithCustomView:btn];
 }
 
 
 + (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage itemSize:(CGSize)size imageEdgeInsets:(UIEdgeInsets)insets
 {
-    UIButton *btn = [self buttonWithTarget:self action:action image:image highImage:highImage btnSize:size imageEdgeInsets:insets];
+    UIButton *btn = [self buttonWithTarget:target action:action image:image highImage:highImage btnSize:size imageEdgeInsets:insets];
     return [[UIBarButtonItem alloc] initWithCustomView:btn];
 }
 
