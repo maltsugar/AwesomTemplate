@@ -21,14 +21,29 @@
  */
 + (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage imageEdgeInsets:(UIEdgeInsets)insets
 {
+    UIButton *btn = [self buttonWithTarget:self action:action image:image highImage:highImage btnSize:CGSizeMake(40, 40) imageEdgeInsets:insets];
+    return [[UIBarButtonItem alloc] initWithCustomView:btn];
+}
+
+
++ (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage itemSize:(CGSize)size imageEdgeInsets:(UIEdgeInsets)insets
+{
+    UIButton *btn = [self buttonWithTarget:self action:action image:image highImage:highImage btnSize:size imageEdgeInsets:insets];
+    return [[UIBarButtonItem alloc] initWithCustomView:btn];
+}
+
++ (UIButton *)buttonWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage btnSize:(CGSize)size imageEdgeInsets:(UIEdgeInsets)insets
+{
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     // 设置图片
     [btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:highImage] forState:UIControlStateHighlighted];
     // 设置尺寸
-    btn.size = CGSizeMake(40, 40);
+    btn.size = size;
     btn.imageEdgeInsets = insets;
-    return [[UIBarButtonItem alloc] initWithCustomView:btn];
+    return btn;
 }
+
+
 @end

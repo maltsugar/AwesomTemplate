@@ -12,6 +12,6 @@
 
 + (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage imageEdgeInsets:(UIEdgeInsets)insets;
 
-
++ (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage itemSize:(CGSize)size imageEdgeInsets:(UIEdgeInsets)insets;
 
 @end
