@@ -10,7 +10,6 @@
 		0469440321EEEF1A00362611 /* AWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469440221EEEF1A00362611 /* AWBaseViewController.m */; };
 		0469440D21EEEF3D00362611 /* UIViewController+RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469440621EEEF3D00362611 /* UIViewController+RTRootNavigationController.m */; };
 		0469440F21EEEF3D00362611 /* RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469440A21EEEF3D00362611 /* RTRootNavigationController.m */; };
-		0469441021EEEF3D00362611 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 0469440C21EEEF3D00362611 /* .gitkeep */; };
 		0469441321EEF14400362611 /* AWRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469441221EEF14400362611 /* AWRootNavigationController.m */; };
 		2DBF7D621F74EFD5005EDBE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF7D611F74EFD5005EDBE6 /* main.m */; };
 		2DBF7D651F74EFD5005EDBE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF7D641F74EFD5005EDBE6 /* AppDelegate.m */; };
@@ -203,7 +202,6 @@
 		0469440721EEEF3D00362611 /* RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTRootNavigationController.h; sourceTree = "<group>"; };
 		0469440921EEEF3D00362611 /* UIViewController+RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RTRootNavigationController.h"; sourceTree = "<group>"; };
 		0469440A21EEEF3D00362611 /* RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTRootNavigationController.m; sourceTree = "<group>"; };
-		0469440C21EEEF3D00362611 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		0469441121EEF14400362611 /* AWRootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWRootNavigationController.h; sourceTree = "<group>"; };
 		0469441221EEF14400362611 /* AWRootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWRootNavigationController.m; sourceTree = "<group>"; };
 		2DBF7D5D1F74EFD5005EDBE6 /* Awesome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Awesome.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -615,7 +613,6 @@
 			isa = PBXGroup;
 			children = (
 				0469440521EEEF3D00362611 /* Classes */,
-				0469440B21EEEF3D00362611 /* Assets */,
 			);
 			path = RTRootNavigationController;
 			sourceTree = "<group>";
@@ -629,14 +626,6 @@
 				0469440621EEEF3D00362611 /* UIViewController+RTRootNavigationController.m */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		0469440B21EEEF3D00362611 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				0469440C21EEEF3D00362611 /* .gitkeep */,
-			);
-			path = Assets;
 			sourceTree = "<group>";
 		};
 		2DBF7D541F74EFD5005EDBE6 = {
@@ -1624,7 +1613,6 @@
 				2DBF7D6D1F74EFD5005EDBE6 /* Assets.xcassets in Resources */,
 				91A7513921006483005F2FE8 /* TOSearchBarLocalizable.strings in Resources */,
 				914F3D7E1FB9687C001C35F3 /* DemoViewController2.xib in Resources */,
-				0469441021EEEF3D00362611 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
