@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0469440321EEEF1A00362611 /* AWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469440221EEEF1A00362611 /* AWBaseViewController.m */; };
+		0469440D21EEEF3D00362611 /* UIViewController+RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469440621EEEF3D00362611 /* UIViewController+RTRootNavigationController.m */; };
+		0469440F21EEEF3D00362611 /* RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469440A21EEEF3D00362611 /* RTRootNavigationController.m */; };
+		0469441021EEEF3D00362611 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 0469440C21EEEF3D00362611 /* .gitkeep */; };
+		0469441321EEF14400362611 /* AWRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469441221EEF14400362611 /* AWRootNavigationController.m */; };
 		2DBF7D621F74EFD5005EDBE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF7D611F74EFD5005EDBE6 /* main.m */; };
 		2DBF7D651F74EFD5005EDBE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF7D641F74EFD5005EDBE6 /* AppDelegate.m */; };
 		2DBF7D6D1F74EFD5005EDBE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DBF7D6C1F74EFD5005EDBE6 /* Assets.xcassets */; };
@@ -64,7 +69,6 @@
 		914F0A2820B3B3DB00339165 /* NSObject+RJBadgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F0A1D20B3B3DB00339165 /* NSObject+RJBadgeController.m */; };
 		914F0A2920B3B3DB00339165 /* RJBadgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F0A1E20B3B3DB00339165 /* RJBadgeController.m */; };
 		914F0A2A20B3B3DB00339165 /* NSString+RJBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F0A2120B3B3DB00339165 /* NSString+RJBadge.m */; };
-		914F3D6D1FB963D0001C35F3 /* AWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F3D6C1FB963D0001C35F3 /* AWNavigationController.m */; };
 		914F3D7D1FB9687C001C35F3 /* DemoViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F3D7B1FB9687C001C35F3 /* DemoViewController2.m */; };
 		914F3D7E1FB9687C001C35F3 /* DemoViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914F3D7C1FB9687C001C35F3 /* DemoViewController2.xib */; };
 		914F3D821FB9688B001C35F3 /* DemoViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 914F3D801FB9688B001C35F3 /* DemoViewController1.m */; };
@@ -193,6 +197,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0469440121EEEF1A00362611 /* AWBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWBaseViewController.h; sourceTree = "<group>"; };
+		0469440221EEEF1A00362611 /* AWBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWBaseViewController.m; sourceTree = "<group>"; };
+		0469440621EEEF3D00362611 /* UIViewController+RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RTRootNavigationController.m"; sourceTree = "<group>"; };
+		0469440721EEEF3D00362611 /* RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTRootNavigationController.h; sourceTree = "<group>"; };
+		0469440921EEEF3D00362611 /* UIViewController+RTRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RTRootNavigationController.h"; sourceTree = "<group>"; };
+		0469440A21EEEF3D00362611 /* RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTRootNavigationController.m; sourceTree = "<group>"; };
+		0469440C21EEEF3D00362611 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		0469441121EEF14400362611 /* AWRootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWRootNavigationController.h; sourceTree = "<group>"; };
+		0469441221EEF14400362611 /* AWRootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWRootNavigationController.m; sourceTree = "<group>"; };
 		2DBF7D5D1F74EFD5005EDBE6 /* Awesome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Awesome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DBF7D611F74EFD5005EDBE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2DBF7D631F74EFD5005EDBE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -315,8 +328,6 @@
 		914F0A1E20B3B3DB00339165 /* RJBadgeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJBadgeController.m; sourceTree = "<group>"; };
 		914F0A2020B3B3DB00339165 /* NSString+RJBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RJBadge.h"; sourceTree = "<group>"; };
 		914F0A2120B3B3DB00339165 /* NSString+RJBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RJBadge.m"; sourceTree = "<group>"; };
-		914F3D6B1FB963D0001C35F3 /* AWNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWNavigationController.h; sourceTree = "<group>"; };
-		914F3D6C1FB963D0001C35F3 /* AWNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWNavigationController.m; sourceTree = "<group>"; };
 		914F3D7A1FB9687C001C35F3 /* DemoViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController2.h; sourceTree = "<group>"; };
 		914F3D7B1FB9687C001C35F3 /* DemoViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController2.m; sourceTree = "<group>"; };
 		914F3D7C1FB9687C001C35F3 /* DemoViewController2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoViewController2.xib; sourceTree = "<group>"; };
@@ -600,6 +611,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0469440421EEEF3D00362611 /* RTRootNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				0469440521EEEF3D00362611 /* Classes */,
+				0469440B21EEEF3D00362611 /* Assets */,
+			);
+			path = RTRootNavigationController;
+			sourceTree = "<group>";
+		};
+		0469440521EEEF3D00362611 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0469440721EEEF3D00362611 /* RTRootNavigationController.h */,
+				0469440A21EEEF3D00362611 /* RTRootNavigationController.m */,
+				0469440921EEEF3D00362611 /* UIViewController+RTRootNavigationController.h */,
+				0469440621EEEF3D00362611 /* UIViewController+RTRootNavigationController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		0469440B21EEEF3D00362611 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0469440C21EEEF3D00362611 /* .gitkeep */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		2DBF7D541F74EFD5005EDBE6 = {
 			isa = PBXGroup;
 			children = (
@@ -687,6 +726,7 @@
 		2DBF7D7B1F74F08B005EDBE6 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				0469440421EEEF3D00362611 /* RTRootNavigationController */,
 				91E744AC21548B4500F18CE6 /* SDWebImage */,
 				91E744182154850500F18CE6 /* IQKeyboardManager */,
 				91E743D5215484AF00F18CE6 /* MJRefresh */,
@@ -708,10 +748,12 @@
 		2DBF7D7C1F74F169005EDBE6 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				914F3D6B1FB963D0001C35F3 /* AWNavigationController.h */,
-				914F3D6C1FB963D0001C35F3 /* AWNavigationController.m */,
 				560D28F71F7DD14900C7ACEC /* AWTabBarController.h */,
 				560D28F81F7DD14900C7ACEC /* AWTabBarController.m */,
+				0469440121EEEF1A00362611 /* AWBaseViewController.h */,
+				0469440221EEEF1A00362611 /* AWBaseViewController.m */,
+				0469441121EEF14400362611 /* AWRootNavigationController.h */,
+				0469441221EEF14400362611 /* AWRootNavigationController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1582,6 +1624,7 @@
 				2DBF7D6D1F74EFD5005EDBE6 /* Assets.xcassets in Resources */,
 				91A7513921006483005F2FE8 /* TOSearchBarLocalizable.strings in Resources */,
 				914F3D7E1FB9687C001C35F3 /* DemoViewController2.xib in Resources */,
+				0469441021EEEF3D00362611 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1636,6 +1679,7 @@
 				916C748E1F7F48CF0056F06B /* NSMutableAttributedString+AvoidCrash.m in Sources */,
 				914F0A2220B3B3DB00339165 /* UIView+RJBadge.m in Sources */,
 				916C748F1F7F48CF0056F06B /* NSAttributedString+AvoidCrash.m in Sources */,
+				0469440D21EEEF3D00362611 /* UIViewController+RTRootNavigationController.m in Sources */,
 				91D83C2A1FB44E82004595DE /* NSDate+JKUtilities.m in Sources */,
 				91E74365215482F400F18CE6 /* ViewController+MASAdditions.m in Sources */,
 				91716708202C1E5200ED39E5 /* UIImage+JKColor.m in Sources */,
@@ -1660,6 +1704,7 @@
 				914F0A2620B3B3DB00339165 /* RJBadgeModel.m in Sources */,
 				91E7440A215484AF00F18CE6 /* MJRefreshBackGifFooter.m in Sources */,
 				91226C0821A281A20000375B /* XMCenter.m in Sources */,
+				0469440F21EEEF3D00362611 /* RTRootNavigationController.m in Sources */,
 				91E7450821548B4500F18CE6 /* SDWebImageGIFCoder.m in Sources */,
 				91E744462154850500F18CE6 /* IQUIView+Hierarchy.m in Sources */,
 				914F3D7D1FB9687C001C35F3 /* DemoViewController2.m in Sources */,
@@ -1719,10 +1764,12 @@
 				914F0A2320B3B3DB00339165 /* UIBarButtonItem+RJBadge.m in Sources */,
 				5699318B1F79F20200BA1BEB /* MJPropertyKey.m in Sources */,
 				91E7443B2154850500F18CE6 /* IQTextView.m in Sources */,
+				0469440321EEEF1A00362611 /* AWBaseViewController.m in Sources */,
 				5699318C1F79F20200BA1BEB /* MJPropertyType.m in Sources */,
 				91E74410215484AF00F18CE6 /* MJRefreshNormalHeader.m in Sources */,
 				569932041F79F52F00BA1BEB /* NSObject+YYAdd.m in Sources */,
 				91E744452154850500F18CE6 /* IQUIScrollView+Additions.m in Sources */,
+				0469441321EEF14400362611 /* AWRootNavigationController.m in Sources */,
 				5699318D1F79F20200BA1BEB /* NSObject+MJClass.m in Sources */,
 				91E744FD21548B4500F18CE6 /* SDWebImageCompat.m in Sources */,
 				914512E420C685CE001A118F /* SDWebImage+AWExtension.m in Sources */,
@@ -1759,7 +1806,6 @@
 				91C1730E1FC6C0EC0050F371 /* UIBarButtonItem+Extension.m in Sources */,
 				2DBF7D9A1F74FAC2005EDBE6 /* LoginViewController.m in Sources */,
 				569931FF1F79F51000BA1BEB /* UIApplication+YYAdd.m in Sources */,
-				914F3D6D1FB963D0001C35F3 /* AWNavigationController.m in Sources */,
 				91A7513B21006483005F2FE8 /* TOSearchBar+Assets.m in Sources */,
 				91E7450121548B4500F18CE6 /* SDAnimatedImageRep.m in Sources */,
 				91E7450221548B4500F18CE6 /* SDImageCache.m in Sources */,

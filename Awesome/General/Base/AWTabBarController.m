@@ -7,7 +7,7 @@
 //
 
 #import "AWTabBarController.h"
-#import "AWNavigationController.h"
+#import "AWRootNavigationController.h"
 #import "AWUserManager.h"
 
 
@@ -102,7 +102,7 @@
     [childVc.tabBarItem setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
     
     // 先给外面传进来的小控制器 包装 一个导航控制器
-    AWNavigationController *nav = [[AWNavigationController alloc] initWithRootViewController:childVc];
+    AWRootNavigationController *nav = [[AWRootNavigationController alloc] initWithRootViewController:childVc];
     // 添加为子控制器
     [self addChildViewController:nav];
 }

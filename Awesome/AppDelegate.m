@@ -19,6 +19,17 @@
 @implementation AppDelegate
 
 
+
+/**
+ ⚠️⚠️⚠️⚠️⚠️⚠️⚠️
+    ⚠️⚠️⚠️⚠️
+     ⚠️⚠️⚠️
+      ⚠️⚠️
+       ⚠️
+ ⚠️⚠️⚠️⚠️⚠️⚠️推荐所有的VC继承  AWBaseViewController  ，便于统一修改导航样式 */
+
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];

@@ -7,7 +7,7 @@
 //
 
 #import "AppTools.h"
-#import "AWNavigationController.h"
+#import "AWRootNavigationController.h"
 #import "LoginViewController.h"
 #import "AWTabBarController.h"
 #import "AWUserManager.h"
@@ -20,7 +20,7 @@
 @interface AppTools ()
 
 @property (nonatomic, strong) AWTabBarController *tabBarController;
-@property (nonatomic, strong) AWNavigationController *loginNav;
+@property (nonatomic, strong) AWRootNavigationController *loginNav;
 @property (nonatomic, strong) GYIntroductionView *introductionView;
 
 @end
@@ -141,11 +141,11 @@ singleton_implementation(AppTools);
 
 
 
-- (AWNavigationController *)loginNav
+- (AWRootNavigationController *)loginNav
 {
     if (nil == _loginNav) {
         LoginViewController *loginVC = [LoginViewController new];
-        _loginNav = [[AWNavigationController alloc]initWithRootViewController:loginVC];
+        _loginNav = [[AWRootNavigationController alloc]initWithRootViewController:loginVC];
         loginVC.navigationController.navigationBarHidden = YES;
         
     }
