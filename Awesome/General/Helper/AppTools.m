@@ -341,6 +341,16 @@ BOOL isIPhoneX(void) {
     return iPhoneX;
 }
 
+UIEdgeInsets deviceSafeInsets(void)
+{
+    if (@available(iOS 11.0, *)) {
+        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+        return mainWindow.safeAreaInsets;
+    }
+    return UIEdgeInsetsZero;
+}
+
+
 CGFloat bottomSafeHeight(void)
 {
     CGFloat safe = 0;

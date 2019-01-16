@@ -60,6 +60,7 @@ singleton_interface(AppTools);
 // 公用函数
 BOOL isIPhoneX(void);
 CGFloat bottomSafeHeight(void);
+UIEdgeInsets deviceSafeInsets(void);
 char *formattedLogDate(void);
 
 
