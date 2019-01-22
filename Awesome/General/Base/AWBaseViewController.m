@@ -12,6 +12,11 @@
  */
 #import "AWBaseViewController.h"
 
+
+
+#define kAWNavBackImgName @"navigationbar_back"
+//#define kAWBackIndicatorImage @"navi_back"
+
 @interface AWBaseViewController ()
 
 @end
@@ -21,22 +26,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UINavigationBar *navBar = self.navigationController.navigationBar;
+    
     // 这里定制统一的导航样式
     NSDictionary *dict = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
    
-    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.translucent = YES;
-    [self.navigationController.navigationBar setTitleTextAttributes:dict];
+    navBar.barTintColor = [UIColor redColor];
+    navBar.tintColor = [UIColor whiteColor];
+    navBar.translucent = YES;
+    [navBar setTitleTextAttributes:dict];
     
 }
 
 - (UIBarButtonItem *)rt_customBackItemWithTarget:(id)target action:(SEL)action
 {
-    return [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
-                                            style:UIBarButtonItemStylePlain
-                                           target:target
-                                           action:action];
+//    UIBarButtonItem *barBtnItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
+//                                            style:UIBarButtonItemStylePlain
+//                                           target:target
+//                                           action:action];
+    
+    UIBarButtonItem *barBtnItem = [[UIBarButtonItem alloc] initWithImage:kImageNamed(kAWNavBackImgName) style:UIBarButtonItemStylePlain target:target action:action];
+    
+    return barBtnItem;
 }
+
+
+
 
 @end

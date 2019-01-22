@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DemoViewController0 : UIViewController
+@interface DemoViewController0 : AWBaseViewController
 
 @end

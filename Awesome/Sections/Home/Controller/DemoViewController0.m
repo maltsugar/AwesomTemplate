@@ -45,7 +45,7 @@
 
 
 - (IBAction)pushNext {
-    UIViewController *vc = [UIViewController new];
+    UIViewController *vc = [AWBaseViewController new];
     vc.view.backgroundColor = kRandomColor;
     vc.title = @"第二个页面";
     
@@ -54,15 +54,15 @@
     
     
     
-    UIViewController *vc1 = [UIViewController new];
+    UIViewController *vc1 = [AWBaseViewController new];
     vc1.view.backgroundColor = kRandomColor;
     vc1.title = @"第3个页面";
-    
+
     NSMutableArray *temp = [self.navigationController.viewControllers mutableCopy];
     [temp addObject:vc];
     [temp addObject:vc1];
     
-    [self.navigationController setViewControllers:temp];
+    [self.navigationController setViewControllers:temp animated:YES];
 }
 
 
