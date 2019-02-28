@@ -1197,11 +1197,11 @@
 		91A7512521006483005F2FE8 /* TOSearchBar */ = {
 			isa = PBXGroup;
 			children = (
-				91A7512621006483005F2FE8 /* TOSearchBarLocalizable.strings */,
 				91A7512B21006483005F2FE8 /* TOSearchBar.h */,
-				91A7513221006483005F2FE8 /* TOSearchBar+Assets.h */,
 				91A7513521006483005F2FE8 /* TOSearchBar.m */,
+				91A7513221006483005F2FE8 /* TOSearchBar+Assets.h */,
 				91A7513821006483005F2FE8 /* TOSearchBar+Assets.m */,
+				91A7512621006483005F2FE8 /* TOSearchBarLocalizable.strings */,
 			);
 			path = TOSearchBar;
 			sourceTree = "<group>";

@@ -22,6 +22,13 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+#define TO_SEARCH_CLEARBTN_FRAME ((CGRect){CGPointZero, {40.0f, 40.0f}})
+
+
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, TOSearchBarStyle) {
@@ -132,6 +139,20 @@ IB_DESIGNABLE
 /** The 'clear' button that will clear any text in the text field */
 @property (nonatomic, strong, readonly) UIButton *clearButton;
 
+
+// =========== 定义搜索条样式 =============
+
+// 可以填充纯色图片，切不同半径圆角
+@property (nonatomic, strong, readonly) UIImageView *barBackgroundImgView;
+// 以下属性必须>0
+@property (nonatomic, assign) CGFloat iconViewLeftMargin;  // 放大镜左边距
+@property (nonatomic, assign) CGFloat clearButtonRightMargin; // 清除按钮右边距
+@property (nonatomic, assign) CGFloat searchBarIconMargin; // 放大镜和textfield间距
+@property (nonatomic, assign) CGFloat searchBarBackgroundHeight; // 切圆角时设置此值，防止使用系统样式默认高度
+
+
+
+
 /** 
  Create a new instance of this class, specifying the frame and style. 
  
@@ -146,6 +167,10 @@ IB_DESIGNABLE
  @param style The color style of the view (light or dark)
  */
 - (instancetype)initWithStyle:(TOSearchBarStyle)style;
+
+
+
+- (void)setClearButtonHidden:(BOOL)hidden animated:(BOOL)animated;
 
 @end
 
