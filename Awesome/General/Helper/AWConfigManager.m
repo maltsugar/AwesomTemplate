@@ -19,8 +19,19 @@ static NSError * XMNetworkErrorGenerator(NSInteger code, NSString *msg) {
 }
 
 
+
+/// 是否允许修改后存本地，默认true
+static BOOL _allowPersistent = YES;
+
+
+// key
+static NSString *_kAWConfigManagerBaseURLKey = @"kAWConfigManagerBaseURLKey";
+static NSString *_kAWConfigManagerPathKey = @"kAWConfigManagerPathKey";
+
+
 @implementation AWConfigManager
 
+@synthesize baseURL = _baseURL, path = _path;
 
 - (NSString *)baseURL
 {
@@ -28,6 +39,19 @@ static NSError * XMNetworkErrorGenerator(NSInteger code, NSString *msg) {
 #if defined kConfigEnv_DEBUG
         _baseURL = @"http://192.168.1.48";
         //        _baseURL = @"http://192.168.2.114:8080";
+        
+        
+        
+        
+        
+        
+        if (_allowPersistent) {
+            NSString *info = [[NSUserDefaults standardUserDefaults] stringForKey:_kAWConfigManagerBaseURLKey];
+            if (info.length > 0) {
+                _baseURL = info;
+            }
+        }
+        
 #endif
         
 #if defined kConfigEnv_RELEASE
@@ -42,6 +66,16 @@ static NSError * XMNetworkErrorGenerator(NSInteger code, NSString *msg) {
     if (nil == _path) {
 #if defined kConfigEnv_DEBUG
         _path = @"api/service";
+        
+        
+        
+        if (_allowPersistent) {
+            NSString *info = [[NSUserDefaults standardUserDefaults] stringForKey:_kAWConfigManagerPathKey];
+            if (info.length > 0) {
+                _path = info;
+            }
+        }
+        
 #endif
         
 #if defined kConfigEnv_RELEASE
@@ -78,6 +112,31 @@ static NSError * XMNetworkErrorGenerator(NSInteger code, NSString *msg) {
     }
     return _OSSPolicyBaseURL;
 }
+
+#pragma mark- setters
+- (void)setBaseURL:(NSString *)baseURL
+{
+    _baseURL = baseURL;
+    if (_allowPersistent) {
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        [ud setObject:baseURL forKey:_kAWConfigManagerBaseURLKey];
+        [ud synchronize];
+    }
+}
+
+- (void)setPath:(NSString *)path
+{
+    _path = path;
+    if (_allowPersistent) {
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        [ud setObject:path forKey:_kAWConfigManagerPathKey];
+        [ud synchronize];
+    }
+}
+
+
+
+
 
 
 - (NSString *)apiVersion
