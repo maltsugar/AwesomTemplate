@@ -60,7 +60,13 @@ singleton_interface(AppTools);
 // 公用函数
 BOOL isIPhoneX(void);
 CGFloat bottomSafeHeight(void);
+
+/// 设备安全区域
 UIEdgeInsets deviceSafeInsets(void);
+
+/// 处理过的安全区域，适合需要顶部适配刘海屏的情况
+UIEdgeInsets deviceBanlancedSafeInsets(void);
+
 char *formattedLogDate(void);
 
 

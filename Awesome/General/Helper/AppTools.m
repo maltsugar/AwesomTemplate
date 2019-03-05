@@ -350,6 +350,19 @@ UIEdgeInsets deviceSafeInsets(void)
     return UIEdgeInsetsZero;
 }
 
+UIEdgeInsets deviceBanlancedSafeInsets(void)
+{
+    UIEdgeInsets insets = UIEdgeInsetsZero;
+    if (@available(iOS 11.0, *)) {
+        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+        if (mainWindow.safeAreaInsets.bottom > 0) {
+            // 只有刘海屏才返回真实safeAreaInsets
+            insets = mainWindow.safeAreaInsets;
+        }
+    }
+    return insets;
+}
+
 
 CGFloat bottomSafeHeight(void)
 {
