@@ -75,4 +75,11 @@
 {
     [self hideHUDForView:nil];
 }
+
++ (void)hideAllHUDs
+{
+    UIView *view = [[[UIApplication sharedApplication] delegate] window];
+    [self hideAllHUDsForView:view animated:YES];
+}
+
 @end

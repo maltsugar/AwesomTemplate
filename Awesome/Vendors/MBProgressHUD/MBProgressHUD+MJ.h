@@ -22,4 +22,6 @@
 + (void)hideHUDForView:(UIView *)view;
 + (void)hideHUD;
 
++ (void)hideAllHUDs;
+
 @end
