@@ -379,10 +379,10 @@ char *formattedLogDate(void)
 {
     time_t rawtime;
     struct tm *timeinfo;
-    static char buffer [128];
-    time (&rawtime);
-    timeinfo = localtime (&rawtime);
-    strftime (buffer,sizeof(buffer),"%Y-%m-%d %H:%M:%S",timeinfo);
+    static char buffer[128];
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
+    strftime(buffer,sizeof(buffer),"%Y-%m-%d %H:%M:%S", timeinfo);
     return buffer;
 }
 
