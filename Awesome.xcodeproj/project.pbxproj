@@ -11,7 +11,8 @@
 		0469440D21EEEF3D00362611 /* UIViewController+RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469440621EEEF3D00362611 /* UIViewController+RTRootNavigationController.m */; };
 		0469440F21EEEF3D00362611 /* RTRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469440A21EEEF3D00362611 /* RTRootNavigationController.m */; };
 		0469441321EEF14400362611 /* AWRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469441221EEF14400362611 /* AWRootNavigationController.m */; };
-		048F3CCF225ED3E000B00FF9 /* QMUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 048F3CCD225ED3E000B00FF9 /* QMUIButton.m */; };
+		048F3CE4225EF4F400B00FF9 /* QMUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 048F3CE2225EF4F400B00FF9 /* QMUIButton.m */; };
+		048F3CE7225EF51F00B00FF9 /* NSAttributedString+QMUILite.m in Sources */ = {isa = PBXBuildFile; fileRef = 048F3CE6225EF51F00B00FF9 /* NSAttributedString+QMUILite.m */; };
 		2DBF7D621F74EFD5005EDBE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF7D611F74EFD5005EDBE6 /* main.m */; };
 		2DBF7D651F74EFD5005EDBE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF7D641F74EFD5005EDBE6 /* AppDelegate.m */; };
 		2DBF7D6D1F74EFD5005EDBE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DBF7D6C1F74EFD5005EDBE6 /* Assets.xcassets */; };
@@ -204,9 +205,11 @@
 		0469440A21EEEF3D00362611 /* RTRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTRootNavigationController.m; sourceTree = "<group>"; };
 		0469441121EEF14400362611 /* AWRootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWRootNavigationController.h; sourceTree = "<group>"; };
 		0469441221EEF14400362611 /* AWRootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWRootNavigationController.m; sourceTree = "<group>"; };
-		048F3CCC225ED3DF00B00FF9 /* QMUICommonDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUICommonDefines.h; sourceTree = "<group>"; };
-		048F3CCD225ED3E000B00FF9 /* QMUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMUIButton.m; sourceTree = "<group>"; };
-		048F3CCE225ED3E000B00FF9 /* QMUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUIButton.h; sourceTree = "<group>"; };
+		048F3CE1225EF4F400B00FF9 /* QMUICommonDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUICommonDefines.h; sourceTree = "<group>"; };
+		048F3CE2225EF4F400B00FF9 /* QMUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMUIButton.m; sourceTree = "<group>"; };
+		048F3CE3225EF4F400B00FF9 /* QMUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUIButton.h; sourceTree = "<group>"; };
+		048F3CE5225EF51F00B00FF9 /* NSAttributedString+QMUILite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+QMUILite.h"; sourceTree = "<group>"; };
+		048F3CE6225EF51F00B00FF9 /* NSAttributedString+QMUILite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+QMUILite.m"; sourceTree = "<group>"; };
 		2DBF7D5D1F74EFD5005EDBE6 /* Awesome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Awesome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DBF7D611F74EFD5005EDBE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2DBF7D631F74EFD5005EDBE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -629,14 +632,16 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		048F3CCB225ED3DF00B00FF9 /* QMUIKit_Button */ = {
+		048F3CE0225EF4F400B00FF9 /* QMUIKit_Lite */ = {
 			isa = PBXGroup;
 			children = (
-				048F3CCC225ED3DF00B00FF9 /* QMUICommonDefines.h */,
-				048F3CCD225ED3E000B00FF9 /* QMUIButton.m */,
-				048F3CCE225ED3E000B00FF9 /* QMUIButton.h */,
+				048F3CE1225EF4F400B00FF9 /* QMUICommonDefines.h */,
+				048F3CE2225EF4F400B00FF9 /* QMUIButton.m */,
+				048F3CE3225EF4F400B00FF9 /* QMUIButton.h */,
+				048F3CE5225EF51F00B00FF9 /* NSAttributedString+QMUILite.h */,
+				048F3CE6225EF51F00B00FF9 /* NSAttributedString+QMUILite.m */,
 			);
-			path = QMUIKit_Button;
+			path = QMUIKit_Lite;
 			sourceTree = "<group>";
 		};
 		2DBF7D541F74EFD5005EDBE6 = {
@@ -726,6 +731,7 @@
 		2DBF7D7B1F74F08B005EDBE6 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				048F3CE0225EF4F400B00FF9 /* QMUIKit_Lite */,
 				0469440421EEEF3D00362611 /* RTRootNavigationController */,
 				91E744AC21548B4500F18CE6 /* SDWebImage */,
 				91E744182154850500F18CE6 /* IQKeyboardManager */,
@@ -790,7 +796,6 @@
 		2DBF7D7E1F74F169005EDBE6 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
-				048F3CCB225ED3DF00B00FF9 /* QMUIKit_Button */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -1692,17 +1697,18 @@
 				91E7450A21548B4500F18CE6 /* UIView+WebCacheOperation.m in Sources */,
 				91D83C2D1FB44E82004595DE /* NSDate+JKCupertinoYankee.m in Sources */,
 				914932F31FBD5F0C005C3A00 /* UIViewController+Extension.m in Sources */,
+				048F3CE7225EF51F00B00FF9 /* NSAttributedString+QMUILite.m in Sources */,
 				9141BA1220108B0B00E311EC /* UIColor+YYAdd.m in Sources */,
 				91E7450421548B4500F18CE6 /* SDWebImageTransition.m in Sources */,
 				917413C41FD91E080003BDD4 /* UIViewController+BackButtonHandler.m in Sources */,
 				91D83C281FB44E82004595DE /* NSDate+JKInternetDateTime.m in Sources */,
 				91E7436A215482F400F18CE6 /* View+MASAdditions.m in Sources */,
-				048F3CCF225ED3E000B00FF9 /* QMUIButton.m in Sources */,
 				91E74366215482F400F18CE6 /* MASCompositeConstraint.m in Sources */,
 				91226C0721A281A20000375B /* XMEngine.m in Sources */,
 				91E744F021548B4500F18CE6 /* MKAnnotationView+WebCache.m in Sources */,
 				91E744472154850500F18CE6 /* IQUIViewController+Additions.m in Sources */,
 				914F0A2620B3B3DB00339165 /* RJBadgeModel.m in Sources */,
+				048F3CE4225EF4F400B00FF9 /* QMUIButton.m in Sources */,
 				91E7440A215484AF00F18CE6 /* MJRefreshBackGifFooter.m in Sources */,
 				91226C0821A281A20000375B /* XMCenter.m in Sources */,
 				0469440F21EEEF3D00362611 /* RTRootNavigationController.m in Sources */,
