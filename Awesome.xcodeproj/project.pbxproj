@@ -13,6 +13,7 @@
 		0469441321EEF14400362611 /* AWRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469441221EEF14400362611 /* AWRootNavigationController.m */; };
 		048F3CE4225EF4F400B00FF9 /* QMUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 048F3CE2225EF4F400B00FF9 /* QMUIButton.m */; };
 		048F3CE7225EF51F00B00FF9 /* NSAttributedString+QMUILite.m in Sources */ = {isa = PBXBuildFile; fileRef = 048F3CE6225EF51F00B00FF9 /* NSAttributedString+QMUILite.m */; };
+		04F7FBEF22672F5600F8A7AA /* AWNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7FBEE22672F5600F8A7AA /* AWNotificationManager.m */; };
 		2DBF7D621F74EFD5005EDBE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF7D611F74EFD5005EDBE6 /* main.m */; };
 		2DBF7D651F74EFD5005EDBE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF7D641F74EFD5005EDBE6 /* AppDelegate.m */; };
 		2DBF7D6D1F74EFD5005EDBE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DBF7D6C1F74EFD5005EDBE6 /* Assets.xcassets */; };
@@ -210,6 +211,8 @@
 		048F3CE3225EF4F400B00FF9 /* QMUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUIButton.h; sourceTree = "<group>"; };
 		048F3CE5225EF51F00B00FF9 /* NSAttributedString+QMUILite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+QMUILite.h"; sourceTree = "<group>"; };
 		048F3CE6225EF51F00B00FF9 /* NSAttributedString+QMUILite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+QMUILite.m"; sourceTree = "<group>"; };
+		04F7FBED22672F5600F8A7AA /* AWNotificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AWNotificationManager.h; sourceTree = "<group>"; };
+		04F7FBEE22672F5600F8A7AA /* AWNotificationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AWNotificationManager.m; sourceTree = "<group>"; };
 		2DBF7D5D1F74EFD5005EDBE6 /* Awesome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Awesome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DBF7D611F74EFD5005EDBE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2DBF7D631F74EFD5005EDBE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -809,6 +812,8 @@
 				91B0BADF20622A2500B31447 /* AWUserManager.m */,
 				914F3D8D1FBA756D001C35F3 /* AWConfigManager.h */,
 				914F3D8E1FBA756D001C35F3 /* AWConfigManager.m */,
+				04F7FBED22672F5600F8A7AA /* AWNotificationManager.h */,
+				04F7FBEE22672F5600F8A7AA /* AWNotificationManager.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1764,6 +1769,7 @@
 				5699318A1F79F20200BA1BEB /* MJProperty.m in Sources */,
 				91E744F521548B4500F18CE6 /* SDWebImageCodersManager.m in Sources */,
 				91E744442154850500F18CE6 /* IQUITextFieldView+Additions.m in Sources */,
+				04F7FBEF22672F5600F8A7AA /* AWNotificationManager.m in Sources */,
 				91E7436B215482F400F18CE6 /* MASConstraint.m in Sources */,
 				91E74413215484AF00F18CE6 /* MJRefreshFooter.m in Sources */,
 				91E7440F215484AF00F18CE6 /* MJRefreshAutoNormalFooter.m in Sources */,
