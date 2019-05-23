@@ -9,7 +9,7 @@
 import UIKit
 
 @objc protocol CDFloatViewDelegate: NSObjectProtocol {
-    @objc optional func floatView(_ view: CDFloatView, didClick index: Int)
+    @objc optional func floatView(_ view: CDFloatView, didClick item: CDFloatViewItem, index: Int)
 }
 
 
@@ -33,9 +33,10 @@ class CDFloatView: UIView {
     }
     
     
-    
+    /// 收起动画时，移动的宽度
     var animateWidth = CGFloat(78)
-    var items: [Item] {
+    
+    var items: [CDFloatViewItem] {
         didSet {
             setupButtons()
             self.setNeedsLayout()
@@ -43,7 +44,7 @@ class CDFloatView: UIView {
         }
     }
 
-    var itemSpace: CGFloat = 10 {
+    var itemSpace: CGFloat = 1 {
         didSet {
             self.setNeedsLayout()
             self.layoutIfNeeded()
@@ -75,7 +76,7 @@ class CDFloatView: UIView {
     ///   - width: 宽度
     ///   - orignY: 左上角的y值
     ///   - fitLeft: 是否靠左
-    init(items: [Item], width: CGFloat, orignY: CGFloat, fitLeft: Bool) {
+    init(items: [CDFloatViewItem], width: CGFloat, orignY: CGFloat, fitLeft: Bool) {
         self.items = items
         self.fitLeft = fitLeft
         
@@ -130,7 +131,8 @@ class CDFloatView: UIView {
     @objc
     private func handleBtnAction(sender: UIButton) {
         let idx = sender.tag - tagStart
-        delegate?.floatView?(self, didClick: idx)
+        let item = items[idx]
+        delegate?.floatView?(self, didClick: item, index: idx)
     }
     
     
@@ -183,32 +185,38 @@ class CDFloatView: UIView {
 }
 
 
-extension CDFloatView {
+class CDFloatViewItem: NSObject {
     
-    struct Item {
-        var iconName: String
-        var title: String
-        var bgImgName: String?
+    var iconName: String
+    var title: String
+    var tagInfo: String /// 标记，可以区分点击
+    
+    var bgImgName: String?
+    var imgPosition: QMUIButtonImagePosition
+    var bgColor: UIColor?
+    var shadowColor: UIColor
+    var titleColor: UIColor
+    var titleFont: UIFont
+    var height: CGFloat
+    
+    
+    init(iconName: String, title: String, tagInfo: String, bgImgName: String? = nil, bgColor: UIColor? = nil) {
+        self.iconName = iconName
+        self.title = title
+        self.bgImgName = bgImgName
+        self.bgColor = bgColor
+        self.tagInfo = tagInfo
         
-        var imgPosition: QMUIButtonImagePosition
-        var bgColor: UIColor?
-        var shadowColor: UIColor
-        var titleColor: UIColor
-        var titleFont: UIFont
-        var height: CGFloat
+        imgPosition = .left
+        shadowColor = UIColor.black.withAlphaComponent(0.16)
+        titleColor = UIColor(hex6: 0x5095F1)
+        titleFont = UIFont.systemFont(ofSize: 14, weight: .medium)
+        height = 60
         
-        
-        init(iconName: String, title: String, bgImgName: String? = nil, bgColor: UIColor? = nil) {
-            self.iconName = iconName
-            self.title = title
-            self.bgImgName = bgImgName
-            self.bgColor = bgColor
-            
-            imgPosition = .left
-            shadowColor = UIColor.black.withAlphaComponent(0.16)
-            titleColor = UIColor(hex6: 0x5095F1)
-            titleFont = UIFont.systemFont(ofSize: 14, weight: .medium)
-            height = 44
-        }
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
