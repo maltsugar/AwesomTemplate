@@ -21,9 +21,15 @@ singleton_interface(AppTools);
 - (void)startApp;
 
 - (void)afterLoginSucceed;
+ 
+    
+/**
+ 判断是否需要强制登录
 
-// 未登录时强制登录
-- (void)forceUserLoginAnimated:(BOOL)animated;
+ @param animated 弹出登录页面是否需要动画
+ @return 是否需要强制登录
+ */
+- (BOOL)forceLoginIfNeeded:(BOOL)animated;
 
 - (void)dismissLoginVC;
 

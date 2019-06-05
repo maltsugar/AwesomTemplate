@@ -46,16 +46,18 @@ singleton_implementation(AppTools);
 }
 
 
-- (void)forceUserLoginAnimated:(BOOL)animated
+- (BOOL)forceLoginIfNeeded:(BOOL)animated
 {
-    // 没有获取本地存储的 用户id 用户token
-    BOOL flag = [[AWUserManager sharedAWUserManager] isUserLogined];
+    // 获取用户信息的标记
+    BOOL didCacheUserInfo = [[AWUserManager sharedAWUserManager] isUserLogined];
     UIViewController *parentVC = _tabBarController;
     if (parentVC.presentedViewController) parentVC = parentVC.presentedViewController;
     
-    if (!flag) {
+    if (!didCacheUserInfo) {
+        // 没有获取本地存储的 用户id 用户token
         [parentVC presentViewController:self.loginNav animated:animated completion:nil];
     }
+    return !didCacheUserInfo;
 }
 
 - (void)dismissLoginVC
@@ -77,7 +79,7 @@ singleton_implementation(AppTools);
         [window jk_makeToast:showTip duration:0.5 position:JKToastPositionCenter];
     }
     if (login) {
-        [self forceUserLoginAnimated:YES];
+        [self forceLoginIfNeeded:YES];
     }
 }
 
