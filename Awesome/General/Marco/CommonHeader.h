@@ -104,8 +104,10 @@ blue:((float)(hexValue & 0xFF)) / 255.0 alpha:1.0]
 
 
 #define kAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
-
 #define kSystemVersion [[[UIDevice currentDevice] systemVersion] doubleValue]
+#define kUpdateAddress @"https://itunes.apple.com/cn/app/id1306589146?mt=8"
+
+
 
 #define kISiPhone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define kISiPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
