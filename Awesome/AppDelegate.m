@@ -8,8 +8,7 @@
 
 
 #import "AppDelegate.h"
-#import "AvoidCrash.h"
-#import "IQKeyboardManager.h"
+
 
 
 @interface AppDelegate ()
@@ -43,51 +42,6 @@
     // 设置根视图
     [[AppTools sharedAppTools] startApp];
     
-    // 配置请求类，采用AWConfigManager不用宏 可以动态设置URL，便于调试
-    // 调用该方法会调用内部setup方法，设置通用配置
-    [AWConfigManager sharedConfigManager];
-    
-  
-    
-    // 设置键盘
-    [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];
-    
-    
-    
-#ifdef DEBUG
-#else
-    // 防止崩溃
-    [AvoidCrash makeAllEffective];
-    NSArray *noneSelClassStrings = @[
-                                     @"NSString"
-                                     ];
-    [AvoidCrash setupNoneSelClassStringsArr:noneSelClassStrings];
-    //监听通知:AvoidCrashNotification, 获取AvoidCrash捕获的崩溃日志的详细信息
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dealwithCrashMessage:) name:AvoidCrashNotification object:nil];
-#endif
-    
-    
-    // 版本引导页，并不是每个小版本都显示，具体控制由下面注释处3行代码控制
-    NSString *lastIntrolVersion = [[NSUserDefaults standardUserDefaults] objectForKey:kLastShowIntrolductionVersionKey];
-    if (lastIntrolVersion) {
-        // 默认不显示引导页，直接执行下面3行代码
-        // 需要显示引导页，注释下面3行代码
-        lastIntrolVersion = [kAppVersion copy];
-        [kUserDefaults setObject:lastIntrolVersion forKey:kLastShowIntrolductionVersionKey];
-        [kUserDefaults synchronize];
-        
-        
-        if (![lastIntrolVersion isEqualToString:kAppVersion]) {
-            // 引导页结束后， 同步当前版本号到kLastShowIntrolductionVersionKey
-            [[AppTools sharedAppTools] showIntrolductionPages];
-        }
-        
-    }else
-    {
-        // 引导页结束后， 同步当前版本号到kLastShowIntrolductionVersionKey
-        [[AppTools sharedAppTools] showIntrolductionPages];
-    }
-    
     
     return YES;
 }
@@ -119,11 +73,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void)dealwithCrashMessage:(NSNotification *)note {
-    //注意:所有的信息都在userInfo中
-    //你可以在这里收集相应的崩溃信息进行相应的处理(比如传到自己服务器)
-//    NSLog(@"%@",note.userInfo);
-}
+
 
 
 
