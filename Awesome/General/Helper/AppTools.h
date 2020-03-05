@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "Singleton.h"
 
-@class PopOverVieConfiguration, BaseResonseModel;
+@class CPShowStyle, BaseResonseModel;
 
 typedef void(^GetCacheSizeComplete)(NSUInteger size);
 
@@ -79,7 +79,7 @@ char *formattedLogDate(void);
 
 
 // 弹出视图配置（用不到可删除）
-//PopOverVieConfiguration *defaultGrayBgConfig();
+//CPShowStyle *defaultStyle();
 
 
 // 一些常量

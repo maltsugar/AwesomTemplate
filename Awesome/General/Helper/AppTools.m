@@ -19,6 +19,7 @@
 #import "Reachability.h"
 #import <CoreTelephony/CTCarrier.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
+//#import "CustomPopOverView.h"
 
 @interface AppTools ()
 
@@ -443,12 +444,12 @@ char *formattedLogDate(void)
     return buffer;
 }
 
-//PopOverVieConfiguration *defaultGrayBgConfig()
+//CPShowStyle *defaultStyle()
 //{
-//    PopOverVieConfiguration *config = [PopOverVieConfiguration new];
+//    CPShowStyle *config = [CPShowStyle new];
 //    config.triAngelHeight = 0;
 //    config.triAngelWidth = 0;
-//    config.containerViewCornerRadius = 0;
+//    config.containerCornerRadius = 0;
 //    config.roundMargin = 0;
 //    config.isNeedAnimate = NO;
 //    return config;
