@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "Singleton.h"
 
-@class CPShowStyle, BaseResonseModel;
+@class CPShowStyle, BaseResponseModel;
 
 typedef void(^GetCacheSizeComplete)(NSUInteger size);
 
@@ -37,7 +37,7 @@ singleton_interface(AppTools);
 
 
 // 处理请求通用的情况
-- (void)manageBaseResponseModle:(BaseResonseModel *)model;
+- (void)manageBaseResponseModle:(BaseResponseModel *)model;
 
 
 // 切换tab

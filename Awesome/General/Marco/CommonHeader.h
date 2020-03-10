@@ -160,7 +160,7 @@ shouldPrevent = NO; \
 
 #import "XMNetworking.h"
 #import "AWConfigManager.h"
-#import "BaseResonseModel.h"
+#import "BaseResponseModel.h"
 #import "RTRootNavigationController.h"
 #import "AWBaseViewController.h"
 

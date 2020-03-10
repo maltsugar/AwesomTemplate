@@ -95,7 +95,7 @@
 		9174A49E1FC90BE8005FD18E /* NSArray+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9174A4961FC90BE8005FD18E /* NSArray+HYBUnicodeReadable.m */; };
 		9174A49F1FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9174A4971FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.m */; };
 		9174A4A01FC90BE8005FD18E /* NSSet+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9174A4991FC90BE8005FD18E /* NSSet+HYBUnicodeReadable.m */; };
-		917ECF3C20A184B60039494D /* BaseResonseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 917ECF3B20A184B60039494D /* BaseResonseModel.m */; };
+		917ECF3C20A184B60039494D /* BaseResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 917ECF3B20A184B60039494D /* BaseResponseModel.m */; };
 		9182A0B91F8DB06100EE238F /* AppTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9182A0B81F8DB06100EE238F /* AppTools.m */; };
 		91A750FC21003BD3005F2FE8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A750F821003BD3005F2FE8 /* Reachability.m */; };
 		91A7513921006483005F2FE8 /* TOSearchBarLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 91A7512621006483005F2FE8 /* TOSearchBarLocalizable.strings */; };
@@ -383,8 +383,8 @@
 		9174A49B1FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
 		9174A49C1FC90BE8005FD18E /* NSSet+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
 		9174A49D1FC90BE8005FD18E /* NSObject+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
-		917ECF3A20A184B60039494D /* BaseResonseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseResonseModel.h; sourceTree = "<group>"; };
-		917ECF3B20A184B60039494D /* BaseResonseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResonseModel.m; sourceTree = "<group>"; };
+		917ECF3A20A184B60039494D /* BaseResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseResponseModel.h; sourceTree = "<group>"; };
+		917ECF3B20A184B60039494D /* BaseResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResponseModel.m; sourceTree = "<group>"; };
 		9182A0B71F8DB06100EE238F /* AppTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppTools.h; sourceTree = "<group>"; };
 		9182A0B81F8DB06100EE238F /* AppTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTools.m; sourceTree = "<group>"; };
 		919DD82A1FB92564004EFB9F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -714,8 +714,8 @@
 		2DBF7D791F74F06B005EDBE6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				917ECF3A20A184B60039494D /* BaseResonseModel.h */,
-				917ECF3B20A184B60039494D /* BaseResonseModel.m */,
+				917ECF3A20A184B60039494D /* BaseResponseModel.h */,
+				917ECF3B20A184B60039494D /* BaseResponseModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1695,7 +1695,7 @@
 				91716708202C1E5200ED39E5 /* UIImage+JKColor.m in Sources */,
 				916C74901F7F48CF0056F06B /* AvoidCrash.m in Sources */,
 				91E7443C2154850500F18CE6 /* IQToolbar.m in Sources */,
-				917ECF3C20A184B60039494D /* BaseResonseModel.m in Sources */,
+				917ECF3C20A184B60039494D /* BaseResponseModel.m in Sources */,
 				916C74911F7F48CF0056F06B /* AvoidCrashStubProxy.m in Sources */,
 				91E7450021548B4500F18CE6 /* NSButton+WebCache.m in Sources */,
 				560D28F91F7DD14900C7ACEC /* AWTabBarController.m in Sources */,

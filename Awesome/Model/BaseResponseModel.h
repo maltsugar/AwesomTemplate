@@ -1,8 +1,8 @@
 //
-//  BaseResonseModel.h
-//  TruckCreditStaff
+//  BaseResponseModel.h
+//  qm
 //
-//  Created by qm on 2017/11/23.
+//  Created by zgy on 2017/11/23.
 //  Copyright © 2017年 zgy. All rights reserved.
 //  接口响应基类
 
@@ -17,7 +17,7 @@ extern NSString *const kResponseFreezeCode;
 extern NSString *const kResponseInvestTooMuchCode;
 
 
-@interface BaseResonseModel : NSObject
+@interface BaseResponseModel : NSObject
 
 @property (nonatomic,   copy) NSString *responseCode;
 @property (nonatomic,   copy) NSString *responseMsg;
