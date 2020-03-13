@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-
+#import "ChangeURLViewController.h"
 
 @interface LoginViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
@@ -71,6 +71,10 @@
 
 
 
+- (IBAction)handleChangeURL {
+    ChangeURLViewController *vc = [ChangeURLViewController new];
+    [self presentViewController:vc animated:YES completion:nil];
+}
 
 
 - (void)headerRefresh
@@ -106,6 +110,10 @@
 
 - (IBAction)handleLoginAction
 {
+    AWConfigManager *config = [AWConfigManager sharedConfigManager];
+    
+    NSLog(@"%@  %@", config.baseURL, config.path);
+    
     [MBProgressHUD showSuccess:@"登录中"];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 模拟网络延迟
