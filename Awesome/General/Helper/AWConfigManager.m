@@ -31,87 +31,8 @@ static NSString *_kAWConfigManagerPathKey = @"kAWConfigManagerPathKey";
 
 @implementation AWConfigManager
 
-@synthesize baseURL = _baseURL, path = _path;
+//@synthesize baseURL = _baseURL, path = _path;
 
-- (NSString *)baseURL
-{
-    if (nil == _baseURL) {
-#if defined kConfigEnv_DEBUG
-        _baseURL = @"http://192.168.1.48";
-        //        _baseURL = @"http://192.168.2.114:8080";
-        
-        
-        
-        
-        
-        
-        if (_allowPersistent) {
-            NSString *info = [[NSUserDefaults standardUserDefaults] stringForKey:_kAWConfigManagerBaseURLKey];
-            if (info.length > 0) {
-                _baseURL = info;
-            }
-        }
-        
-#endif
-        
-#if defined kConfigEnv_RELEASE
-        _baseURL = @"https://op.51huochedai.com";
-#endif
-    }
-    return _baseURL;
-}
-
-- (NSString *)path
-{
-    if (nil == _path) {
-#if defined kConfigEnv_DEBUG
-        _path = @"api/service";
-        
-        
-        
-        if (_allowPersistent) {
-            NSString *info = [[NSUserDefaults standardUserDefaults] stringForKey:_kAWConfigManagerPathKey];
-            if (info.length > 0) {
-                _path = info;
-            }
-        }
-        
-#endif
-        
-#if defined kConfigEnv_RELEASE
-        _path = @"api/service";
-#endif
-    }
-    return _path;
-}
-
-- (NSString *)OSSPolicyPath
-{
-    if (nil == _OSSPolicyPath) {
-#if defined kConfigEnv_DEBUG
-        _OSSPolicyPath = @"op/oss/ossapptoken";
-#endif
-        
-#if defined kConfigEnv_RELEASE
-        _OSSPolicyPath = @"op/oss/ossapptoken";
-#endif
-    }
-    return _OSSPolicyPath;
-}
-
-- (NSString *)OSSPolicyBaseURL
-{
-    if (nil == _OSSPolicyBaseURL) {
-#if defined kConfigEnv_DEBUG
-        _OSSPolicyBaseURL = self.baseURL;
-#endif
-        
-#if defined kConfigEnv_RELEASE
-        _OSSPolicyBaseURL = self.baseURL;
-#endif
-    }
-    return _OSSPolicyBaseURL;
-}
 
 #pragma mark- setters
 - (void)setBaseURL:(NSString *)baseURL
@@ -122,6 +43,7 @@ static NSString *_kAWConfigManagerPathKey = @"kAWConfigManagerPathKey";
         [ud setObject:baseURL forKey:_kAWConfigManagerBaseURLKey];
         [ud synchronize];
     }
+    [self setup];
 }
 
 - (void)setPath:(NSString *)path
@@ -132,11 +54,8 @@ static NSString *_kAWConfigManagerPathKey = @"kAWConfigManagerPathKey";
         [ud setObject:path forKey:_kAWConfigManagerPathKey];
         [ud synchronize];
     }
+    [self setup];
 }
-
-
-
-
 
 
 - (NSString *)apiVersion
@@ -208,6 +127,46 @@ static AWConfigManager *_instance;
 // 设置请求通用配置
 - (void)setup
 {
+    
+#if defined kConfigEnv_DEBUG
+    _baseURL = @"http://192.168.1.48";
+    // _baseURL = @"http://192.168.2.114:8080";
+    
+    _path = @"api/service";
+    
+    
+    if (_allowPersistent) {
+        NSString *info = [[NSUserDefaults standardUserDefaults] stringForKey:_kAWConfigManagerBaseURLKey];
+        if (info.length > 0) {
+            _baseURL = info;
+        }
+        
+        NSString *info1 = [[NSUserDefaults standardUserDefaults] stringForKey:_kAWConfigManagerPathKey];
+        if (info1.length > 0) {
+            _path = info1;
+        }
+    }
+    
+    
+    _OSSPolicyPath = @"op/oss/ossapptoken";
+    _OSSPolicyBaseURL = _baseURL;
+    
+    
+    
+#endif
+    
+#if defined kConfigEnv_RELEASE
+    _baseURL = @"https://op.51huochedai.com";
+    _path = @"api/service";
+    _OSSPolicyPath = @"op/oss/ossapptoken";
+    _OSSPolicyBaseURL = _baseURL;
+#endif
+    
+    
+    
+    
+    
+    
     kWeakSelf(self);
     
     // 网络请求全局配置
