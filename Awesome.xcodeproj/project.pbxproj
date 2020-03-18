@@ -195,6 +195,7 @@
 		91EC94FE1FA9618F005C5021 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EC94FC1FA9618F005C5021 /* TableViewCell.m */; };
 		91EC94FF1FA9618F005C5021 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91EC94FD1FA9618F005C5021 /* TableViewCell.xib */; };
 		91EF7C952021B80B00755759 /* UIAlertView+JKBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EF7C932021B80B00755759 /* UIAlertView+JKBlock.m */; };
+		B9319E1524220B8D00DA7423 /* UIAlertController+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = B9319E1324220B8D00DA7423 /* UIAlertController+Blocks.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -603,6 +604,8 @@
 		91EC94FD1FA9618F005C5021 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		91EF7C932021B80B00755759 /* UIAlertView+JKBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+JKBlock.m"; sourceTree = "<group>"; };
 		91EF7C942021B80B00755759 /* UIAlertView+JKBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+JKBlock.h"; sourceTree = "<group>"; };
+		B9319E1324220B8D00DA7423 /* UIAlertController+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Blocks.m"; sourceTree = "<group>"; };
+		B9319E1424220B8D00DA7423 /* UIAlertController+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Blocks.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -786,6 +789,8 @@
 				91C1730C1FC6C0EB0050F371 /* UIBarButtonItem+Extension.m */,
 				917413C31FD91E080003BDD4 /* UIViewController+BackButtonHandler.h */,
 				917413C21FD91E080003BDD4 /* UIViewController+BackButtonHandler.m */,
+				B9319E1424220B8D00DA7423 /* UIAlertController+Blocks.h */,
+				B9319E1324220B8D00DA7423 /* UIAlertController+Blocks.m */,
 				91EF7C942021B80B00755759 /* UIAlertView+JKBlock.h */,
 				91EF7C932021B80B00755759 /* UIAlertView+JKBlock.m */,
 				2DBF7D861F74F7AD005EDBE6 /* UIView+Extension.h */,
@@ -1729,6 +1734,7 @@
 				91E7436D215482F400F18CE6 /* MASViewAttribute.m in Sources */,
 				91E744F421548B4500F18CE6 /* UIImage+ForceDecode.m in Sources */,
 				56C094A01F7A0724002C3ECE /* AFSecurityPolicy.m in Sources */,
+				B9319E1524220B8D00DA7423 /* UIAlertController+Blocks.m in Sources */,
 				56C094A11F7A0724002C3ECE /* AFURLRequestSerialization.m in Sources */,
 				91D83C271FB44E82004595DE /* NSDate+JKExtension.m in Sources */,
 				91E7436C215482F400F18CE6 /* MASViewConstraint.m in Sources */,
