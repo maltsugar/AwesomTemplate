@@ -61,7 +61,7 @@ _Pragma("clang diagnostic pop") \
 + (NSDate *)jk_dateWithDaysFromNow: (NSInteger) days
 {
     // Thanks, Jim Morrison
-    return [[NSDate date] jk_dateByAddingDays:days];
+    return [[NSDate date] jkut_dateByAddingDays:days];
 }
 
 + (NSDate *)jk_dateWithDaysBeforeNow: (NSInteger) days
@@ -109,7 +109,7 @@ _Pragma("clang diagnostic pop") \
 }
 
 #pragma mark - String Properties
-- (NSString *) jk_stringWithFormat: (NSString *) format
+- (NSString *) jkut_stringWithFormat: (NSString *) format
 {
     NSDateFormatter *formatter = [NSDateFormatter new];
     //    formatter.locale = [NSLocale currentLocale]; // Necessary?
@@ -425,7 +425,7 @@ _Pragma("clang diagnostic pop") \
 }
 
 // Courtesy of dedan who mentions issues with Daylight Savings
-- (NSDate *) jk_dateByAddingDays: (NSInteger) dDays
+- (NSDate *) jkut_dateByAddingDays: (NSInteger) dDays
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     [dateComponents setDay:dDays];
@@ -435,7 +435,7 @@ _Pragma("clang diagnostic pop") \
 
 - (NSDate *) jk_dateBySubtractingDays: (NSInteger) dDays
 {
-    return [self jk_dateByAddingDays: (dDays * -1)];
+    return [self jkut_dateByAddingDays: (dDays * -1)];
 }
 
 - (NSDate *) jk_dateByAddingHours: (NSInteger) dHours
@@ -601,13 +601,13 @@ _Pragma("clang diagnostic pop") \
 #endif
     return components.hour;
 }
-- (NSInteger) jk_hour
+- (NSInteger) jkut_hour
 {
     NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
     return components.hour;
 }
 
-- (NSInteger) jk_minute
+- (NSInteger) jkut_minute
 {
     NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
     return components.minute;
@@ -619,13 +619,13 @@ _Pragma("clang diagnostic pop") \
     return components.second;
 }
 
-- (NSInteger) jk_day
+- (NSInteger) jkut_day
 {
     NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
     return components.day;
 }
 
-- (NSInteger) jk_month
+- (NSInteger) jkut_month
 {
     NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
     return components.month;
@@ -637,7 +637,7 @@ _Pragma("clang diagnostic pop") \
     return components.weekOfMonth;
 }
 
-- (NSInteger) jk_weekday
+- (NSInteger) jkut_weekday
 {
     NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
     return components.weekday;
@@ -649,7 +649,7 @@ _Pragma("clang diagnostic pop") \
     return components.weekdayOrdinal;
 }
 
-- (NSInteger) jk_year
+- (NSInteger) jkut_year
 {
     NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
     return components.year;

@@ -74,7 +74,7 @@
 }
 
 
-+ (NSDate *)jk_dateWithYear:(int)year month:(int)month day:(int)day {
++ (NSDate *)jkrp_dateWithYear:(int)year month:(int)month day:(int)day {
     NSDateComponents *components = [[NSDateComponents alloc] init];
     
     // Assign the year, month and day components.

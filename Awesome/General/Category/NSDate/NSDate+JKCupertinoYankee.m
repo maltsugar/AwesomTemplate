@@ -74,7 +74,7 @@
     return [calendar dateFromComponents:components];
 }
 
-- (NSDate *)jk_endOfWeek {
+- (NSDate *)jkcu_endOfWeek {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDateComponents *components = [[NSDateComponents alloc] init];
@@ -100,7 +100,7 @@
     return [calendar dateFromComponents:components];
 }
 
-- (NSDate *)jk_endOfMonth {
+- (NSDate *)jkcu_endOfMonth {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDateComponents *components = [[NSDateComponents alloc] init];
@@ -127,7 +127,7 @@
     return [calendar dateFromComponents:components];
 }
 
-- (NSDate *)jk_endOfYear {
+- (NSDate *)jkcu_endOfYear {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDateComponents *components = [[NSDateComponents alloc] init];

@@ -53,7 +53,7 @@
 /**
  
  */
-- (NSDate *)jk_endOfWeek;
+- (NSDate *)jkcu_endOfWeek;
 
 ///-----------------------------------------
 /// @name Calculate Beginning / End of Month
@@ -67,7 +67,7 @@
 /**
  
  */
-- (NSDate *)jk_endOfMonth;
+- (NSDate *)jkcu_endOfMonth;
 
 ///----------------------------------------
 /// @name Calculate Beginning / End of Year
@@ -81,6 +81,6 @@
 /**
  
  */
-- (NSDate *)jk_endOfYear;
+- (NSDate *)jkcu_endOfYear;
 
 @end

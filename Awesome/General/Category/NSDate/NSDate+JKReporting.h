@@ -9,7 +9,7 @@
 @interface NSDate (JKReporting)
 
 // Return a date with a specified year, month and day.
-+ (NSDate *)jk_dateWithYear:(int)year month:(int)month day:(int)day;
++ (NSDate *)jkrp_dateWithYear:(int)year month:(int)month day:(int)day;
 
 // Return midnight on the specified date.
 + (NSDate *)jk_midnightOfDate:(NSDate *)date;
