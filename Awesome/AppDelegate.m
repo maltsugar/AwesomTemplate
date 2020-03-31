@@ -40,7 +40,7 @@
     [self.window makeKeyAndVisible];
     
     // 设置根视图
-    [[AppTools sharedAppTools] startApp];
+    [[AppTools sharedTools] startAppWithLoginPage:YES];
     
     
     return YES;

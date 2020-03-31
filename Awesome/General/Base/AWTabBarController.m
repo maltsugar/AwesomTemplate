@@ -49,7 +49,7 @@
     BOOL flag = YES;
     if (selectedIndex == 1 || selectedIndex == 2 || selectedIndex == 4) {
         flag = [[AWUserManager sharedAWUserManager] isUserLogined];
-        [[AppTools sharedAppTools] forceLoginIfNeeded:YES];
+        [[AppTools sharedTools] forceLoginAnimated:YES];
     }
     
     if (flag) {
@@ -64,7 +64,7 @@
     BOOL flag = YES;
     if (index == 1 || index == 2 || index == 4) {
         flag = [[AWUserManager sharedAWUserManager] isUserLogined];
-        [[AppTools sharedAppTools] forceLoginIfNeeded:YES];
+        [[AppTools sharedTools] forceLoginAnimated:YES];
     }
     
     

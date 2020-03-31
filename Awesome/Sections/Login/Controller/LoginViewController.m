@@ -118,7 +118,7 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 模拟网络延迟
         [MBProgressHUD hideHUD];
-        [[AppTools sharedAppTools] afterLoginSucceed];
+        [[AppTools sharedTools] afterLoginSucceed];
     });
 }
 

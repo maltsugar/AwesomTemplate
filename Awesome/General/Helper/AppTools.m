@@ -22,6 +22,9 @@
 //#import "CustomPopOverView.h"
 
 @interface AppTools ()
+{
+    BOOL _didPresentLoginPage;
+}
 
 @property (nonatomic, strong) AWTabBarController *tabBarController;
 @property (nonatomic, strong) AWRootNavigationController *loginNav;
@@ -30,13 +33,34 @@
 @end
 
 @implementation AppTools
-singleton_implementation(AppTools);
 
-
-- (void)startApp
+static AppTools *_instance;
++ (id)allocWithZone:(struct _NSZone *)zone
 {
-    _tabBarController = [AWTabBarController new];
-    kAppDelegate.window.rootViewController = _tabBarController;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [super allocWithZone:zone];
+    });
+    
+    return _instance;
+}
+
++ (instancetype)sharedTools
+{
+    if (_instance == nil) {
+        _instance = [[AppTools alloc] init];
+    }
+    return _instance;
+}
+
+
+- (void)startAppWithLoginPage:(BOOL)flag
+{
+    if (flag) {
+        kAppDelegate.window.rootViewController = self.loginNav;
+    }else {
+        kAppDelegate.window.rootViewController = self.tabBarController;
+    }
     
     
     // 配置请求类，采用AWConfigManager不用宏 可以动态设置URL，便于调试
@@ -75,13 +99,13 @@ singleton_implementation(AppTools);
         
         if (![lastIntrolVersion isEqualToString:kAppVersion]) {
             // 引导页结束后， 同步当前版本号到kLastShowIntrolductionVersionKey
-            [[AppTools sharedAppTools] showIntrolductionPages];
+            [[AppTools sharedTools] showIntrolductionPages];
         }
         
     }else
     {
         // 引导页结束后， 同步当前版本号到kLastShowIntrolductionVersionKey
-        [[AppTools sharedAppTools] showIntrolductionPages];
+        [[AppTools sharedTools] showIntrolductionPages];
     }
 }
 
@@ -96,15 +120,21 @@ singleton_implementation(AppTools);
 }
 
 
-- (BOOL)forceLoginIfNeeded:(BOOL)animated
+- (BOOL)forceLoginAnimated:(BOOL)animated
 {
     // 获取用户信息的标记
     BOOL didCacheUserInfo = [[AWUserManager sharedAWUserManager] isUserLogined];
-    UIViewController *parentVC = _tabBarController;
-    if (parentVC.presentedViewController) parentVC = parentVC.presentedViewController;
+    UIViewController *parentVC = self.tabBarController;
+    if (parentVC.presentedViewController) {
+        parentVC = parentVC.presentedViewController;
+    }
     
     if (!didCacheUserInfo) {
+        
+        _didPresentLoginPage = YES;
+        
         // 没有获取本地存储的 用户id 用户token
+        self.loginNav.modalPresentationStyle = UIModalPresentationFullScreen;
         [parentVC presentViewController:self.loginNav animated:animated completion:nil];
     }
     return !didCacheUserInfo;
@@ -112,7 +142,13 @@ singleton_implementation(AppTools);
 
 - (void)dismissLoginVC
 {
-    [self.loginNav dismissViewControllerAnimated:YES completion:nil];
+    if (_didPresentLoginPage) {
+        [self.loginNav dismissViewControllerAnimated:YES completion:nil];
+        _didPresentLoginPage = NO;
+        
+    }else {
+        kAppDelegate.window.rootViewController = self.tabBarController;
+    }
     self.loginNav = nil;
 }
 
@@ -129,7 +165,7 @@ singleton_implementation(AppTools);
         [window jk_makeToast:showTip duration:0.5 position:JKToastPositionCenter];
     }
     if (login) {
-        [self forceLoginIfNeeded:YES];
+        [self forceLoginAnimated:YES];
     }
 }
 
@@ -153,7 +189,7 @@ singleton_implementation(AppTools);
 // 切换tab
 - (void)switchTabbarControllerIndex:(NSUInteger)index
 {
-    [_tabBarController setSelectedIndex:index];
+    [self.tabBarController setSelectedIndex:index];
 }
 
 
@@ -202,6 +238,13 @@ singleton_implementation(AppTools);
         
     }
     return _loginNav;
+}
+- (AWTabBarController *)tabBarController
+{
+    if (nil == _tabBarController) {
+        _tabBarController = [[AWTabBarController alloc]init];
+    }
+    return _tabBarController;
 }
 
 
