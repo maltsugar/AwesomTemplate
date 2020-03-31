@@ -129,7 +129,7 @@ static AppTools *_instance;
         parentVC = parentVC.presentedViewController;
     }
     
-    if (!didCacheUserInfo) {
+    if (!didCacheUserInfo && !_didPresentLoginPage) {
         
         _didPresentLoginPage = YES;
         
@@ -144,12 +144,11 @@ static AppTools *_instance;
 {
     if (_didPresentLoginPage) {
         [self.loginNav dismissViewControllerAnimated:YES completion:nil];
-        _didPresentLoginPage = NO;
-        
     }else {
         kAppDelegate.window.rootViewController = self.tabBarController;
     }
     self.loginNav = nil;
+    _didPresentLoginPage = NO;
 }
 
 
