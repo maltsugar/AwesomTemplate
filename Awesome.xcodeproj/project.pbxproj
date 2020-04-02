@@ -197,6 +197,8 @@
 		B9319E59242211A400DA7423 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = B9319E41242211A300DA7423 /* MJRefreshBackFooter.m */; };
 		B9319E5A242211A400DA7423 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = B9319E42242211A300DA7423 /* MJRefreshAutoFooter.m */; };
 		B9319E5B242211A400DA7423 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B9319E44242211A300DA7423 /* MJRefreshComponent.m */; };
+		B9AE95A52435C68C00E63709 /* AWEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9AE95A22435C68C00E63709 /* AWEmptyView.xib */; };
+		B9AE95A62435C68C00E63709 /* AWEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AE95A42435C68C00E63709 /* AWEmptyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -609,6 +611,9 @@
 		B9319E44242211A300DA7423 /* MJRefreshComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshComponent.m; sourceTree = "<group>"; };
 		B9319E45242211A300DA7423 /* MJRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooter.h; sourceTree = "<group>"; };
 		B9319E46242211A300DA7423 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
+		B9AE95A22435C68C00E63709 /* AWEmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AWEmptyView.xib; sourceTree = "<group>"; };
+		B9AE95A32435C68C00E63709 /* AWEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWEmptyView.h; sourceTree = "<group>"; };
+		B9AE95A42435C68C00E63709 /* AWEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWEmptyView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -769,6 +774,9 @@
 				0469440221EEEF1A00362611 /* AWBaseViewController.m */,
 				0469441121EEF14400362611 /* AWRootNavigationController.h */,
 				0469441221EEF14400362611 /* AWRootNavigationController.m */,
+				B9AE95A32435C68C00E63709 /* AWEmptyView.h */,
+				B9AE95A42435C68C00E63709 /* AWEmptyView.m */,
+				B9AE95A22435C68C00E63709 /* AWEmptyView.xib */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1644,6 +1652,7 @@
 				2DBF7D6D1F74EFD5005EDBE6 /* Assets.xcassets in Resources */,
 				91A7513921006483005F2FE8 /* TOSearchBarLocalizable.strings in Resources */,
 				914F3D7E1FB9687C001C35F3 /* DemoViewController2.xib in Resources */,
+				B9AE95A52435C68C00E63709 /* AWEmptyView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1765,6 +1774,7 @@
 				914F0A2420B3B3DB00339165 /* UITabBarItem+RJBadge.m in Sources */,
 				9174A49F1FC90BE8005FD18E /* NSDictionary+HYBUnicodeReadable.m in Sources */,
 				91B0BAE020622A2500B31447 /* AWUserManager.m in Sources */,
+				B9AE95A62435C68C00E63709 /* AWEmptyView.m in Sources */,
 				91E7450721548B4500F18CE6 /* NSImage+WebCache.m in Sources */,
 				B9319E53242211A400DA7423 /* MJRefreshAutoNormalFooter.m in Sources */,
 				91E74364215482F400F18CE6 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
