@@ -66,5 +66,9 @@
 }
 
 
+- (void)dealloc
+{
+    NSLog(@"2222");
+}
 
 @end

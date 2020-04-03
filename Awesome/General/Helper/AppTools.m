@@ -116,12 +116,18 @@ static AppTools *_instance;
     // 保存用户id  token等
     [[AWUserManager sharedAWUserManager] saveUserInfo];
     
+    if (_resetTabbarChildVCs) {
+        [self.tabBarController resetChildViewControllers];
+    }
+    
     [self dismissLoginVC];
 }
 
 
 - (BOOL)forceLoginAnimated:(BOOL)animated
 {
+//    _resetTabbarChildVCs = YES;
+    
     // 获取用户信息的标记
     BOOL didCacheUserInfo = [[AWUserManager sharedAWUserManager] isUserLogined];
     UIViewController *parentVC = self.tabBarController;

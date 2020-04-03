@@ -16,6 +16,7 @@ typedef void(^GetCacheSizeComplete)(NSUInteger size);
 
 @interface AppTools : NSObject
 
+@property (nonatomic, assign) BOOL resetTabbarChildVCs; /// 是否登录后重置tabbar子vc，根据自己项目需要
 
 + (instancetype)sharedTools;
 

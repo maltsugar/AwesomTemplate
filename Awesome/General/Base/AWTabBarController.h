@@ -2,7 +2,7 @@
 //  AWTabBarController.h
 //  Awesome
 //
-//  Created by 全名财富 on 2017/9/29.
+//  Created by zgy on 2017/9/29.
 //  Copyright © 2017年 zgy. All rights reserved.
 //
 
@@ -10,4 +10,6 @@
 
 @interface AWTabBarController : UITabBarController
 
+
+- (void)resetChildViewControllers;
 @end
