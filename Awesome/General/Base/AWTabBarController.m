@@ -73,6 +73,12 @@
     //    [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -2)];
 }
 
+- (void)modifyTabBarHidden:(BOOL)hidden
+{
+    self.tabBar.hidden = hidden;
+    [self.selectedViewController.view setNeedsLayout];
+    [self.selectedViewController.view layoutIfNeeded];
+}
 
 
 - (void)resetChildViewControllers

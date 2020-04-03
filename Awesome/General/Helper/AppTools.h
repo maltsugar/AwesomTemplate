@@ -45,6 +45,8 @@ typedef void(^GetCacheSizeComplete)(NSUInteger size);
 // 切换tab
 - (void)switchTabbarControllerIndex:(NSUInteger)index;
 
+- (void)modifyTabBarHidden:(BOOL)hidden;
+
 
 // 显示引导页
 - (void)showIntrolductionPages;
