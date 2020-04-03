@@ -9,7 +9,7 @@
 
 @implementation AWEmptyView
 
-+ (instancetype)emptyViewView
++ (instancetype)emptyView
 {
     NSBundle *bd = [NSBundle mainBundle];
     NSArray *arr = [bd loadNibNamed:NSStringFromClass(self) owner:nil options:nil];

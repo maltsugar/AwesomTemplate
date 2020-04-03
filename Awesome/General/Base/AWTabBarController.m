@@ -29,7 +29,7 @@
     
     DemoViewController1 *vc1 = [DemoViewController1 new];
     [self addChildVc:vc1 title:@"更多" image:@"tabbar_1" selectedImage:@"tabbar_1hl"];
-    [vc1.view showEmptyView:nil];
+    [vc1.view showEmptyView];
     
     DemoViewController2 *vc2 = [DemoViewController2 new];
     [self addChildVc:vc2 title:@"我的" image:@"tabbar_2" selectedImage:@"tabbar_2hl"];

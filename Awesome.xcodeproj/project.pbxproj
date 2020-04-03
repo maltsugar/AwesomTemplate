@@ -1020,12 +1020,12 @@
 			isa = PBXGroup;
 			children = (
 				914F0A0A20B3B3DB00339165 /* RJBadgeView.h */,
-				914F0A0B20B3B3DB00339165 /* UIView+RJBadge.m */,
 				914F0A0C20B3B3DB00339165 /* UIBarButtonItem+RJBadge.h */,
-				914F0A0D20B3B3DB00339165 /* UITabBarItem+RJBadge.h */,
 				914F0A0E20B3B3DB00339165 /* UIBarButtonItem+RJBadge.m */,
-				914F0A0F20B3B3DB00339165 /* UIView+RJBadge.h */,
+				914F0A0D20B3B3DB00339165 /* UITabBarItem+RJBadge.h */,
 				914F0A1020B3B3DB00339165 /* UITabBarItem+RJBadge.m */,
+				914F0A0F20B3B3DB00339165 /* UIView+RJBadge.h */,
+				914F0A0B20B3B3DB00339165 /* UIView+RJBadge.m */,
 			);
 			path = BadgeView;
 			sourceTree = "<group>";
@@ -1034,9 +1034,9 @@
 			isa = PBXGroup;
 			children = (
 				914F0A1320B3B3DB00339165 /* RJBadge.h */,
+				914F0A1620B3B3DB00339165 /* RJBadgeInfo.h */,
 				914F0A1420B3B3DB00339165 /* RJBadgeInfo.m */,
 				914F0A1520B3B3DB00339165 /* RJBadgeModel.h */,
-				914F0A1620B3B3DB00339165 /* RJBadgeInfo.h */,
 				914F0A1720B3B3DB00339165 /* RJBadgeModel.m */,
 			);
 			path = BadgeModel;
@@ -1045,12 +1045,12 @@
 		914F0A1820B3B3DB00339165 /* BadgeController */ = {
 			isa = PBXGroup;
 			children = (
-				914F0A1920B3B3DB00339165 /* RJBadgeManager.m */,
-				914F0A1A20B3B3DB00339165 /* RJBadgeController.h */,
 				914F0A1B20B3B3DB00339165 /* NSObject+RJBadgeController.h */,
-				914F0A1C20B3B3DB00339165 /* RJBadgeManager.h */,
 				914F0A1D20B3B3DB00339165 /* NSObject+RJBadgeController.m */,
+				914F0A1A20B3B3DB00339165 /* RJBadgeController.h */,
 				914F0A1E20B3B3DB00339165 /* RJBadgeController.m */,
+				914F0A1C20B3B3DB00339165 /* RJBadgeManager.h */,
+				914F0A1920B3B3DB00339165 /* RJBadgeManager.m */,
 			);
 			path = BadgeController;
 			sourceTree = "<group>";

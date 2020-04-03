@@ -5,10 +5,10 @@
 //
 
 #import "UIView+Extension.h"
+#import <objc/runtime.h>
 #import "AWEmptyView.h"
 
 
-static int __emptyViewTag = 2783210;
 @implementation UIView (Extension)
 
 - (void)setX:(CGFloat)x
@@ -135,6 +135,27 @@ static int __emptyViewTag = 2783210;
     return self.layer.borderWidth;
 }
 
+- (UIView *)emptyView
+{
+    UIView *v = objc_getAssociatedObject(self, _cmd);
+    if (nil == v) {
+        v = [AWEmptyView emptyView];
+        self.emptyView = v;
+    }
+    return v;
+}
+
+- (void)setEmptyView:(UIView *)emptyView
+{
+    UIView *v = objc_getAssociatedObject(self, _cmd);
+    if (v == emptyView) return;
+    objc_setAssociatedObject(self,
+                             @selector(emptyView),
+                             emptyView,
+                             OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+
 - (void)setCorners:(UIRectCorner)corners radius:(CGFloat)radi
 {
     if (@available(iOS 11.0, *)) {
@@ -180,22 +201,19 @@ static int __emptyViewTag = 2783210;
     self.layer.shadowPath = shadowPath.CGPath;
 }
 
-
-- (void)showEmptyView:(UIView *)emptyView
+- (void)showEmptyView
 {
-    if ([self viewWithTag:__emptyViewTag]){
-        return;
-    }
-    
-    UIView *ep = emptyView;
-    if (nil == ep) {
-        ep = [AWEmptyView emptyViewView];
-    }
-    ep.tag = __emptyViewTag;
-    [self addSubview:ep];
-    [ep mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self addSubview:self.emptyView];
+    [self.emptyView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
 }
+- (void)hideEmptyView
+{
+    [self.emptyView removeFromSuperview];
+}
+
+
+
 
 @end

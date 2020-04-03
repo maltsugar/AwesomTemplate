@@ -21,12 +21,14 @@
 @property (nonatomic, assign) IBInspectable CGFloat borderWidth;
 @property (nonatomic, assign) IBInspectable UIColor *borderColor;
 
+@property (nonatomic, strong) UIView *emptyView;
 
 - (void)setCorners:(UIRectCorner)corners radius:(CGFloat)radi;
 - (void)setShadow:(UIColor *)color offset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius;
 
 
-// emptyView为nil时，默认为AWEmptyView
-- (void)showEmptyView:(UIView *)emptyView;
+// 默认为AWEmptyView
+- (void)showEmptyView;
+- (void)hideEmptyView;
 
 @end
