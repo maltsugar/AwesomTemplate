@@ -22,7 +22,8 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [AppTools sharedTools].resetTabbarChildVCs = YES;
-    [[AppTools sharedTools] userLogoutSucceedWithTip:@"退出登录" presentLogin:YES];
+
+    [[AppTools sharedTools] userLogoutSucceedWithTip:@"退出登录" clearAll:YES presentLogin:YES];
 }
     
 

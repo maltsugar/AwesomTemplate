@@ -121,6 +121,11 @@ static AppTools *_instance;
     }
     
     [self dismissLoginVC];
+    
+    
+    if (self.loginSucceedBlock){
+        self.loginSucceedBlock();
+    }
 }
 
 
@@ -158,7 +163,7 @@ static AppTools *_instance;
 }
 
 
-- (void)userLogoutSucceedWithTip:(NSString *)showTip presentLogin:(BOOL)login
+- (void)userLogoutSucceedWithTip:(NSString *)showTip clearAll:(BOOL)clearAll presentLogin:(BOOL)login
 {
     // 清空用户id token等
     [[AWUserManager sharedAWUserManager] clearUserInfo];
@@ -172,6 +177,10 @@ static AppTools *_instance;
     if (login) {
         [self forceLoginAnimated:YES];
     }
+    
+    if (self.logoutSucceedBlock){
+        self.logoutSucceedBlock();
+    }
 }
 
 
@@ -179,7 +188,7 @@ static AppTools *_instance;
 - (void)manageBaseResponseModle:(BaseResponseModel *)model
 {
     if ([model.responseCode isEqualToString:kResponseLoginverdueCode]){
-        [self userLogoutSucceedWithTip:nil presentLogin:YES];
+        [self userLogoutSucceedWithTip:nil clearAll:YES presentLogin:YES];
     }else
     {
         // 统一提示接口返回错误信息
