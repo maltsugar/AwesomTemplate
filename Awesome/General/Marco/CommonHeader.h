@@ -103,7 +103,11 @@ blue:((float)(hexValue & 0xFF)) / 255.0 alpha:1.0]
 #define kLastShowIntrolductionVersionKey @"kLastShowIntrolductionVersionKey"
 
 
-#define kAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+// Version
+#define kAppShortVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+// Build
+#define kAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+
 #define kSystemVersion [[[UIDevice currentDevice] systemVersion] doubleValue]
 #define kUpdateAddress @"https://itunes.apple.com/cn/app/id1306589146?mt=8"
 
