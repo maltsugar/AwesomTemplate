@@ -90,15 +90,20 @@
 
 - (void)setSelectedIndex:(NSUInteger)selectedIndex
 {
-    BOOL flag = YES;
-    //    if (selectedIndex == 1 || selectedIndex == 2 || selectedIndex == 4) {
-    //        flag = [[AWUserManager sharedAWUserManager] isUserLogined];
-    //        [[AppTools sharedTools] forceLoginAnimated:YES];
-    //    }
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        BOOL flag = YES;
+        //    if (selectedIndex == 1 || selectedIndex == 2 || selectedIndex == 4) {
+        //        flag = [[AWUserManager sharedAWUserManager] isUserLogined];
+        //        [[AppTools sharedTools] forceLoginAnimated:YES];
+        //    }
+        
+        if (flag) {
+            [super setSelectedIndex:selectedIndex];
+        }
+    });
     
-    if (flag) {
-        [super setSelectedIndex:selectedIndex];
-    }
+    
+    
 }
 
 #pragma mark- UITabBarControllerDelegate
