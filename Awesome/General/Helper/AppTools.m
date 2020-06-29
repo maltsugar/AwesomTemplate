@@ -26,6 +26,7 @@
     BOOL _didPresentLoginPage;
 }
 
+@property (nonatomic, strong) UIViewController *rootVC; // 推荐使用rootVC present对应的vc
 @property (nonatomic, strong) AWTabBarController *tabBarController;
 @property (nonatomic, strong) AWRootNavigationController *loginNav;
 @property (nonatomic, strong) GYIntroductionView *introductionView;
@@ -56,10 +57,15 @@ static AppTools *_instance;
 
 - (void)startAppWithLoginPage:(BOOL)flag
 {
+    _rootVC = [[UIViewController alloc] init];
+    _rootVC.view.backgroundColor = [UIColor whiteColor];
+    kAppDelegate.window.rootViewController = _rootVC;
+    
     if (flag) {
-        kAppDelegate.window.rootViewController = self.loginNav;
+        _didPresentLoginPage = YES;
+        [_rootVC presentViewController:self.loginNav animated:NO completion:nil];
     }else {
-        kAppDelegate.window.rootViewController = self.tabBarController;
+        [_rootVC presentViewController:self.tabBarController animated:NO completion:nil];
     }
     
     
@@ -131,35 +137,42 @@ static AppTools *_instance;
 
 - (BOOL)forceLoginAnimated:(BOOL)animated
 {
-//    _resetTabbarChildVCs = YES;
+    //    _resetTabbarChildVCs = YES;
     
     // 获取用户信息的标记
     BOOL didCacheUserInfo = [[AWUserManager sharedAWUserManager] isUserLogined];
-    UIViewController *parentVC = self.tabBarController;
-    if (parentVC.presentedViewController) {
-        parentVC = parentVC.presentedViewController;
+    
+    if (!didCacheUserInfo && ! self -> _didPresentLoginPage) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self -> _didPresentLoginPage = YES;
+            // 没有获取本地存储的 用户id 用户token
+            [self.rootVC dismissViewControllerAnimated:NO completion:^{
+                [self.rootVC presentViewController:self.loginNav animated:animated completion:nil];
+                self.tabBarController = nil;
+            }];
+        });
     }
     
-    if (!didCacheUserInfo && !_didPresentLoginPage) {
-        
-        _didPresentLoginPage = YES;
-        
-        // 没有获取本地存储的 用户id 用户token
-        self.loginNav.modalPresentationStyle = UIModalPresentationFullScreen;
-        [parentVC presentViewController:self.loginNav animated:animated completion:nil];
-    }
     return !didCacheUserInfo;
 }
 
 - (void)dismissLoginVC
 {
-    if (_didPresentLoginPage) {
-        [self.loginNav dismissViewControllerAnimated:YES completion:nil];
-    }else {
-        kAppDelegate.window.rootViewController = self.tabBarController;
-    }
-    self.loginNav = nil;
-    _didPresentLoginPage = NO;
+//    if (_didPresentLoginPage) {
+//        [self.loginNav dismissViewControllerAnimated:YES completion:nil];
+//    }else {
+//        kAppDelegate.window.rootViewController = self.tabBarController;
+//    }
+//    self.loginNav = nil;
+//    _didPresentLoginPage = NO;
+    
+    
+    [self.rootVC dismissViewControllerAnimated:YES completion:^{
+        [self.rootVC presentViewController:self.tabBarController animated:NO completion:nil];
+        self.loginNav = nil;
+        self -> _didPresentLoginPage = NO;
+    }];
+
 }
 
 
@@ -252,6 +265,7 @@ static AppTools *_instance;
     if (nil == _loginNav) {
         LoginViewController *loginVC = [LoginViewController new];
         _loginNav = [[AWRootNavigationController alloc]initWithRootViewController:loginVC];
+        _loginNav.modalPresentationStyle = UIModalPresentationFullScreen;
         loginVC.navigationController.navigationBarHidden = YES;
         
     }
@@ -261,6 +275,7 @@ static AppTools *_instance;
 {
     if (nil == _tabBarController) {
         _tabBarController = [[AWTabBarController alloc]init];
+        _tabBarController.modalPresentationStyle = UIModalPresentationFullScreen;
     }
     return _tabBarController;
 }
@@ -423,7 +438,7 @@ static AppTools *_instance;
 - (void)dealwithCrashMessage:(NSNotification *)note {
     //注意:所有的信息都在userInfo中
     //你可以在这里收集相应的崩溃信息进行相应的处理(比如传到自己服务器)
-//    NSLog(@"%@",note.userInfo);
+    //    NSLog(@"%@",note.userInfo);
 }
 
 

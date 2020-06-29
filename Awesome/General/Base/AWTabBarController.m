@@ -90,7 +90,7 @@
 
 - (void)setSelectedIndex:(NSUInteger)selectedIndex
 {
-    dispatch_sync(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         BOOL flag = YES;
         //    if (selectedIndex == 1 || selectedIndex == 2 || selectedIndex == 4) {
         //        flag = [[AWUserManager sharedAWUserManager] isUserLogined];
