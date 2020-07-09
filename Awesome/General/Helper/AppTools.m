@@ -27,6 +27,8 @@
 }
 
 @property (nonatomic, strong) UIViewController *rootVC; // 推荐使用rootVC present对应的vc
+@property (nonatomic, strong) UIViewController *rooBaseVC;
+
 @property (nonatomic, strong) AWTabBarController *tabBarController;
 @property (nonatomic, strong) AWRootNavigationController *loginNav;
 @property (nonatomic, strong) GYIntroductionView *introductionView;
@@ -57,9 +59,8 @@ static AppTools *_instance;
 
 - (void)startAppWithLoginPage:(BOOL)flag
 {
-    _rootVC = [[UIViewController alloc] init];
-    _rootVC.view.backgroundColor = [UIColor whiteColor];
-    kAppDelegate.window.rootViewController = _rootVC;
+
+    kAppDelegate.window.rootViewController = self.rootVC;
     
     if (flag) {
         _didPresentLoginPage = YES;
@@ -278,6 +279,21 @@ static AppTools *_instance;
         _tabBarController.modalPresentationStyle = UIModalPresentationFullScreen;
     }
     return _tabBarController;
+}
+- (UIViewController *)rootVC
+{
+    if (nil == _rootVC) {
+        _rootVC = [[UIViewController alloc]init];
+        _rootVC.view.backgroundColor = [UIColor whiteColor];
+        
+        _rooBaseVC = [[UIViewController alloc] init];
+        _rooBaseVC.view.backgroundColor = [UIColor whiteColor];
+        
+        [_rootVC addChildViewController:_rooBaseVC];
+        _rooBaseVC.view.frame = _rootVC.view.bounds;
+        [_rootVC.view addSubview:_rooBaseVC.view];
+    }
+    return _rootVC;
 }
 
 
