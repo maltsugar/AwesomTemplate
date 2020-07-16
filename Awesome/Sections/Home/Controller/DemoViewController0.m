@@ -68,7 +68,7 @@
 
 - (void)dealloc
 {
-    NSLog(@"2222");
+    NSLog(@"释放");
 }
 
 @end

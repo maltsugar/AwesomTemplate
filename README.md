@@ -1,13 +1,16 @@
 # 新项目模板
 ---
+#### [Swift版](https://github.com/maltsugar/Awesome_Swift)，欢迎使用
+
 ### 功能介绍
+
 - 此模板可以帮助快速搭建一个APP的“地基”，省却设置pch，宏，info.plist的一堆配置等步骤，换个名字（bundleID）就可以立即开发业务模块
 - 集成几乎必用到的库，具体用法可以搜索，都是很常用的应该都有用过，也可以问我（我有空的话）省去导库、找库的时间
 - 你可以拿去修改名称作为新项目，修改bundleID直接修改就行，[这里](https://github.com/maltsugar/AwesomTemplate#awdes)有怎么修改Target名(如果不能跳转，你往下翻吧(⊙﹏⊙)b) 
 - 编译build值自增1，可以显示这个项目经过了多少次“打磨”，也方便传iTunes Connect 或者标记测试包，值必须不一样。（不需要的话删除Build Phases下的 Run Script）  
 - 项目目录分区明确，参考[iOS App开发那些事](http://www.cocoachina.com/programmer/20140526/8551.html)，我也一直用这种模式，不得不说，目录层次确实清晰，coding要优雅，也方便别人维护  
 ![目录结构](http://wx4.sinaimg.cn/mw690/72aba7efgy1fv5ey9xrj2j21161cs10p.jpg)   
- 
+
 
 ---
 
@@ -27,7 +30,6 @@
 	
 	- 1.2 会出现以下提示, 点击 Rename，再点击OK
 	<img src="http://wx2.sinaimg.cn/mw690/72aba7efgy1flhdl2mkvbj20rs0l4gnn.jpg" width="600">  
-	
 	
 	
 	
@@ -60,7 +62,8 @@
 - ### 5.这时就可以Bulid Succeed!
 	- 别忘了把最外面的文件夹名称也改成MyProject，删除`.git`隐藏文件夹(终端cd项目目录, `rm -rf .git`)
 	<img src="http://wx1.sinaimg.cn/mw690/72aba7efgy1flhdl7g077j20og01wwem.jpg" width="600">   
-	 
+	
 # 注意
 该项目使用了YYCache，所以Xcode要8.0以上，可能有的同学的xcode版本问题，编译报错.   
+
 ##### 尝试导入 `lizb.tbd`  `libsqlite3.tbd`

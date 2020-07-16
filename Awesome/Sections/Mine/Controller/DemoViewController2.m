@@ -21,11 +21,12 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [AppTools sharedTools].resetTabbarChildVCs = YES;
-
-    [[AppTools sharedTools] userLogoutSucceedWithTip:@"退出登录" clearAll:YES presentLogin:YES];
+    [[AppTools sharedTools] userLogoutSucceedWithTip:@"退出登录" clearAll:YES presentLogin:YES removeTabbarController:YES];
 }
     
-
+- (void)dealloc
+{
+    NSLog(@"释放");
+}
 
 @end

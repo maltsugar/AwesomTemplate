@@ -23,11 +23,10 @@
 
 @interface AppTools ()
 {
-    BOOL _didPresentLoginPage;
+    BOOL _didShowLoginVC; // 当前已经弹出登录页面
 }
 
 @property (nonatomic, strong) UIViewController *rootVC; // 推荐使用rootVC present对应的vc
-@property (nonatomic, strong) UIViewController *rooBaseVC;
 
 @property (nonatomic, strong) AWTabBarController *tabBarController;
 @property (nonatomic, strong) AWRootNavigationController *loginNav;
@@ -63,10 +62,9 @@ static AppTools *_instance;
     kAppDelegate.window.rootViewController = self.rootVC;
     
     if (flag) {
-        _didPresentLoginPage = YES;
-        [_rootVC presentViewController:self.loginNav animated:NO completion:nil];
+        [self setDisplayVC:self.loginNav animated:NO];
     }else {
-        [_rootVC presentViewController:self.tabBarController animated:NO completion:nil];
+        [self setDisplayVC:self.tabBarController animated:NO];
     }
     
     
@@ -123,12 +121,12 @@ static AppTools *_instance;
     // 保存用户id  token等
     [[AWUserManager sharedAWUserManager] saveUserInfo];
     
-    if (_resetTabbarChildVCs) {
-        [self.tabBarController resetChildViewControllers];
-    }
-    
+   
     [self dismissLoginVC];
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self setDisplayVC:self.tabBarController animated:NO];
+    });
     
     if (self.loginSucceedBlock){
         self.loginSucceedBlock();
@@ -136,21 +134,24 @@ static AppTools *_instance;
 }
 
 
-- (BOOL)forceLoginAnimated:(BOOL)animated
+- (BOOL)forceLoginAnimated:(BOOL)animated removeTabbarController:(BOOL)removeTabbarController
 {
-    //    _resetTabbarChildVCs = YES;
     
     // 获取用户信息的标记
     BOOL didCacheUserInfo = [[AWUserManager sharedAWUserManager] isUserLogined];
     
-    if (!didCacheUserInfo && ! self -> _didPresentLoginPage) {
+    if (!didCacheUserInfo && !_didShowLoginVC) {
+        // 没有获取本地存储的 用户id 用户token
+        
         dispatch_async(dispatch_get_main_queue(), ^{
-            self -> _didPresentLoginPage = YES;
-            // 没有获取本地存储的 用户id 用户token
-            [self.rootVC dismissViewControllerAnimated:NO completion:^{
-                [self.rootVC presentViewController:self.loginNav animated:animated completion:nil];
-                self.tabBarController = nil;
-            }];
+            [self setDisplayVC:self.loginNav animated:animated];
+            self -> _didShowLoginVC = YES;
+            if (removeTabbarController) {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self removeDisplayVC:self.tabBarController animated:NO];
+                    self.tabBarController = nil;
+                });
+            }
         });
     }
     
@@ -159,25 +160,14 @@ static AppTools *_instance;
 
 - (void)dismissLoginVC
 {
-//    if (_didPresentLoginPage) {
-//        [self.loginNav dismissViewControllerAnimated:YES completion:nil];
-//    }else {
-//        kAppDelegate.window.rootViewController = self.tabBarController;
-//    }
-//    self.loginNav = nil;
-//    _didPresentLoginPage = NO;
+    [self removeDisplayVC:self.loginNav animated:YES];
+    self.loginNav = nil;
+    _didShowLoginVC = NO;
     
-    
-    [self.rootVC dismissViewControllerAnimated:YES completion:^{
-        [self.rootVC presentViewController:self.tabBarController animated:NO completion:nil];
-        self.loginNav = nil;
-        self -> _didPresentLoginPage = NO;
-    }];
-
 }
 
 
-- (void)userLogoutSucceedWithTip:(NSString *)showTip clearAll:(BOOL)clearAll presentLogin:(BOOL)login
+- (void)userLogoutSucceedWithTip:(NSString *)showTip clearAll:(BOOL)clearAll presentLogin:(BOOL)login removeTabbarController:(BOOL)removeTabbarController
 {
     // 清空用户id token等
     [[AWUserManager sharedAWUserManager] clearUserInfo];
@@ -189,7 +179,7 @@ static AppTools *_instance;
         [window jk_makeToast:showTip duration:0.5 position:JKToastPositionCenter];
     }
     if (login) {
-        [self forceLoginAnimated:YES];
+        [self forceLoginAnimated:YES removeTabbarController:removeTabbarController];
     }
     
     if (self.logoutSucceedBlock){
@@ -202,7 +192,7 @@ static AppTools *_instance;
 - (void)manageBaseResponseModle:(BaseResponseModel *)model
 {
     if ([model.responseCode isEqualToString:kResponseLoginverdueCode]){
-        [self userLogoutSucceedWithTip:nil clearAll:YES presentLogin:YES];
+        [self userLogoutSucceedWithTip:nil clearAll:YES presentLogin:YES removeTabbarController:NO];
     }else
     {
         // 统一提示接口返回错误信息
@@ -258,6 +248,32 @@ static AppTools *_instance;
     
 }
 
+- (void)setDisplayVC:(UIViewController *)vc animated:(BOOL)animated {
+    [self.rootVC addChildViewController:vc];
+    [self.rootVC.view addSubview:vc.view];
+    vc.view.frame = self.rootVC.view.bounds;
+    
+    if (animated) {
+        vc.view.transform = CGAffineTransformMakeTranslation(0, kScreenHeight);
+        [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            vc.view.transform = CGAffineTransformIdentity;
+        } completion:nil];
+    }
+}
+
+- (void)removeDisplayVC:(UIViewController *)vc animated:(BOOL)animated {
+    if (animated) {
+        [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            vc.view.transform = CGAffineTransformMakeTranslation(0, kScreenHeight);
+        } completion:^(BOOL finished) {
+            [vc.view removeFromSuperview];
+            [vc removeFromParentViewController];
+        }];
+    }else {
+        [vc.view removeFromSuperview];
+        [vc removeFromParentViewController];
+    }
+}
 
 
 
@@ -285,13 +301,6 @@ static AppTools *_instance;
     if (nil == _rootVC) {
         _rootVC = [[UIViewController alloc]init];
         _rootVC.view.backgroundColor = [UIColor whiteColor];
-        
-        _rooBaseVC = [[UIViewController alloc] init];
-        _rooBaseVC.view.backgroundColor = [UIColor whiteColor];
-        
-        [_rootVC addChildViewController:_rooBaseVC];
-        _rooBaseVC.view.frame = _rootVC.view.bounds;
-        [_rootVC.view addSubview:_rooBaseVC.view];
     }
     return _rootVC;
 }

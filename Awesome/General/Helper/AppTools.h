@@ -20,7 +20,7 @@ typedef void(^EmptyBlock)(void);
 
 @interface AppTools : NSObject
 
-@property (nonatomic, assign) BOOL resetTabbarChildVCs; /// 是否登录后重置tabbar子vc，根据自己项目需要
+
 @property (nonatomic,   copy) EmptyBlock loginSucceedBlock;
 @property (nonatomic,   copy) EmptyBlock logoutSucceedBlock;
 
@@ -37,9 +37,10 @@ typedef void(^EmptyBlock)(void);
  判断是否需要强制登录
 
  @param animated 弹出登录页面是否需要动画
+ @param removeTabbarController 是否移除TabbarController，YES则登录成功后全部重新加载
  @return 是否需要强制登录
  */
-- (BOOL)forceLoginAnimated:(BOOL)animated;
+- (BOOL)forceLoginAnimated:(BOOL)animated removeTabbarController:(BOOL)removeTabbarController;
 
 - (void)dismissLoginVC;
 
@@ -47,8 +48,7 @@ typedef void(^EmptyBlock)(void);
 /// @param showTip 展示的提示
 /// @param clearAll 是否清楚所有用户相关的信息，NO表示只清除内存中（适合有其他较安全的登录方式，比如 生物识别）
 /// @param login 是否弹登录页
-- (void)userLogoutSucceedWithTip:(NSString *)showTip clearAll:(BOOL)clearAll presentLogin:(BOOL)login;
-
+- (void)userLogoutSucceedWithTip:(NSString *)showTip clearAll:(BOOL)clearAll presentLogin:(BOOL)login removeTabbarController:(BOOL)removeTabbarController;
 
 // 处理请求通用的情况
 - (void)manageBaseResponseModle:(BaseResponseModel *)model;
