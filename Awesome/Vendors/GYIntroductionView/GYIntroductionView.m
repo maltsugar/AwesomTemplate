@@ -21,17 +21,18 @@
 
 @implementation GYIntroductionCell
 
-- (UIImageView *)imgView
+- (instancetype)initWithFrame:(CGRect)frame
 {
-    if (nil == _imgView) {
+    self = [super initWithFrame:frame];
+    if (self) {
         _imgView = [[UIImageView alloc]init];
         _imgView.frame = self.bounds;
         _imgView.contentMode = UIViewContentModeScaleAspectFill;
         [self.contentView addSubview:_imgView];
+        self.contentView.clipsToBounds = YES;
     }
-    return _imgView;
+    return self;
 }
-
 @end
 
 
@@ -63,17 +64,7 @@ static NSString *GYIntroductionViewCellIdentifier = @"GYIntroductionViewCellIden
 
 @implementation GYIntroductionView
 
-- (instancetype)initWithImgCount:(NSUInteger)count andDataSource:(id <GYIntroductionDataSource>)dataSource
-{
-    self = [super init];
-    if (self) {
-        self.dataSource = dataSource;
-        self.imgCount = count;
-        [self setupIntroductionViews];
-    }
-    return self;
-}
-- (instancetype)initWithImgNames:(NSArray <NSString *>*)imgNames bgImgNames:(NSArray *)bgNames
+- (instancetype)initWithImgNames:(NSArray <NSString *>*)imgNames bgImgNames:(NSArray <NSString *>*)bgNames
 {
     self = [super init];
     if (self) {
@@ -101,13 +92,22 @@ static NSString *GYIntroductionViewCellIdentifier = @"GYIntroductionViewCellIden
     return self;
 }
 
+- (instancetype)initWithImgCount:(NSUInteger)count andDataSource:(id <GYIntroductionDataSource>)dataSource
+{
+    self = [super init];
+    if (self) {
+        self.imgCount = count;
+        self.dataSource = dataSource;
+        [self setupIntroductionViews];
+    }
+    return self;
+}
 
 
 #pragma mark- private
 - (void)setupIntroductionViews
 {
     CGRect fullFrame = CGRectMake(0, 0, GYINTROL_SCREENSIZE.width, GYINTROL_SCREENSIZE.height);
-    
     self.backgroundColor = [UIColor whiteColor];
     self.frame = fullFrame;
     

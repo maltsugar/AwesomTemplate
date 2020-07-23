@@ -49,13 +49,16 @@ typedef void(^GYEnterAction)(void);
  640:1136           9:16
  750:1334           9:16
  1242:2208          9:16
- 1125:2436          9:19.5
+ 1125:2436          9:19.5 (iPhone X、 iPhone XS)
+ 1242:2688          9:19.5 (iPhone XS Max)
+ 828:1792           9:19.5 (iPhone XR)
+ 
  
  
  ===============================
  iPad               3:4
  */
-- (instancetype)initWithImgNames:(NSArray <NSString *>*)imgNames bgImgNames:(NSArray *)bgNames;
+- (instancetype)initWithImgNames:(NSArray <NSString *>*)imgNames bgImgNames:(NSArray <NSString *>*)bgNames;
 
 
 
