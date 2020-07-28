@@ -142,10 +142,10 @@ static AppTools *_instance;
     
     if (!didCacheUserInfo && !_didShowLoginVC) {
         // 没有获取本地存储的 用户id 用户token
-        
+        _didShowLoginVC = YES;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setDisplayVC:self.loginNav animated:animated];
-            self -> _didShowLoginVC = YES;
+         
             if (removeTabbarController) {
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [self removeDisplayVC:self.tabBarController animated:NO];
