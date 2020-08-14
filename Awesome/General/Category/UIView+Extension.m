@@ -191,14 +191,12 @@
 
 
 - (void)setShadow:(UIColor *)color offset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius
-{
-    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.bounds];
+{    
     self.layer.masksToBounds = NO;
     self.layer.shadowColor = color.CGColor;
     self.layer.shadowOffset = offset;
     self.layer.shadowOpacity = opacity;
     self.layer.shadowRadius = radius;
-    self.layer.shadowPath = shadowPath.CGPath;
 }
 
 - (void)showEmptyView
