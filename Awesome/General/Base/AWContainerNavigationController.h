@@ -1,5 +1,5 @@
 //
-//  AWRootNavigationController.h
+//  AWContainerNavigationController.h
 //  Awesome
 //
 //  Created by mac on 2019/1/16.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AWRootNavigationController : RTRootNavigationController
+@interface AWContainerNavigationController : RTContainerNavigationController
 
 @end
 

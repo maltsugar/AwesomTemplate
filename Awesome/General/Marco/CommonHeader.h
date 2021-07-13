@@ -9,6 +9,7 @@
 #ifndef CommonHeader_h
 #define CommonHeader_h
 
+#import "RTRootNavigationController.h"
 #import "AppTools.h"
 
 //#ifdef DEBUG
@@ -165,7 +166,6 @@ shouldPrevent = NO; \
 #import "XMNetworking.h"
 #import "AWConfigManager.h"
 #import "BaseResponseModel.h"
-#import "RTRootNavigationController.h"
 #import "AWBaseViewController.h"
 
 

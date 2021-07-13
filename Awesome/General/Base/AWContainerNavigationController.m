@@ -1,14 +1,14 @@
 //
-//  AWRootNavigationController.m
+//  AWContainerNavigationController.m
 //  Awesome
 //
 //  Created by mac on 2019/1/16.
 //  Copyright © 2019 zgy. All rights reserved.
 //
 
-#import "AWRootNavigationController.h"
+#import "AWContainerNavigationController.h"
 
-@implementation AWRootNavigationController
+@implementation AWContainerNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

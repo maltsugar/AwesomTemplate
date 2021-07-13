@@ -7,7 +7,7 @@
 //
 
 #import "AWTabBarController.h"
-#import "AWRootNavigationController.h"
+#import "AWContainerNavigationController.h"
 #import "AWUserManager.h"
 
 
@@ -40,7 +40,7 @@
     
     DemoViewController1 *vc1 = [DemoViewController1 new];
     [self setupChildVc:vc1 title:@"更多" image:@"tabbar_1" selectedImage:@"tabbar_1hl"];
-    [vc1.view showEmptyView];
+
     
     DemoViewController2 *vc2 = [DemoViewController2 new];
     [self setupChildVc:vc2 title:@"我的" image:@"tabbar_2" selectedImage:@"tabbar_2hl"];
@@ -50,7 +50,7 @@
     
     NSMutableArray *navArr = @[].mutableCopy;
     for (UIViewController *v in temp) {
-        AWRootNavigationController *nav = [[AWRootNavigationController alloc] initWithRootViewController:v];
+        AWContainerNavigationController *nav = [[AWContainerNavigationController alloc] initWithRootViewController:v];
         [navArr addObject:nav];
     }
     
@@ -92,10 +92,10 @@
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         BOOL flag = YES;
-        //    if (selectedIndex == 1 || selectedIndex == 2 || selectedIndex == 4) {
-        //        flag = [[AWUserManager sharedAWUserManager] isUserLogined];
-        //        [[AppTools sharedTools] forceLoginAnimated:YES];
-        //    }
+        if (selectedIndex == 1 || selectedIndex == 2 || selectedIndex == 4) {
+            flag = [[AWUserManager sharedAWUserManager] isUserLogined];
+            [[AppTools sharedTools] forceLoginAnimated:YES removeTabbarController:NO];
+        }
         
         if (flag) {
             [super setSelectedIndex:selectedIndex];
@@ -109,21 +109,21 @@
 #pragma mark- UITabBarControllerDelegate
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
-    //    NSUInteger index = [tabBarController.viewControllers indexOfObject:viewController];
+    NSUInteger index = [tabBarController.viewControllers indexOfObject:viewController];
     BOOL flag = YES;
-    //    if (index == 1 || index == 2 || index == 4) {
-    //        flag = [[AWUserManager sharedAWUserManager] isUserLogined];
-    //        [[AppTools sharedTools] forceLoginAnimated:YES];
-    //    }
+    if (index == 1 || index == 2 || index == 4) {
+        flag = [[AWUserManager sharedAWUserManager] isUserLogined];
+        [[AppTools sharedTools] forceLoginAnimated:YES removeTabbarController:NO];
+    }
     
     
-    //    UIViewController *thirdVC = [tabBarController.viewControllers objectAtIndex:2];
-    //    if (viewController == thirdVC) {
-    //        PublishViewController *vc = [PublishViewController new];
-    //        AWNavigationController *nav = [[AWNavigationController alloc] initWithRootViewController:vc];
-    //        [self presentViewController:nav animated:YES completion:nil];
-    //        return NO;
-    //    }
+//    UIViewController *thirdVC = [tabBarController.viewControllers objectAtIndex:2];
+//    if (viewController == thirdVC) {
+//        PublishViewController *vc = [PublishViewController new];
+//        AWNavigationController *nav = [[AWNavigationController alloc] initWithRootViewController:vc];
+//        [self presentViewController:nav animated:YES completion:nil];
+//        return NO;
+//    }
     return flag;
 }
 

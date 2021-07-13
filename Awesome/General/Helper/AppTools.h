@@ -23,7 +23,7 @@ typedef void(^EmptyBlock)(void);
 
 @property (nonatomic,   copy) EmptyBlock loginSucceedBlock;
 @property (nonatomic,   copy) EmptyBlock logoutSucceedBlock;
-
+@property (nonatomic, strong) RTRootNavigationController *rooNav;
 
 
 + (instancetype)sharedTools;
@@ -42,7 +42,7 @@ typedef void(^EmptyBlock)(void);
  */
 - (BOOL)forceLoginAnimated:(BOOL)animated removeTabbarController:(BOOL)removeTabbarController;
 
-- (void)dismissLoginVC;
+
 
 /// 退出登录
 /// @param showTip 展示的提示

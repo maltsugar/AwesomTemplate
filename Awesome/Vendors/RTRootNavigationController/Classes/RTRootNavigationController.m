@@ -107,7 +107,8 @@ __attribute((overloadable)) static inline UIViewController *RTSafeWrapViewContro
                                                                                      BOOL withPlaceholder,
                                                                                      UIBarButtonItem *backItem,
                                                                                      NSString *backTitle) {
-    if (![controller isKindOfClass:[RTContainerController class]]) {
+    if (![controller isKindOfClass:[RTContainerController class]] &&
+        ![controller.parentViewController isKindOfClass:[RTContainerController class]]) {
         return [RTContainerController containerControllerWithController:controller
                                                      navigationBarClass:navigationBarClass
                                               withPlaceholderController:withPlaceholder
@@ -118,7 +119,8 @@ __attribute((overloadable)) static inline UIViewController *RTSafeWrapViewContro
 }
 
 __attribute((overloadable)) static inline UIViewController *RTSafeWrapViewController(UIViewController *controller, Class navigationBarClass, BOOL withPlaceholder) {
-    if (![controller isKindOfClass:[RTContainerController class]]) {
+    if (![controller isKindOfClass:[RTContainerController class]] &&
+        ![controller.parentViewController isKindOfClass:[RTContainerController class]]) {
         return [RTContainerController containerControllerWithController:controller
                                                      navigationBarClass:navigationBarClass
                                               withPlaceholderController:withPlaceholder];
@@ -351,6 +353,11 @@ __attribute((overloadable)) static inline UIViewController *RTSafeWrapViewContro
     return self.contentViewController.tabBarItem;
 }
 
+- (id<UIViewControllerAnimatedTransitioning>)rt_animatedTransitioning
+{
+    return self.contentViewController.rt_animatedTransitioning;
+}
+
 #if RT_INTERACTIVE_PUSH
 - (nullable __kindof UIViewController *)rt_nextSiblingController
 {
@@ -418,7 +425,7 @@ __attribute((overloadable)) static inline UIViewController *RTSafeWrapViewContro
 {
     [super viewDidLayoutSubviews];
     
-    UIViewController *viewController = self.visibleViewController;
+    UIViewController *viewController = self.topViewController;
     if (!viewController.rt_hasSetInteractivePop) {
         BOOL hasSetLeftItem = viewController.navigationItem.leftBarButtonItem != nil;
         if (self.navigationBarHidden) {
@@ -964,11 +971,15 @@ __attribute((overloadable)) static inline UIViewController *RTSafeWrapViewContro
 {
     BOOL isRootVC = viewController == navigationController.viewControllers.firstObject;
     viewController = RTSafeUnwrapViewController(viewController);
+    // fix #258 https://github.com/rickytan/RTRootNavigationController/issues/258
+    // animated 为 NO 时的时序不太对，手动触发 viewDidLoad
+    if (!animated) {
+        [viewController view];
+    }
     if (viewController.rt_disableInteractivePop) {
         self.interactivePopGestureRecognizer.delegate = nil;
         self.interactivePopGestureRecognizer.enabled = NO;
     } else {
-        self.interactivePopGestureRecognizer.delaysTouchesBegan = YES;
         self.interactivePopGestureRecognizer.delegate = self;
         self.interactivePopGestureRecognizer.enabled = !isRootVC;
     }
@@ -985,8 +996,10 @@ __attribute((overloadable)) static inline UIViewController *RTSafeWrapViewContro
     if (self.animationBlock) {
         if (animated) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.animationBlock(YES);
-                self.animationBlock = nil;
+                if (self.animationBlock) {
+                    self.animationBlock(YES);
+                    self.animationBlock = nil;
+                }
             });
         }
         else {
@@ -1021,6 +1034,9 @@ __attribute((overloadable)) static inline UIViewController *RTSafeWrapViewContro
         return [self.rt_delegate navigationController:navigationController
           interactionControllerForAnimationController:animationController];
     }
+    if ([animationController respondsToSelector:@selector(rt_interactiveTransitioning)]) {
+        return [((id <RTViewControllerAnimatedTransitioning>)animationController) rt_interactiveTransitioning];
+    }
     return nil;
 }
 
@@ -1029,13 +1045,17 @@ __attribute((overloadable)) static inline UIViewController *RTSafeWrapViewContro
                                                 fromViewController:(UIViewController *)fromVC
                                                   toViewController:(UIViewController *)toVC
 {
+    if (operation == UINavigationControllerOperationPush) {
+        self.interactivePopGestureRecognizer.delegate = nil;
+        self.interactivePopGestureRecognizer.enabled = NO;
+    }
     if ([self.rt_delegate respondsToSelector:@selector(navigationController:animationControllerForOperation:fromViewController:toViewController:)]) {
         return [self.rt_delegate navigationController:navigationController
                       animationControllerForOperation:operation
                                    fromViewController:RTSafeUnwrapViewController(fromVC)
                                      toViewController:RTSafeUnwrapViewController(toVC)];
     }
-    return nil;
+    return operation == UINavigationControllerOperationPush ? [toVC rt_animatedTransitioning] : [fromVC rt_animatedTransitioning];
 }
 
 
@@ -1044,7 +1064,7 @@ __attribute((overloadable)) static inline UIViewController *RTSafeWrapViewContro
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
-    return YES;
+    return (gestureRecognizer == self.interactivePopGestureRecognizer);
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer

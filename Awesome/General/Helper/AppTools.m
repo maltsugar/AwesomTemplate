@@ -10,7 +10,6 @@
 #import "AvoidCrash.h"
 #import "IQKeyboardManager.h"
 
-#import "AWRootNavigationController.h"
 #import "LoginViewController.h"
 #import "AWTabBarController.h"
 #import "AWUserManager.h"
@@ -26,10 +25,10 @@
     BOOL _didShowLoginVC; // 当前已经弹出登录页面
 }
 
-@property (nonatomic, strong) UIViewController *rootVC; // 推荐使用rootVC present对应的vc
+
 
 @property (nonatomic, strong) AWTabBarController *tabBarController;
-@property (nonatomic, strong) AWRootNavigationController *loginNav;
+@property (nonatomic, strong) LoginViewController *loginVC;
 @property (nonatomic, strong) GYIntroductionView *introductionView;
 
 @end
@@ -59,14 +58,15 @@ static AppTools *_instance;
 - (void)startAppWithLoginPage:(BOOL)flag
 {
 
-    kAppDelegate.window.rootViewController = self.rootVC;
-    
+    _rooNav = [[RTRootNavigationController alloc] init];
     if (flag) {
-        [self setDisplayVC:self.loginNav animated:NO];
+        [_rooNav pushViewController:self.loginVC animated:NO complete:nil];
     }else {
-        [self setDisplayVC:self.tabBarController animated:NO];
+        _rooNav = [[RTRootNavigationController alloc] initWithRootViewControllerNoWrapping:self.tabBarController];
     }
     
+    
+    kAppDelegate.window.rootViewController = _rooNav;
     
     // 配置请求类，采用AWConfigManager不用宏 可以动态设置URL，便于调试
     // 调用该方法会调用内部setup方法，设置通用配置
@@ -121,12 +121,14 @@ static AppTools *_instance;
     // 保存用户id  token等
     [[AWUserManager sharedAWUserManager] saveUserInfo];
     
-   
-    [self dismissLoginVC];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self setDisplayVC:self.tabBarController animated:NO];
-    });
+
+    NSMutableArray *tmp = self.rooNav.viewControllers.mutableCopy;
+    [tmp replaceObjectAtIndex:(tmp.count - 1) withObject:self.tabBarController];
+    [self.rooNav setViewControllers:tmp];
+    self.loginVC = nil;
+    _didShowLoginVC = NO;
+    self.tabBarController.navigationController.navigationBarHidden = YES;
+
     
     if (self.loginSucceedBlock){
         self.loginSucceedBlock();
@@ -143,28 +145,18 @@ static AppTools *_instance;
     if (!didCacheUserInfo && !_didShowLoginVC) {
         // 没有获取本地存储的 用户id 用户token
         _didShowLoginVC = YES;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self setDisplayVC:self.loginNav animated:animated];
-         
-            if (removeTabbarController) {
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [self removeDisplayVC:self.tabBarController animated:NO];
-                    self.tabBarController = nil;
-                });
-            }
-        });
+        
+        NSArray *tmp = @[self.loginVC];
+        [self.rooNav setViewControllers:tmp];
+        if (removeTabbarController) {
+            self.tabBarController = nil;
+        }
     }
     
     return !didCacheUserInfo;
 }
 
-- (void)dismissLoginVC
-{
-    [self removeDisplayVC:self.loginNav animated:YES];
-    self.loginNav = nil;
-    _didShowLoginVC = NO;
-    
-}
+
 
 
 - (void)userLogoutSucceedWithTip:(NSString *)showTip clearAll:(BOOL)clearAll presentLogin:(BOOL)login removeTabbarController:(BOOL)removeTabbarController
@@ -248,64 +240,23 @@ static AppTools *_instance;
     
 }
 
-- (void)setDisplayVC:(UIViewController *)vc animated:(BOOL)animated {
-    [self.rootVC addChildViewController:vc];
-    [self.rootVC.view addSubview:vc.view];
-    vc.view.frame = self.rootVC.view.bounds;
-    
-    if (animated) {
-        vc.view.transform = CGAffineTransformMakeTranslation(0, kScreenHeight);
-        [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            vc.view.transform = CGAffineTransformIdentity;
-        } completion:nil];
-    }
-}
 
-- (void)removeDisplayVC:(UIViewController *)vc animated:(BOOL)animated {
-    if (animated) {
-        [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            vc.view.transform = CGAffineTransformMakeTranslation(0, kScreenHeight);
-        } completion:^(BOOL finished) {
-            [vc.view removeFromSuperview];
-            [vc removeFromParentViewController];
-        }];
-    }else {
-        [vc.view removeFromSuperview];
-        [vc removeFromParentViewController];
-    }
-}
-
-
-
-- (AWRootNavigationController *)loginNav
+- (LoginViewController *)loginVC
 {
-    if (nil == _loginNav) {
-        LoginViewController *loginVC = [LoginViewController new];
-        _loginNav = [[AWRootNavigationController alloc]initWithRootViewController:loginVC];
-        _loginNav.modalPresentationStyle = UIModalPresentationFullScreen;
-        loginVC.navigationController.navigationBarHidden = YES;
-        
+    if (nil == _loginVC) {
+        _loginVC = [LoginViewController new];
+        _loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        _loginVC.navigationController.navigationBarHidden = YES;
     }
-    return _loginNav;
+    return _loginVC;
 }
 - (AWTabBarController *)tabBarController
 {
     if (nil == _tabBarController) {
         _tabBarController = [[AWTabBarController alloc]init];
-        _tabBarController.modalPresentationStyle = UIModalPresentationFullScreen;
     }
     return _tabBarController;
 }
-- (UIViewController *)rootVC
-{
-    if (nil == _rootVC) {
-        _rootVC = [[UIViewController alloc]init];
-        _rootVC.view.backgroundColor = [UIColor whiteColor];
-    }
-    return _rootVC;
-}
-
-
 
 
 + (void)showTipWithError:(NSError *)error
