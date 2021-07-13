@@ -120,7 +120,7 @@
 //    UIViewController *thirdVC = [tabBarController.viewControllers objectAtIndex:2];
 //    if (viewController == thirdVC) {
 //        PublishViewController *vc = [PublishViewController new];
-//        AWNavigationController *nav = [[AWNavigationController alloc] initWithRootViewController:vc];
+//        AWContainerNavigationController *nav = [[AWContainerNavigationController alloc] initWithRootViewController:vc];
 //        [self presentViewController:nav animated:YES completion:nil];
 //        return NO;
 //    }

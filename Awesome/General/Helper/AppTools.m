@@ -122,8 +122,7 @@ static AppTools *_instance;
     [[AWUserManager sharedAWUserManager] saveUserInfo];
     
 
-    NSMutableArray *tmp = self.rooNav.viewControllers.mutableCopy;
-    [tmp replaceObjectAtIndex:(tmp.count - 1) withObject:self.tabBarController];
+    NSArray *tmp = @[self.tabBarController];
     [self.rooNav setViewControllers:tmp];
     self.loginVC = nil;
     _didShowLoginVC = NO;
@@ -144,10 +143,11 @@ static AppTools *_instance;
     
     if (!didCacheUserInfo && !_didShowLoginVC) {
         // 没有获取本地存储的 用户id 用户token
-        _didShowLoginVC = YES;
-        
         NSArray *tmp = @[self.loginVC];
         [self.rooNav setViewControllers:tmp];
+        
+        _didShowLoginVC = YES;
+        
         if (removeTabbarController) {
             self.tabBarController = nil;
         }

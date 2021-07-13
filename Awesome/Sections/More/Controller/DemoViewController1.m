@@ -7,6 +7,7 @@
 //
 
 #import "DemoViewController1.h"
+#import "UIView+Extension.h"
 
 @interface DemoViewController1 ()
 
@@ -17,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.view showEmptyView];
 }
 - (void)dealloc
 {
