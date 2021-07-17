@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+#import "AWNavigationController.h"
 
 @class CPShowStyle, BaseResponseModel;
 
@@ -23,7 +23,7 @@ typedef void(^EmptyBlock)(void);
 
 @property (nonatomic,   copy) EmptyBlock loginSucceedBlock;
 @property (nonatomic,   copy) EmptyBlock logoutSucceedBlock;
-@property (nonatomic, strong) RTRootNavigationController *rooNav;
+@property (nonatomic, strong) AWNavigationController *rooNav;
 
 
 + (instancetype)sharedTools;

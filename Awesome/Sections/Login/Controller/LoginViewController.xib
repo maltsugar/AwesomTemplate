@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,17 +18,20 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNY-D2-PLD">
-                    <rect key="frame" x="164" y="216" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNY-D2-PLD">
+                    <rect key="frame" x="147.5" y="313.5" width="80" height="40"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="O03-uq-yjL"/>
+                        <constraint firstAttribute="height" constant="40" id="tGS-UJ-2Ke"/>
+                    </constraints>
                     <state key="normal" title="登录"/>
                     <connections>
                         <action selector="handleLoginAction" destination="-1" eventType="touchUpInside" id="eFn-vO-a4L"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5h-rM-2l3">
-                    <rect key="frame" x="288" y="67" width="60" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5h-rM-2l3">
+                    <rect key="frame" x="288" y="200" width="60" height="30"/>
                     <state key="normal" title="切换URL"/>
                     <connections>
                         <action selector="handleChangeURL" destination="-1" eventType="touchUpInside" id="CNa-uY-HfM"/>
@@ -35,7 +39,18 @@
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.94509803920000002" green="0.94901960780000005" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="C5h-rM-2l3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="1kb-81-IMf"/>
+                <constraint firstItem="gNY-D2-PLD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="O9v-15-JeY"/>
+                <constraint firstItem="gNY-D2-PLD" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ezc-r4-9KP"/>
+                <constraint firstAttribute="trailing" secondItem="C5h-rM-2l3" secondAttribute="trailing" constant="27" id="gD9-Hp-BMd"/>
+            </constraints>
             <point key="canvasLocation" x="-297.5" y="-490.5"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

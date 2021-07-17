@@ -9,7 +9,6 @@
 #ifndef CommonHeader_h
 #define CommonHeader_h
 
-#import "RTRootNavigationController.h"
 #import "AppTools.h"
 
 //#ifdef DEBUG

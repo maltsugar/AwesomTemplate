@@ -8,6 +8,9 @@
 
 #import "DemoViewController0.h"
 
+#import "ViewController1.h"
+#import "ViewController2.h"
+
 
 // test
 #import "NSString+Tools.h"
@@ -25,52 +28,50 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    
+//    
+//    NSLog(@"%@", [NSString chineseWithInteger:1232321]);
+//    
+//    if ([NSString isEmptyString:@"null"]) {
+//        NSLog(@"空");
+//    }else
+//    {
+//        NSLog(@"字符串不为空");
+//    }
+//    
+//    
+//    UIImage *img = _imgView.image;
+//    _imgView.image = [img tintedImageWithColor:[UIColor yellowColor]];
+//    
+//    NSLog(@"  ---%f  %f", kBottomSafeHeight , kTabBarHeight)
+}
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
+                    
+  
     
-    NSLog(@"%@", [NSString chineseWithInteger:1232321]);
-    
-    if ([NSString isEmptyString:@"null"]) {
-        NSLog(@"空");
-    }else
-    {
-        NSLog(@"字符串不为空");
-    }
-    
-    
-    UIImage *img = _imgView.image;
-    _imgView.image = [img tintedImageWithColor:[UIColor yellowColor]];
-    
-    NSLog(@"  ---%f  %f", kBottomSafeHeight , kTabBarHeight)
+    NSLog(@"%@    %@", self.navigationController, self.navigationController.viewControllers);
 }
 
 
 - (IBAction)pushNext {
-    UIViewController *vc = [AWBaseViewController new];
     
+    ViewController1 *vc1 = [ViewController1 new];
+    ViewController2 *vc2 = [ViewController2 new];
     
-//    [self.rt_navigationController pushViewController:vc animated:YES];
-    
-    
-    
-    UIViewController *vc1 = [AWBaseViewController new];
     
 
-    NSMutableArray *temp = [self.navigationController.viewControllers mutableCopy];
-    [temp addObject:vc];
-    [temp addObject:vc1];
+    [self.navigationController pushViewController:vc1 animated:YES];
     
-    [self.navigationController setViewControllers:temp animated:YES];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.navigationController pushViewController:vc2 animated:YES];
+    });
+   
     
-    
-    
-    
-    vc.view.backgroundColor = kRandomColor;
-    vc.title = @"第二个页面";
-    
-    vc1.view.backgroundColor = kRandomColor;
-    vc1.title = @"第3个页面";
-    
-    NSLog(@"%@   %@", self.navigationController, self.rt_navigationController);
 }
 
 

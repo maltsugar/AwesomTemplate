@@ -14,9 +14,6 @@
 
 
 
-//#define kAWNavBackImgName @"navigationbar_back"
-#define kAWBackIndicatorImage @"navi_back"
-
 @interface AWBaseViewController ()
 
 @end
@@ -26,19 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    NSLog(@"%@", self.navigationController);
-    UINavigationBar *navBar = self.navigationController.navigationBar;
-    
-    // 这里定制统一的导航样式
-    NSDictionary *dict = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
-   
-    navBar.barTintColor = [UIColor redColor];
-    navBar.tintColor = [UIColor whiteColor];
-    navBar.translucent = YES;
-    [navBar setTitleTextAttributes:dict];
-  
-    
 }
 
 
@@ -47,20 +31,5 @@
     [super viewWillAppear:animated];
     
 }
-
-- (UIBarButtonItem *)rt_customBackItemWithTarget:(id)target action:(SEL)action
-{
-//    UIBarButtonItem *barBtnItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
-//                                            style:UIBarButtonItemStylePlain
-//                                           target:target
-//                                           action:action];
-    
-    UIBarButtonItem *barBtnItem = [[UIBarButtonItem alloc] initWithImage:kImageNamed(kAWBackIndicatorImage) style:UIBarButtonItemStylePlain target:target action:action];
-    
-    return barBtnItem;
-}
-
-
-
 
 @end

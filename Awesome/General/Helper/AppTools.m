@@ -58,11 +58,11 @@ static AppTools *_instance;
 - (void)startAppWithLoginPage:(BOOL)flag
 {
 
-    _rooNav = [[RTRootNavigationController alloc] init];
+    _rooNav = [[AWNavigationController alloc] init];
     if (flag) {
-        [_rooNav pushViewController:self.loginVC animated:NO complete:nil];
+        [_rooNav pushViewController:self.loginVC animated:NO];
     }else {
-        _rooNav = [[RTRootNavigationController alloc] initWithRootViewControllerNoWrapping:self.tabBarController];
+        _rooNav = [[AWNavigationController alloc] initWithRootViewController:self.tabBarController];
     }
     
     

@@ -8,7 +8,7 @@
 
 
 
-// 系统的导航，做样式统一定制（不推荐，推荐使用AWRootNavigationController）
+// 系统的导航，做样式统一定制
 #import <UIKit/UIKit.h>
 
 @interface AWNavigationController : UINavigationController

@@ -7,7 +7,7 @@
 //
 
 #import "AWTabBarController.h"
-#import "AWContainerNavigationController.h"
+#import "AWNavigationController.h"
 #import "AWUserManager.h"
 
 
@@ -50,7 +50,7 @@
     
     NSMutableArray *navArr = @[].mutableCopy;
     for (UIViewController *v in temp) {
-        AWContainerNavigationController *nav = [[AWContainerNavigationController alloc] initWithRootViewController:v];
+        AWNavigationController *nav = [[AWNavigationController alloc] initWithRootViewController:v];
         [navArr addObject:nav];
     }
     
