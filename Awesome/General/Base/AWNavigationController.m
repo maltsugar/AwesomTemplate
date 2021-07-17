@@ -16,11 +16,11 @@
 
 
 
-@interface AWNavigationController ()<UINavigationControllerDelegate, UIGestureRecognizerDelegate>
-
+@interface AWNavigationController ()
 @end
 
 @implementation AWNavigationController
+
 
 + (void)initialize
 {
@@ -29,14 +29,37 @@
     navBar.barTintColor = [UIColor redColor];
     NSDictionary *dict = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
     [navBar setTitleTextAttributes:dict];
+    
+    
+    // 设置整个项目所有item的主题样式
+    UIBarButtonItem *item = [UIBarButtonItem appearance];
+    
+    // 设置普通状态
+    UIFont *font = [UIFont systemFontOfSize:15];
+    NSDictionary *normalAttr = @{
+        NSForegroundColorAttributeName: [UIColor whiteColor],
+        NSFontAttributeName: font
+    };
+    [item setTitleTextAttributes:normalAttr forState:UIControlStateNormal];
+    
+    // 设置不可用状态
+    NSDictionary *disableAttr = @{
+        NSForegroundColorAttributeName: [UIColor lightGrayColor],
+        NSFontAttributeName: font
+    };
+    [item setTitleTextAttributes:disableAttr forState:UIControlStateDisabled];
+    // 返回按钮
+    // 设置文字，水平偏移到看不见的位置
+    [item setBackButtonTitlePositionAdjustment:UIOffsetMake(LONG_MIN, 0) forBarMetrics:UIBarMetricsDefault];
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.interactivePopGestureRecognizer.delegate = self;
-    self.delegate = self;
+    self.navigationBar.backIndicatorImage = [[UIImage imageNamed:kAWBackIndicatorImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationBar.backIndicatorTransitionMaskImage = [[UIImage imageNamed:kAWBackIndicatorImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
 - (UIViewController *)childViewControllerForStatusBarStyle
@@ -49,15 +72,10 @@
     return self.visibleViewController;
 }
 
-
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    self.interactivePopGestureRecognizer.enabled = NO;
     if (self.viewControllers.count > 0) { // 这时push进来的控制器viewController，不是第一个子控制器（不是根控制器）
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:kAWNavBackImgName highImage:kAWNavBackImgName imageEdgeInsets:kAWNavBackEdge];
         viewController.hidesBottomBarWhenPushed = YES;
-        
-        
     }
     
     [super pushViewController:viewController animated:animated];
@@ -65,34 +83,22 @@
 
 - (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated
 {
-    self.interactivePopGestureRecognizer.enabled = NO;
-    
     if (viewControllers.count > 0) {
-        
         int i = 0;
         for (UIViewController *vc in viewControllers) {
-            
             if (i > 0) {
-                vc.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) image:kAWNavBackImgName highImage:kAWNavBackImgName imageEdgeInsets:kAWNavBackEdge];
                 vc.hidesBottomBarWhenPushed = YES;
             }
             i ++;
         }
     }
-    
     [super setViewControllers:viewControllers animated:animated];
 }
 
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    self.interactivePopGestureRecognizer.enabled = YES;
-}
 
 
-- (void)back
-{
-    [self popViewControllerAnimated:YES];
-}
+
+
 
 
 
