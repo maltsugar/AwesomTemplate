@@ -35,4 +35,7 @@
 
 // 数字转中文
 + (NSString *)chineseWithInteger:(NSInteger)integer;
+
+// 按照正则表达式匹配
++ (NSArray<NSTextCheckingResult *> *)matchRegex:(NSString *)pattern inString:(NSString *)text;
 @end

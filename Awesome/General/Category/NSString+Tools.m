@@ -106,4 +106,19 @@ static BOOL __stringDebug = NO;
     return string;
 }
 
++ (NSArray<NSTextCheckingResult *> *)matchRegex:(NSString *)pattern inString:(NSString *)text
+{
+    NSError *error = nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
+    
+    if (error) {
+        NSLog(@"Error creating regular expression: %@", error.localizedDescription);
+        return @[];
+    }
+    
+    NSArray<NSTextCheckingResult *> *matches = [regex matchesInString:text options:0 range:NSMakeRange(0, [text length])];
+    return matches;
+}
+
+
 @end
