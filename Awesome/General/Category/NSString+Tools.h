@@ -38,4 +38,8 @@
 
 // 按照正则表达式匹配
 + (NSArray<NSTextCheckingResult *> *)matchRegex:(NSString *)pattern inString:(NSString *)text;
+
+
+// 将文本写入Document目录下的 文件
+- (void)wirteToDocumentfileName:(NSString *)fileName;
 @end

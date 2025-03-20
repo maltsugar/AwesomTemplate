@@ -108,6 +108,10 @@ static BOOL __stringDebug = NO;
 
 + (NSArray<NSTextCheckingResult *> *)matchRegex:(NSString *)pattern inString:(NSString *)text
 {
+    if (!pattern || !text) {
+        return @[];
+    }
+    
     NSError *error = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
     
@@ -118,6 +122,24 @@ static BOOL __stringDebug = NO;
     
     NSArray<NSTextCheckingResult *> *matches = [regex matchesInString:text options:0 range:NSMakeRange(0, [text length])];
     return matches;
+}
+
+
+- (void)wirteToDocumentfileName:(NSString *)fileName
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *docPath = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask].firstObject;
+    NSURL *logPath = [docPath URLByAppendingPathComponent:fileName];
+    
+        
+    // 写入文件
+    NSError *error;
+    BOOL success = [self writeToURL:logPath atomically:YES encoding:NSUTF8StringEncoding error:&error];
+    if (error) {
+        NSLog(@"文件写入失败 %@", error.localizedDescription);
+    } else {
+        NSLog(@"文件写入成功");
+    }
 }
 
 
