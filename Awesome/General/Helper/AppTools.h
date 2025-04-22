@@ -89,7 +89,7 @@ UIEdgeInsets deviceSafeInsets(void);
 /// 处理过的安全区域，适合需要顶部适配刘海屏的情况
 UIEdgeInsets deviceBanlancedSafeInsets(void);
 
-char *formattedLogDate(void);
+//char *formattedLogDate(void);
 
 
 

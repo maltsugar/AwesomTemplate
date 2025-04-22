@@ -11,6 +11,22 @@
 
 #import "AppTools.h"
 
+
+
+static inline char *formattedLogDate(void)
+{
+    time_t rawtime;
+    struct tm *timeinfo;
+    static char buffer[128];
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
+    strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", timeinfo);
+    return buffer;
+}
+
+
+
+
 //#ifdef DEBUG
 //#define NSLog(...) NSLog(@"%s 第%d行 \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
 //#else
