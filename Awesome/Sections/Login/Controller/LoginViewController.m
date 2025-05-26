@@ -111,16 +111,26 @@
 
 - (IBAction)handleLoginAction
 {
-    AWConfigManager *config = [AWConfigManager sharedConfigManager];
     
-    NSLog(@"%@  %@", config.baseURL, config.path);
     
-    [MBProgressHUD showSuccess:@"登录中"];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // 模拟网络延迟
-        [MBProgressHUD hideHUD];
-        [[AppTools sharedTools] afterLoginSucceed];
-    });
+//    [MBProgressHUD showSuccess:@"成功"];
+    
+//    [MBProgressHUD showError:@"失败"];
+    
+    
+    [MBProgressHUD showMessage:@""];
+    
+    
+//    AWConfigManager *config = [AWConfigManager sharedConfigManager];
+//    
+//    NSLog(@"%@  %@", config.baseURL, config.path);
+//    
+//    [MBProgressHUD showSuccess:@"登录中"];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        // 模拟网络延迟
+//        [MBProgressHUD hideHUD];
+//        [[AppTools sharedTools] afterLoginSucceed];
+//    });
 }
 
 - (void)dealloc
